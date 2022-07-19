@@ -83,7 +83,7 @@ if ($_SESSION['userType'] == 0) {
                             <button class="btn btn-success btn-lg btnTable" title="Edita tu evento">
                               <i class="fa-solid fa-pen-to-square"></i>
                             </button>
-                            <button class="btn btn-success btn-lg btnTable" title="Crear Tickets" onclick="ticketsCreateGo(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
+                            <button class="btn btn-success btn-lg btnTable" title="Crear Tickets" onclick="myTickets(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
                               <i class="fa-solid fa-ticket"></i>
                             </button>
                             <button class="btn btn-success btn-lg btnTable" title="Tickets vendidos y cortesías enviadas">
@@ -180,8 +180,8 @@ if ($_SESSION['userType'] == 0) {
             }
           });
         });
-        const ticketsCreateGo = (id, nomEvent) => {
-          window.location.href = 'ticketsCreate.php?id=' + id + '&nomEvent=' + nomEvent;
+        const myTickets = (id, nomEvent) => {
+          window.location.href = 'myTickets.php?id=' + id + '&nomEvent=' + nomEvent;
         }
       </script>
     </body>

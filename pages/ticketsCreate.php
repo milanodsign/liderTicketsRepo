@@ -43,24 +43,23 @@ if ($_SESSION['userType'] == 0) {
                         $result = $mysqli->query($sql);
                         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                         ?>
-                            <div class="col-md-5">
-                                <div class="card imgEvent">
-                                    <div class="card-body">
-
+                            <div class="col-md-4" style="max-width: 400px;max-height: 400px;box-sizing: border-box;padding: 0;">
+                                <div class="card imgEvent" style="height: 100%;">
+                                    <div class="card-body" style="background: url(<?php echo $row['flyer'] ?>);background-position: center; background-repeat: no-repeat;background-size: cover;width: 100%;">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-md-8">
                                 <div class="card">
                                     <div class="card-header">
                                         <h3><?php echo $title ?></h3>
                                     </div>
                                     <div class="card-body">
-                                        <form class="row" action="" method="post">
-                                            <input type="hidden" name="idEvent">
+                                        <form class="row" action="../assets/api/php/tickets/saveTickets.php?nomEvent=<?php echo $nomEvent?>" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" name="idEvent" value="<?php echo $idEvent ?>">
                                             <div class="form-group col-md-6">
                                                 <label for="">Tipo de entrada</label>
-                                                <select class="form-control form-control-lg" name="ticketType" id="ticketType">
+                                                <select class="form-control form-control-lg" name="ticketType" id="ticketType" required>
                                                     <option value="">Seleccione</option>
                                                     <option value="0">Ticket Presencial</option>
                                                     <option value="1">Ticket Streaming</option>
@@ -68,9 +67,9 @@ if ($_SESSION['userType'] == 0) {
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="">Estado</label>
-                                                <select class="form-control form-control-lg" name="estado" id="estado">
+                                                <select class="form-control form-control-lg" name="estado" id="estado" required>
                                                     <option value="">Seleccione</option>
-                                                    <option value="0">Activol</option>
+                                                    <option value="0">Activo</option>
                                                     <option value="1">Agotado</option>
                                                     <option value="2">Cortesía</option>
                                                     <option value="3">Cerrado</option>
@@ -79,11 +78,47 @@ if ($_SESSION['userType'] == 0) {
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <label for="">Nombre del ticket</label>
-                                                <input class="form-control form-control-lg" type="text" name="name" id="name">
+                                                <input class="form-control form-control-lg" type="text" name="name" id="name" required>
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <label for="">Descripción</label>
-                                                <textarea name="descriptionTickets" id="" class="form-control form-control-lg"></textarea>
+                                                <textarea name="descriptionTickets" id="" class="form-control form-control-lg" required></textarea>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="">Entradas en venta hasta la siguiente fecha y hora</label>
+                                                <div class="input-group">
+                                                    <input class="form-control form-control-lg" type="date" name="fechaVenta" id="fechaVenta" required>
+                                                    <input class="form-control form-control-lg" type="time" name="horaVenta" id="horaVenta" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="">Los tickets serán válidos hasta</label>
+                                                <div class="input-group">
+                                                    <input class="form-control form-control-lg" type="date" name="fechaValid" id="fechaValid" required>
+                                                    <input class="form-control form-control-lg" type="time" name="horaValid" id="horaValid" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="price">Price</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="amount">
+                                                            <i class="fa-solid fa-dollar-sign"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="text" class="form-control form-control-lg" id="price" name="price" aria-describedby="amount" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                                <label for="">Cantidad</label>
+                                                <input class="form-control form-control-lg" type="number" name="cant" id="cant" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="">Imagen del ticket</label>
+                                                <input class="form-control form-control-lg" type="file" name="imgTickets" id="imgTickets">
+                                            </div>
+                                            <div class="form-group col-md-12 btnSubmin d-flex justify-content-end mt-4">
+                                                <input type="submit" value="Agregar Tickets" class="btn btn-lg btn-primary btn-lg mb-0">
                                             </div>
                                         </form>
 

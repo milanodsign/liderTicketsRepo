@@ -120,32 +120,32 @@ td.botonera {
   display: flex;
 }
 td.sorting_1 > img {
-    max-width: 200px;
-    margin: 0 auto;
-    display: block;
+  max-width: 200px;
+  margin: 0 auto;
+  display: block;
 }
 ul.dtr-details {
-    padding: 0;
+  padding: 0;
 }
 ul.dtr-details > li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 span.dtr-title {
-    font-weight: 900;
-    padding: 10px 0 5px;
+  font-weight: 900;
+  padding: 10px 0 5px;
 }
 ul.dtr-details > li:last-child > span.dtr-data {
-    flex-wrap: wrap;
-    width: 80%;
-    gap: 10px;
-    display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  gap: 10px;
+  display: flex;
 }
 /* Custom Card Events */
 .events .card {
-  height: 400px;
+  height: 500px;
   overflow: hidden;
 }
 .events .card-body {
@@ -173,7 +173,7 @@ ul.dtr-details > li:last-child > span.dtr-data {
   align-items: center;
   height: 15%;
   font-size: 12px;
-  border-bottom: .5px solid #c1c1c1;
+  border-bottom: 0.5px solid #c1c1c1;
   padding: 0 15px;
   font-weight: 600;
 }
@@ -203,4 +203,42 @@ ul.dtr-details > li:last-child > span.dtr-data {
 .infoEvent > span.btn.btn-primary > svg.svg-inline--fa.fa-ticket {
   color: #fff;
   transform: rotateZ(135deg);
+}
+span.valPass {
+  font-size: 12px;
+  color: #ff0000;
+  display: none;
+}
+span.valPass.active {
+  display: block;
+}
+span#amount {
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  height: 100%;
+}
+span#amount > svg.svg-inline--fa.fa-dollar-sign {
+  width: inherit;
+  margin: 0;
+}
+span.estatus {
+  font-size: 14px;
+  font-weight: 600;
+}
+span.estatus > svg {
+  width: inherit;
+}
+span.estatus.active,
+span.estatus.courtesy,
+span.estatus.rrpp,
+span.estatus.active > svg,
+span.estatus.courtesy > svg,
+span.estatus.rrpp > svg {
+  color: #2dce89;
+}
+span.estatus.soldOut,
+span.estatus.close,
+span.estatus.soldOut > svg,
+span.estatus.close > svg {
+  color: #ff0000;
 }

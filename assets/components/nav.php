@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="../pages/myTickets.php">
+                <a class="nav-link " href="#">
                     <i class="fa-solid fa-ticket"></i>
                     <span class="nav-link-text">Mis tickets</span>
                 </a>
@@ -36,7 +36,7 @@
                 </a>
             </li>
             <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder">Perfil de Organizador</h6>
+                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder">Perfil de productor</h6>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#eventCreate">
@@ -75,26 +75,8 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="#">
-                    <i class="fa-solid fa-gift"></i>
-                    <span class="nav-link-text">Tickets de cortesía</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#">
-                    <i class="fa-solid fa-envelope-open-text"></i>
-                    <span class="nav-link-text">Envío de cortesía masivo</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#">
                     <i class="fa-solid fa-file-invoice-dollar"></i>
                     <span class="nav-link-text">Ventas totales</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#">
-                    <i class="fa-solid fa-sitemap"></i>
-                    <span class="nav-link-text">Planimetria</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -106,7 +88,7 @@
             <li class="nav-item">
                 <a class="nav-link " href="#">
                     <i class="fa-solid fa-user-check"></i>
-                    <span class="nav-link-text">Datos del organizador</span>
+                    <span class="nav-link-text">Datos del productor</span>
                 </a>
             </li>
             <li class="nav-item">

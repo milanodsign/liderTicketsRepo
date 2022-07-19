@@ -40,7 +40,6 @@ if ($_SESSION['userType'] == 0) {
                         $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 ";
                         $resultEvents = $mysqli->query($sqlEvents);
                         while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
-                            $id = $rowEvents['id'];
                         ?>
                             <div class="col-md-3">
                                 <div class="card">
@@ -59,15 +58,9 @@ if ($_SESSION['userType'] == 0) {
                                             </span>
                                             <span>
                                                 <i class="fa-solid fa-dollar-sign"></i>
-                                                <?php
-                                                $sqlTickets = "SELECT MIN(price), MAX(price) FROM `ticketsType` WHERE `idEvent`=$id";
-                                                $resultTickets = $mysqli->query($sqlTickets);
-                                                while ($rowTickets = $resultTickets->fetch_array(MYSQLI_ASSOC)) {
-                                                ?>
-                                                    <span>
-                                                        <? echo  'Desde $' . number_format($rowTickets['MIN(price)'], 2) . ' - Hasta $' . number_format($rowTickets['MAX(price)'], 2) ?>
-                                                    </span>
-                                                <? } ?>
+                                                <span>
+                                                    Desde <? echo  ' $000.000 ' ?>
+                                                </span>
                                             </span>
                                             <span>
                                                 <i class="fa-solid fa-map-pin"></i>
@@ -75,9 +68,9 @@ if ($_SESSION['userType'] == 0) {
                                                     <?php echo $rowEvents['dir'] ?>
                                                 </span>
                                             </span>
-                                            <span class="btn btn-primary" onclick="eventGo(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
-                                                <i class="fa-solid fa-ticket"></i>
-                                                <span>Comprar Tickets</span>
+                                            <span class="btn btn-primary">
+                                            <i class="fa-solid fa-ticket"></i>
+                                            <span>Comprar Tickets</span>
                                             </span>
                                         </div>
 
@@ -97,9 +90,6 @@ if ($_SESSION['userType'] == 0) {
                         damping: '0.5'
                     }
                     Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-                }
-                const eventGo = (id, nomEvent) => {
-                    window.location.href = 'event.php?id=' + id + '&nomEvent=' + nomEvent;
                 }
             </script>
         </body>

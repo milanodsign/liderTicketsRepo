@@ -46,7 +46,8 @@ $title = "Registro";
                 </div>
                 <div class="div-50">
                   <label for="repetir_clave"><span class="t_ubicacion">Repetir clave:</span></label>
-                  <input type="password" size="50" name="repetir_clave" id="repetir_clave" value="" placeholder="Repite la clave" class="form-control form-control-lg">
+                  <input type="password" size="50" name="repetir_clave" id="repetir_clave" value="" placeholder="Repite la clave" class="form-control form-control-lg" onblur="valPass()">
+                  <span class="valPass">Las contraseñas no coinciden</span>
                 </div>
 
                 <!-- <div class="g-recaptcha div-50" data-sitekey="6LdKyCQTAAAAANngEInKLldYDXUY4a1lf2fgr5tu">
@@ -58,6 +59,11 @@ $title = "Registro";
                 <div class="align-items-center d-flex justify-content-end mt-4 w-100">
                   <button type="submit" name="button2" id="button2" class="btn btn-primary w-100">REGÍSTRATE</button>
                 </div>
+                <span class="d-flex justify-content-center w-100 text-primary text-gradient font-weight-bold">
+                  <a href="../index">
+                    o vuelve al Inicio
+                  </a>
+                </span>
               </form>
             </div>
           </div>
@@ -74,6 +80,8 @@ $title = "Registro";
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {

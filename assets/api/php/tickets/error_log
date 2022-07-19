@@ -1,0 +1,3 @@
+[18-Jul-2022 23:08:37 America/Bogota] PHP Warning:  move_uploaded_file(ticketsImg/280661815_114654631239080_1129790877358562031_n.jpg): failed to open stream: No such file or directory in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/saveTickets.php on line 33
+[18-Jul-2022 23:08:37 America/Bogota] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpUUMym6' to 'ticketsImg/280661815_114654631239080_1129790877358562031_n.jpg' in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/saveTickets.php on line 33
+[18-Jul-2022 23:08:37 America/Bogota] PHP Notice:  Undefined variable: ticketsImg in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/saveTickets.php on line 43
