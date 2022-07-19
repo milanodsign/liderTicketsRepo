@@ -1,0 +1,206 @@
+/* Bootstrap css */
+/* @import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"; */
+/* Select2 css */
+@import "http://propeller.in/components/select2/css/select2.min.css";
+@import "http://propeller.in/components/select2/css/select2-bootstrap.css";
+/* Propeller typography */
+@import "http://propeller.in/components/typography/css/typography.css";
+/* Propeller text fields */
+@import "http://propeller.in/components/textfield/css/textfield.css";
+/* Propeller select2 */
+@import "http://propeller.in/components/select2/css/pmd-select2.css";
+/* Propeller icons */
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "https://opensource.propeller.in/components/icons/css/google-icons.css";
+/* Bootstrap datetimepicker */
+@import "https://opensource.propeller.in/components/datetimepicker/css/bootstrap-datetimepicker.css";
+/* Propeller datetimepicker */
+@import "https://opensource.propeller.in/components/datetimepicker/css/pmd-datetimepicker.css";
+.div-100 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.div-50 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+#contentCard {
+  min-width: 50%;
+}
+body {
+  min-height: 100vh;
+  background: #1e1f29;
+}
+.register > main,
+.registerSuccess > main {
+  height: calc(100vh - 53px) !important;
+}
+.register footer > div > div > div,
+.registerSuccess footer > div > div > div {
+  margin: 0 auto !important;
+}
+.register .copyright,
+.registerSuccess .copyright {
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+body.registerSuccess div#contentCard {
+  min-height: 300px !important;
+}
+body.registerSuccess div#contentCard div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+img.logoRegister {
+  width: 400px;
+}
+label {
+  margin: 0;
+}
+div#navbar {
+  justify-content: flex-end;
+}
+svg.svg-inline--fa {
+  width: 32px;
+  color: #e09900;
+  margin-right: 10px;
+}
+span.nav-link-text {
+  color: #fff;
+  margin: 0;
+}
+h6 {
+  color: #e09900;
+}
+div.divCollapse {
+  box-sizing: border-box;
+  padding-left: 30px;
+}
+div.divCollapse li {
+  color: #fff;
+}
+div.divCollapse li::marker {
+  content: "";
+  display: none;
+}
+div.divCollapse li > a {
+  font-size: 14px;
+  color: #fff;
+}
+div.divCollapse svg.svg-inline--fa {
+  width: 10px;
+  margin-right: 5px;
+}
+.btnTable {
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnTable > svg.svg-inline--fa {
+  margin: 0;
+  color: #fff;
+}
+td.botonera {
+  gap: 3px;
+  flex-wrap: wrap;
+  display: flex;
+}
+td.sorting_1 > img {
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+ul.dtr-details {
+    padding: 0;
+}
+ul.dtr-details > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+span.dtr-title {
+    font-weight: 900;
+    padding: 10px 0 5px;
+}
+ul.dtr-details > li:last-child > span.dtr-data {
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 10px;
+    display: flex;
+}
+/* Custom Card Events */
+.events .card {
+  height: 400px;
+  overflow: hidden;
+}
+.events .card-body {
+  padding: 0;
+  overflow: hidden;
+}
+.imgEvent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+.infoEvent {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  width: 100%;
+  height: 50%;
+}
+.infoEvent > span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 15%;
+  font-size: 12px;
+  border-bottom: .5px solid #c1c1c1;
+  padding: 0 15px;
+  font-weight: 600;
+}
+.infoEvent > span:first-child {
+  width: 100%;
+  height: 40%;
+  font-size: 20px;
+  padding: 15px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+}
+.infoEvent svg.svg-inline--fa {
+  width: inherit;
+}
+.infoEvent > span.btn.btn-primary {
+  margin: 0;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infoEvent > span.btn.btn-primary > svg.svg-inline--fa.fa-ticket {
+  color: #fff;
+  transform: rotateZ(135deg);
+}
