@@ -242,3 +242,16 @@ span.estatus.soldOut > svg,
 span.estatus.close > svg {
   color: #ff0000;
 }
+.eventSale .eventImg {
+  width: 400px;
+  max-width: 400px;
+  overflow: hidden;
+}
+.eventSale .eventImg > .card-body {
+  padding: 0;
+  width: 100%;
+  height: 600px;
+}
+.eventSale .eventImg > .card-body > .imgEvent {
+  height: 400px;
+}

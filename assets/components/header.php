@@ -31,4 +31,5 @@
 <!-- CSS Files -->
 <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 <link id="pagestyle" href="../assets/css/custom.css" rel="stylesheet" />
+
 <?php ?>

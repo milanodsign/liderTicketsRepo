@@ -69,8 +69,8 @@ if ($_SESSION['userType'] == 0) {
                                                 </span>
                                             </span>
                                             <span class="btn btn-primary">
-                                            <i class="fa-solid fa-ticket"></i>
-                                            <span>Comprar Tickets</span>
+                                                <i class="fa-solid fa-ticket"></i>
+                                                <span>Comprar Tickets</span>
                                             </span>
                                         </div>
 

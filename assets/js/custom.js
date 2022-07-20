@@ -1,3 +1,5 @@
+
+
 // register
 const register = () => {
   let name = $("nombre").val();
@@ -28,12 +30,11 @@ const register = () => {
 const valPass = () => {
   let pass = $("#clave").val();
   let valPass = $("#repetir_clave").val();
-  if (valPass !== pass){
-    $('.valPass').addClass('active')
-    $('#button2').prop('disabled', true)
-  }
-  else{
-    $('.valPass').removeClass('active')
-    $('#button2').prop('disabled', false)
+  if (valPass !== pass) {
+    $(".valPass").addClass("active");
+    $("#button2").prop("disabled", true);
+  } else {
+    $(".valPass").removeClass("active");
+    $("#button2").prop("disabled", false);
   }
 };
