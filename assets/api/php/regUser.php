@@ -6,14 +6,15 @@ require('../conex/conexConfig.php');
 $nombre = $_POST['nombre'];
 $email = $_POST['email'];
 $telefono = $_POST['telefono'];
+$pais = $_POST['pais'];
 $clave = $_POST['clave'];
-$sql = "INSERT INTO `user`(`id`, `name`,`mail`, `phone`, `pass`, `userType`) VALUES (NULL, '" . $nombre . "', '" . $email . "', '" . $telefono . "', '" . $clave . "', 0 )";
+$sql = "INSERT INTO `user`(`id`, `name`,`mail`, `phone`, `pais`, `pass`, `userType`) VALUES (NULL, '" . $nombre . "', '" . $email . "', '" . $telefono . "', '" . $pais . "', '" . $clave . "', 0 )";
 $saveBD = $mysqli->query($sql);
 
 $title = "Registro Exitoso";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />

@@ -18,10 +18,10 @@ include('../assets/api/php/functions/fechaEs.php');
 if ($_SESSION['userType'] == 0) {
     $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
     $result = $mysqli->query($sql);
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="es">
 
         <head>
             <?php include('../assets/components/header.php') ?>
@@ -45,7 +45,7 @@ if ($_SESSION['userType'] == 0) {
                             <div class="col-md-3">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="imgEvent" style="background: url(<?php echo $rowEvents['flyer'] ?>);background-position: center; background-repeat: no-repeat;background-size: cover;">
+                                        <div class="imgEvent" style="background: url(<?php echo '..' . $rowEvents['flyer'] ?>);background-position: center; background-repeat: no-repeat;background-size: cover;">
                                         </div>
                                         <div class="infoEvent">
                                             <span>
@@ -54,7 +54,7 @@ if ($_SESSION['userType'] == 0) {
                                             <span>
                                                 <i class="fa-solid fa-calendar-days"></i>
                                                 <span>
-                                                    <? echo  fechaEs($rowEvents['fechaIni']) . ' - ' . $rowEvents['horaIni'] ?>
+                                                    <? echo  fechaEs($rowEvents['fechaIni']) . ' - ' . date('h:i A', strtotime($rowEvents['horaIni'])) ?>
                                                 </span>
                                             </span>
                                             <span>

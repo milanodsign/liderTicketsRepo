@@ -1,92 +1,321 @@
-<?php ?>
+<?php
+require './assets/api/conex/conexConfig.php';
+include('./assets/api/php/functions/fechaEs.php');
+$title = 'Colombia';
+?>
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="es">
+<!--<![endif]-->
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-  <title>
-    Lider Tickets
-  </title>
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-  <!-- Nucleo Icons -->
-  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
-  <!-- CSS Files -->
-  <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  <?php include('./assets/components/headerIndex.php') ?>
 </head>
 
-<body class="">
-  <main class="main-content  mt-0">
-    <section>
-      <div class="page-header min-vh-100">
-        <div class="container">
-          <div class="row">
-            <div class="col-7 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-              <div class="position-relative h-100 m-3 px-7 d-flex flex-column justify-content-center overflow-hidden">
-                <img src="./assets/img/small-logos/Logo_Home_Svg.svg" alt="" srcset="">
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
-              <div class="card card-plain">
-                <div class="card-header pb-0 text-start">
-                  <h4 class="font-weight-bolder">Iniciar sesión</h4>
-                  <p class="mb-0">Ingrese su correo electrónico y contraseña para iniciar sesión</p>
+<body class="events">
+  <!-- header section -->
+  <?php include('./assets/components/navIndex.php') ?>
+  <!-- banner text -->
+  <div id="bannerPrincipal" class="carousel slide">
+    <?php
+    $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 ";
+    $resultEvents = $mysqli->query($sqlEvents);
+    while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
+      if ($rowEvents['banner'] != '') {
+
+    ?>
+        <div>
+          <img class="d-block w-100" src="<?php echo 'https://lidertickets.co' . $rowEvents['banner']  ?>" alt="<?php echo $rowEvents['nomEvent']  ?>">
+        </div>
+    <?php
+      }
+    }
+    ?>
+  </div>
+  <!-- banner text -->
+
+  <!-- search section -->
+  <section class="search section">
+    <form action="" method="post" class="form-inline">
+      <input type="text" name="key" id="key" class="form-control" placeholder="Busca tu evento en Lider Tickets">
+      <select name="department" id="department" class="form-control">
+        <option value="-1">Seleccione Departamento</option>
+      </select>
+      <select name="municipality" id="municipality" class="form-control">
+        <option value="-1">Seleccione Municipio</option>
+        <option value="-1">Selecciona un Departamento</option>
+      </select>
+      <select name="month" id="month" class="form-control">
+        <option value="-1">Seleccione Mes</option>
+        <?php
+        for ($i = 1; $i <= 12; $i++) {
+          switch ($i) {
+            case '1':
+              $mes = 'Ene';
+              break;
+            case '2':
+              $mes = 'Feb';
+              break;
+            case '3':
+              $mes = 'Mar';
+              break;
+            case '4':
+              $mes = 'Abr';
+              break;
+            case '5':
+              $mes = 'May';
+              break;
+            case '6':
+              $mes = 'Jun';
+              break;
+            case '7':
+              $mes = 'Jul';
+              break;
+            case '8':
+              $mes = 'Ago';
+              break;
+            case '9':
+              $mes = 'Sep';
+              break;
+            case '10':
+              $mes = 'Oct';
+              break;
+            case '11':
+              $mes = 'Nov';
+              break;
+            case '12':
+              $mes = 'Dic';
+              break;
+          }
+          echo '<option value="' . $i . '">' . $mes . ' ' . date('Y') . '</option>';
+        }
+        ?>
+      </select>
+      <button class="btn btn-primary" type="submit">Buscar</button>
+    </form>
+  </section>
+  <!-- search section -->
+
+  <!-- caroussel section -->
+  <section class="caroussel section">
+    <div class="responsive">
+      <?php
+      $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 ";
+      $resultEvents = $mysqli->query($sqlEvents);
+      while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
+      ?>
+        <div>
+          <a href="<?php echo 'https://lidertickets.co/event.php?nomEvent=' . $rowEvents['nomEvent'] . '&id=' . $rowEvents['id'] . '&idUser' . $rowEvents['idUser'] ?>">
+            <img src="<?php echo 'https://lidertickets.co' . $rowEvents['flyer'] ?>" alt="<?php echo $rowEvents['nomEvent'] ?>" title="<?php echo $rowEvents['nomEvent'] ?>">
+          </a>
+        </div>
+      <?php
+      }
+      ?>
+    </div>
+  </section>
+  <!-- caroussel section -->
+
+  <!-- gridEvent section -->
+  <section id="eventGrid" class="gallery section">
+    <div class="container-fluid">
+      <div class="gridEvent">
+        <?php
+        if (isset($_GET['pageno'])) {
+          $pageno = $_GET['pageno'];
+        } else {
+          $pageno = 1;
+        }
+        $no_of_records_per_page = 8;
+        $offset = ($pageno - 1) * $no_of_records_per_page;
+
+        $total_pages_sql = "SELECT COUNT(*) FROM `eventos` WHERE `estado`= 1";
+        $result = $mysqli->query($total_pages_sql);
+        $total_rows = mysqli_fetch_array($result)[0];
+        $total_pages = ceil((float)$total_rows / $no_of_records_per_page);
+
+
+        $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 LIMIT $offset, $no_of_records_per_page";
+        $resultEvents = $mysqli->query($sqlEvents);
+        while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
+          $id = $rowEvents['id'];
+        ?>
+          <div class="eventContent" onclick="eventGo(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`, `<?php echo $rowEvents['idUser'] ?>`)">
+            <div class="card">
+              <div class="card-body">
+                <div class="imgEvent" style="background: url(<?php echo 'https://lidertickets.co' . $rowEvents['flyer'] ?>);background-position: center; background-repeat: no-repeat;background-size: cover;">
                 </div>
-                <div class="card-body">
-                  <form role="form" action="./assets/api/conex/valLogin.php" method="POST">
-                    <div class="mb-3">
-                      <input type="email" name="mail" class="form-control form-control-lg" placeholder="Correo electrónico" aria-label="Correo electrónico">
-                    </div>
-                    <div class="mb-3">
-                      <input type="password" name="pass" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Contraseña">
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="rememberMe">
-                      <label class="form-check-label" for="rememberMe">Recuerdame</label>
-                    </div>
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Entrar</button>
-                    </div>
-                  </form>
+                <div class="infoEvent">
+                  <span>
+                    <?php echo $rowEvents['nomEvent'] ?>
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>
+                      <? echo  fechaEs($rowEvents['fechaIni']) . ' - ' . date('h:i A', strtotime($rowEvents['horaIni'])) ?>
+                    </span>
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <?php
+                    $sqlTickets = "SELECT MIN(price), MAX(price) FROM `ticketsType` WHERE `idEvent`=$id";
+                    $resultTickets = $mysqli->query($sqlTickets);
+                    while ($rowTickets = $resultTickets->fetch_array(MYSQLI_ASSOC)) {
+                    ?>
+                      <span>
+                        <? echo  'Desde $' . number_format($rowTickets['MIN(price)'], 2) . ' - Hasta $' . number_format($rowTickets['MAX(price)'], 2) ?>
+                      </span>
+                    <? } ?>
+                  </span>
+                  <span>
+                    <i class="fa-solid fa-map-pin"></i>
+                    <span>
+                      <?php echo $rowEvents['dir'] ?>
+                    </span>
+                  </span>
+                  <span class="btn btn-primary">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span>Comprar Tickets</span>
+                  </span>
                 </div>
-                <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                  <p class="mb-4 text-sm mx-auto">
-                  ¿No tienes una cuenta?
-                    <a href="./pages/register.php" class="text-primary text-gradient font-weight-bold">Registrate</a>
-                  </p>
-                </div>
+
               </div>
             </div>
           </div>
+        <?php } ?>
+        <nav aria-label="Page navigation" class="navPagination">
+          <ul class="pagination justify-content-center">
+            <?php
+            for ($page = 1; $page <= $total_pages; $page++) {
+            ?>
+              <li class="page-item <?php if ($page == $pageno) {
+                                      echo 'active';
+                                    } ?>">
+                <a class="page-link" href="<?php echo "?pageno=" . $page . "#eventGrid" ?>"><?php echo $page ?></a>
+              </li>
+            <?php
+            }
+            ?>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- gridEvent section -->
+
+  <!-- commingSoon section -->
+  <section id="commingSoon" class="section teams">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="wow fadeInDown animated">Próximo evento</h2>
+      </div>
+      <div class="row">
+        <?php
+        $sqlEventoCercano = "SELECT * FROM `eventos` WHERE `fechaIni` > NOW() ORDER BY `fechaIni` LIMIT 1";
+        $resultEventoCercano = $mysqli->query($sqlEventoCercano);
+        while ($row = $resultEventoCercano->fetch_array(MYSQLI_ASSOC)) {
+          $fechaIni = explode("-", $row['fechaIni']);
+          switch ($fechaIni[1]) {
+            case '1':
+              $mes = 'Ene';
+              break;
+            case '2':
+              $mes = 'Feb';
+              break;
+            case '3':
+              $mes = 'Mar';
+              break;
+            case '4':
+              $mes = 'Abr';
+              break;
+            case '5':
+              $mes = 'May';
+              break;
+            case '6':
+              $mes = 'Jun';
+              break;
+            case '7':
+              $mes = 'Jul';
+              break;
+            case '8':
+              $mes = 'Ago';
+              break;
+            case '9':
+              $mes = 'Sep';
+              break;
+            case '10':
+              $mes = 'Oct';
+              break;
+            case '11':
+              $mes = 'Nov';
+              break;
+            case '12':
+              $mes = 'Dic';
+              break;
+          }
+        ?>
+          <div class="col-md-6">
+            <img src="<?php echo 'https://lidertickets.co' . $row['flyer'] ?>" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-6">
+            <div class="col-md-11">
+              <h3><?php echo $row['nomEvent'] ?></h3>
+              <h4><?php echo $row['descripcion'] ?></h4>
+              <ul class="tour-list">
+                <li>
+                  <div class="tour-date">
+                    <?php echo $fechaIni[2] ?><span><?php echo $mes ?><br><em><?php echo $fechaIni[0] ?></em></span>
+                  </div>
+                  <span class="d-flex">
+                    <div class="tour-info">
+                      <?php echo $row['dir'] . ' - ' . $row['comuna'] . '/' . $row['region'] ?></div>
+                  </span>
+                  <div class="mt-2 tour-ticket"><a href="#">Comprar Tickets</a></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        <?php
+        }
+        ?>
+      </div>
+    </div>
+  </section>
+  <!-- commingSoon section -->
+
+  <!-- contact section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="wow fadeInDown animated">Contáctanos</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 conForm">
+          <div id="message"></div>
+          <form method="post" action="php/contact.php" name="cform" id="cform">
+            <input name="name" id="name" type="text" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Indicanos tu Nombre">
+            <input name="email" id="email" type="email" class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 noMarr" placeholder="Indicanos tu Correo Electrónico">
+            <textarea name="comments" id="comments" cols="" rows="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Mensaje"></textarea>
+            <input type="submit" id="submit" name="send" class="submitBnt" value="Enviar">
+            <div id="simple-msg"></div>
+          </form>
         </div>
       </div>
-    </section>
-  </main>
-  <!--   Core JS Files   -->
-  <script src="./assets/js/core/popper.min.js"></script>
-  <script src="./assets/js/core/bootstrap.min.js"></script>
-  <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="./assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+    </div>
+  </section>
+  <!-- contact section -->
+
+  <!-- Footer section -->
+  <?php include('./assets/components/footerIndex.php') ?>
+  <!-- Footer section -->
+
+  <!-- JS FILES -->
+  <?php include('./assets/components/scriptIndex.php') ?>
+  <script type="text/javascript" src="./assets/js/index.js"></script>
 </body>
 
 </html>

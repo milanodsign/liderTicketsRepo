@@ -1,14 +1,14 @@
 /* Bootstrap css */
 /* @import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"; */
 /* Select2 css */
-@import "http://propeller.in/components/select2/css/select2.min.css";
-@import "http://propeller.in/components/select2/css/select2-bootstrap.css";
+@import "https://propeller.in/components/select2/css/select2.min.css";
+@import "https://propeller.in/components/select2/css/select2-bootstrap.css";
 /* Propeller typography */
-@import "http://propeller.in/components/typography/css/typography.css";
+@import "https://propeller.in/components/typography/css/typography.css";
 /* Propeller text fields */
-@import "http://propeller.in/components/textfield/css/textfield.css";
+@import "https://propeller.in/components/textfield/css/textfield.css";
 /* Propeller select2 */
-@import "http://propeller.in/components/select2/css/pmd-select2.css";
+@import "https://propeller.in/components/select2/css/pmd-select2.css";
 /* Propeller icons */
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "https://opensource.propeller.in/components/icons/css/google-icons.css";
@@ -16,6 +16,10 @@
 @import "https://opensource.propeller.in/components/datetimepicker/css/bootstrap-datetimepicker.css";
 /* Propeller datetimepicker */
 @import "https://opensource.propeller.in/components/datetimepicker/css/pmd-datetimepicker.css";
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .div-100 {
   width: 100%;
   display: flex;
@@ -34,6 +38,7 @@
 body {
   min-height: 100vh;
   background: #1e1f29;
+  overflow-x: hidden;
 }
 .register > main,
 .registerSuccess > main {
@@ -145,6 +150,7 @@ ul.dtr-details > li:last-child > span.dtr-data {
 }
 /* Custom Card Events */
 .events .card {
+  min-height: 500px;
   height: 500px;
   overflow: hidden;
 }
@@ -243,7 +249,6 @@ span.estatus.close > svg {
   color: #ff0000;
 }
 .eventSale .eventImg {
-  width: 400px;
   max-width: 400px;
   overflow: hidden;
 }
@@ -254,4 +259,282 @@ span.estatus.close > svg {
 }
 .eventSale .eventImg > .card-body > .imgEvent {
   height: 400px;
+}
+.eventSale .infoEvent.unit {
+  height: calc(100% - 400px);
+}
+.eventSale .infoEvent > span:first-child {
+  flex-direction: column;
+  height: 40%;
+}
+.eventSale .infoEvent > span:first-child > span {
+  font-size: 12px;
+}
+.infoEvent.unit > span {
+  border: none;
+  justify-content: center;
+  height: 20%;
+}
+button.btn.btn-lg.btn-primary.btn-lg.w-100.mt-4.mb-0:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background-image: url('../img/wompi.svg');
+  background-size: contain;
+  vertical-align: middle;
+  transform: translateY(-8%);
+}
+/* dt */
+.dt-buttons > .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  box-sizing: border-box;
+  padding: 0;
+  background: #1e202a;
+  border-radius: 100% !important;
+  margin: 0 15px;
+}
+.dt-buttons > .btn > span > svg.svg-inline--fa {
+  margin: 0;
+  width: 15px;
+  height: 15px;
+}
+div#DataTables_Table_0_length {
+  width: 150px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#DataTables_Table_0_length > label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+div#DataTables_Table_0_length > label > select {
+  margin: 0 5px;
+  text-align: center;
+}
+div#DataTables_Table_0_filter {
+  width: 200px;
+  height: 45px;
+  display: flex;
+}
+div#DataTables_Table_0_filter > label {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#DataTables_Table_0_filter > label > input {
+  margin-left: 5px;
+}
+.active a.page-link {
+  color: #fff !important;
+}
+nav.navPagination .active a.page-link {
+  color: #fff !important;
+  background-color: var(--bs-pagination-active-bg);
+  border-color: var(--bs-pagination-active-bg);
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  border-radius: 100%;
+  background: transparent;
+  border: none;
+}
+img.imgCheckOut {
+  max-width: 150px;
+  height: auto;
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.8));
+}
+img.imgCheckOutTable {
+  max-width: 100px;
+}
+section#contact {
+  padding-bottom: 0;
+}
+.slick-prev:before, .slick-next:before, .slick-dots li button:before {
+  opacity: 1;
+  color: #e09900;
+}
+.slick-dots {
+  bottom: -50px;
+}
+.slick-slide > a > img {
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px 0 rgb(0, 0, 0, .5);
+}
+.search.section, .caroussel.section {
+  padding: 50px 50px 0;
+}
+.search.section form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+section.search.section input, section.search.section select, section.search.section .btn {
+  border-radius: 0;
+  height: 40px;
+  margin: 0 !important;
+  width: 20%;
+}
+.gridEvent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 50px;
+  justify-content: flex-start;
+}
+.eventContent {
+  width: 330px;
+  box-shadow: 0 10px 10px 0 rgb(0 0 0 / 50%);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.eventContent .card {
+  box-shadow: none;
+}
+.slick-initialized .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+div#bannerPrincipal {
+  padding-top: 144px;
+}
+div#bannerPrincipal.slick-initialized .slick-slide {
+  height: inherit;
+}
+nav.navPagination {
+  width: 100%;
+}
+div#bannerPrincipal .slick-slide > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+}
+body.event h1, body.event h2 {
+  color: var(--bs-white);
+  font-weight: 600;
+}
+.eventContentInfo > div:first-child {
+  /* border-right: 1px solid var(--bs-white); */
+  padding-bottom: 30px;
+}
+.eventContentInfo > div:last-child {
+  padding-bottom: 30px;
+}
+.eventContentInfo > div:last-child svg {
+  width: 65px;
+  height: 65px;
+  margin-right: 15px;
+}
+.eventContentInfo  .card-body {
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+}
+.eventContentInfo .card-body > span:last-child {
+  font-size: 10px;
+  text-align: justify;
+  display: block;
+  margin-top: 2rem;
+}
+.cantTickets > button {
+  margin: 1rem 0 3rem;
+}
+.description > p {
+  line-height: 1.5;
+  text-align: justify;
+}
+.eventContentInfo  .card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.eventContentInfo > div:last-child > .card {
+  margin-top: 21px;
+  padding: 0;
+}
+.eventContentInfo > div:last-child > .card > .card-body {
+  padding: 0;
+}
+div#evntListProd {
+  padding: 15px;
+}
+div#evntListProd.slick-initialized .slick-slide {
+  height: auto;
+  margin: 5px;
+}
+span.titleOtherEvent {
+  border-bottom: 1px solid var(--bs-gray-400);
+  padding: 1rem 0;
+}
+span.titleOtherEvent > h3, span.titleOtherEvent > h1 {
+  color: var(--bs-dark);
+  margin: 0;
+}
+div#evntListProd .slick-slide > a > img {
+  width: inherit;
+  height: inherit;
+  box-shadow: inherit;
+}
+body.login section:nth-child(2) {
+  height: calc(100vh - 64px);
+}
+.login footer {
+  width: 100%;
+  background: #e09900;
+}
+body.checkOut section.checkOutIndex {
+  padding-top: 144px;
+  padding-bottom: 30px;
+}
+.form-control-lg {
+  min-height: 50px;
+}
+.checkOut .col-md-12.mt-4:nth-child(2) .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 175px;
+}
+.checkOut .col-md-12.mt-4:nth-child(2) .card-body > svg.svg-inline--fa {
+  width: 35px;
+  height: 35px;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+button.goBack {
+  margin: 0 10px 0 0;
+}
+.goBack svg.svg-inline--fa {
+  color: #fff;
+  margin: 0;
+}
+.eventSale h1, .eventSale h2 {
+  color: #fff;
+}
+.eventSale table.table span.soldOut {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #a72727;
+  color: #fff;
+  border-radius: 10px;
+}
+.table-responsive tfoot > tr {
+  border-color: transparent;
 }

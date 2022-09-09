@@ -114,3 +114,43 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home2/hotshipi/public_html/lidertickets/pages/myEvents.php on line 19
+[19-Jul-2022 23:45:09 America/Bogota] PHP Notice:  Undefined index: userType in /home2/hotshipi/public_html/lidertickets/pages/event.php on line 20
+[19-Jul-2022 23:45:09 America/Bogota] PHP Notice:  Undefined index: id in /home2/hotshipi/public_html/lidertickets/pages/event.php on line 21
+[19-Jul-2022 23:45:09 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home2/hotshipi/public_html/lidertickets/pages/event.php:23
+Stack trace:
+#0 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets/pages/event.php on line 23
+[20-Jul-2022 00:24:01 America/Bogota] PHP Notice:  Undefined index: userType in /home2/hotshipi/public_html/lidertickets/pages/eventsGrid.php on line 18
+[20-Jul-2022 00:24:01 America/Bogota] PHP Notice:  Undefined index: id in /home2/hotshipi/public_html/lidertickets/pages/eventsGrid.php on line 19
+[20-Jul-2022 00:24:01 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home2/hotshipi/public_html/lidertickets/pages/eventsGrid.php:21
+Stack trace:
+#0 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets/pages/eventsGrid.php on line 21
+[20-Jul-2022 00:24:05 America/Bogota] PHP Notice:  Undefined index: userType in /home2/hotshipi/public_html/lidertickets/pages/eventsGrid.php on line 18
+[20-Jul-2022 00:24:05 America/Bogota] PHP Notice:  Undefined index: id in /home2/hotshipi/public_html/lidertickets/pages/eventsGrid.php on line 19
+[20-Jul-2022 00:24:05 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home2/hotshipi/public_html/lidertickets/pages/eventsGrid.php:21
+Stack trace:
+#0 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets/pages/eventsGrid.php on line 21
+[20-Jul-2022 01:16:23 America/Bogota] PHP Notice:  Undefined index: userType in /home2/hotshipi/public_html/lidertickets/pages/dashboard.php on line 17
+[20-Jul-2022 01:16:23 America/Bogota] PHP Notice:  Undefined index: id in /home2/hotshipi/public_html/lidertickets/pages/dashboard.php on line 18
+[20-Jul-2022 01:16:23 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home2/hotshipi/public_html/lidertickets/pages/dashboard.php:20
+Stack trace:
+#0 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets/pages/dashboard.php on line 20
+[20-Jul-2022 12:50:45 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home2/hotshipi/public_html/lidertickets/pages/producerData.php:103
+Stack trace:
+#0 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets/pages/producerData.php on line 103
+[20-Jul-2022 12:50:53 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home2/hotshipi/public_html/lidertickets/pages/producerData.php:103
+Stack trace:
+#0 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets/pages/producerData.php on line 103
+[20-Jul-2022 12:51:36 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home2/hotshipi/public_html/lidertickets/pages/producerData.php:103
+Stack trace:
+#0 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets/pages/producerData.php on line 103
+[20-Jul-2022 12:52:13 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home2/hotshipi/public_html/lidertickets/pages/producerData.php:103
+Stack trace:
+#0 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets/pages/producerData.php on line 103

@@ -32,7 +32,7 @@ if (isset($imgTickets) && $imgTickets != "") {
     } else {
         if (move_uploaded_file($temp, 'ticketsImg/' . $imgTickets)) {
             chmod('ticketsImg/' . $imgTickets, 0777);
-            $ticketsImg = '../assets/api/php/tickets/ticketsImg/' . $imgTickets;
+            $ticketsImg = '/assets/api/php/tickets/ticketsImg/' . $imgTickets;
         }
     }
 } else {
@@ -55,7 +55,7 @@ $title = "Registro de Ticket Exitoso";
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />

@@ -2,7 +2,7 @@
 $title = "Registro";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <?php include('../assets/components/header.php') ?>
@@ -26,35 +26,53 @@ $title = "Registro";
           <div class="card z-index-0">
             <div class="card-body">
               <form action="../assets/api/php/regUser.php?txt=Usuario Registrado Satisfactoriamente" method="POST" id="registro" name="registro" class="contacto row" autocomplete="off">
-                <div class="div-100">
+                <div class="col-md-6">
                   <label for="nombre"><span class="t_ubicacion">Nombre completo:</span></label>
-                  <input type="text" size="50" name="nombre" id="nombre" value="" placeholder="Escribe tu nombre completo aquí" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg">
+                  <input type="text" size="50" name="nombre" id="nombre" value="" placeholder="Escribe tu nombre completo aquí" spellcheck="false" data-ms-editor="true" class="form-control form-control-lg" required>
                 </div>
-                <div class="div-50">
+                <div class="col-md-6">
                   <label for="email"><span class="t_ubicacion">Email:</span></label>
-                  <input type="email" size="50" name="email" id="email" value="" placeholder="Escribe tu email aquí" class="form-control form-control-lg">
+                  <input type="email" size="50" name="email" id="email" value="" placeholder="Escribe tu email aquí" class="form-control form-control-lg" required>
                 </div>
-                <div class="div-50">
+                <div class="col-md-6">
                   <label for="telefono"><span class="t_ubicacion">Teléfono:</span></label>
-                  <input type="tel" size="50" name="telefono" id="telefono" value="" placeholder="Escribe tu teléfono aquí" class="form-control form-control-lg">
+                  <input type="tel" size="50" name="telefono" id="telefono" value="" placeholder="Escribe tu teléfono aquí" class="form-control form-control-lg" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="pais"><span class="t_ubicacion">País:</span></label>
+                  <select name="pais" id="pais" class="form-control form-control-lg" required>
+                    <option value="">Seleccione</option>
+                    <option value="chile">Chile</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="uruguay">Uruguay</option>
+                    <option value="paraguay">Paraguay</option>
+                    <option value="peru">Perú</option>
+                    <option value="mexico">México</option>
+                    <option value="bolivia">Bolivia</option>
+                    <option value="colombia" selected>Colombia</option>
+                    <option value="ecuador">Ecuador</option>
+                    <option value="usa">USA - CANADA</option>
+                    <option value="espana">España</option>
+                    <option value="panama">Panamá</option>
+                    <option value="venezuela">Venezuela</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="costarica">Costa Rica</option>
+                    <option value="guatemala">Guatemala</option>
+                    <option value="salvador">El Salvador</option>
+                    <option value="dominicana">Republica Dominicana</option>
+                  </select>
                 </div>
 
                 <span style="clear:both; display: block"></span>
                 <div class="div-50">
                   <label for="clave"><span class="t_ubicacion">Clave:</span></label>
-                  <input type="password" size="50" name="clave" id="clave" value="" placeholder="Escribe tu clave aquí" class="form-control form-control-lg">
+                  <input type="password" size="50" name="clave" id="clave" value="" placeholder="Escribe tu clave aquí" class="form-control form-control-lg" required>
                 </div>
                 <div class="div-50">
                   <label for="repetir_clave"><span class="t_ubicacion">Repetir clave:</span></label>
-                  <input type="password" size="50" name="repetir_clave" id="repetir_clave" value="" placeholder="Repite la clave" class="form-control form-control-lg" onblur="valPass()">
+                  <input type="password" size="50" name="repetir_clave" id="repetir_clave" value="" placeholder="Repite la clave" class="form-control form-control-lg" onblur="valPass()" required>
                   <span class="valPass">Las contraseñas no coinciden</span>
                 </div>
-
-                <!-- <div class="g-recaptcha div-50" data-sitekey="6LdKyCQTAAAAANngEInKLldYDXUY4a1lf2fgr5tu">
-                  <div style="width: 304px; height: 78px;">
-                    <div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdKyCQTAAAAANngEInKLldYDXUY4a1lf2fgr5tu&amp;co=aHR0cHM6Ly93d3cucGFzc2xpbmUuY29tOjQ0Mw..&amp;hl=es&amp;v=4rwLQsl5N_ccppoTAwwwMrEN&amp;size=normal&amp;cb=f8chrvh2mhnc" width="304" height="78" role="presentation" name="a-9elm0zy3fye8" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-                  </div><iframe style="display: none;"></iframe>
-                </div> -->
 
                 <div class="align-items-center d-flex justify-content-end mt-4 w-100">
                   <button type="submit" name="button2" id="button2" class="btn btn-primary w-100">REGÍSTRATE</button>

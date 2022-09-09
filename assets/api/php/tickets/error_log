@@ -1,3 +1,34 @@
-[18-Jul-2022 23:08:37 America/Bogota] PHP Warning:  move_uploaded_file(ticketsImg/280661815_114654631239080_1129790877358562031_n.jpg): failed to open stream: No such file or directory in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/saveTickets.php on line 33
-[18-Jul-2022 23:08:37 America/Bogota] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpUUMym6' to 'ticketsImg/280661815_114654631239080_1129790877358562031_n.jpg' in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/saveTickets.php on line 33
-[18-Jul-2022 23:08:37 America/Bogota] PHP Notice:  Undefined variable: ticketsImg in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/saveTickets.php on line 43
+[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: flyer in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 289
+[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: nomEvent in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 290
+[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: nomEvent in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 307
+[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: lugar in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 311
+[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: dir in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 316
+[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: fechaIni in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 321
+[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: horaIni in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 326
+[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 331
+[06-Sep-2022 18:53:12 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 331
+[06-Sep-2022 18:58:54 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 331
+[06-Sep-2022 19:12:19 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: idEvent in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 35
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: ticketType in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 60
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: email in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 235
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: name in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 267
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: flyer in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 291
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: nomEvent in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 292
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: nomEvent in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 309
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: lugar in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 313
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: dir in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 318
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: fechaIni in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 323
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: horaIni in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 328
+[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 19:21:18 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 19:22:58 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 19:23:04 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 19:24:22 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 19:24:55 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 19:25:48 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 19:26:03 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 19:27:20 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 19:28:21 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 20:21:28 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
+[06-Sep-2022 21:00:47 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/sendTicket.php on line 165

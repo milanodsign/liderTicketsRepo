@@ -1,0 +1,19 @@
+<?php
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+require('../conex/conexConfig.php');
+
+$id = $_GET['id'];
+// var_dump($id);exit();
+$sql = "SELECT * FROM ticketsSales INNER JOIN courtesyTickets ON ticketsSales.idEvent = courtesyTickets.idEvent ORDER BY ticketsSales.id WHERE ticketsSales.validated = 1 OR courtesyTickets.validated = 1";
+$result = $mysqli->query($sql);
+// var_dump($result);exit();
+while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    $response[] = array(
+        "name" => $row['name'],
+        "codTicket" => $row['codTicket'],
+    );
+}
+
+echo json_encode($response);

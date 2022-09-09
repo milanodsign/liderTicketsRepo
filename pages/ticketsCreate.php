@@ -23,7 +23,7 @@ if ($_SESSION['userType'] == 0) {
     while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="es">
 
         <head>
             <?php include('../assets/components/header.php') ?>

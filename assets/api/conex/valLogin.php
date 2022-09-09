@@ -15,12 +15,12 @@ if ($filas > 0) {
 		$_SESSION['id'] = $row['id'];
 		$_SESSION['name'] = $row['name'];
 	}
-	header("location:../../../pages/dashboard.php");
+	header("location:../../../pages/eventsGrid.php");
 } else {
 ?>
 
 	<!DOCTYPE html>
-	<html lang="en">
+	<html lang="es">
 
 	<head>
 		<meta charset="utf-8" />

@@ -28,6 +28,9 @@
 <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
 <!-- Datepicker -->
 <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+<!-- Slick -->
+<link rel="stylesheet" type="text/css" href="../assets/lib/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="../assets/lib/slick/slick-theme.css">
 <!-- CSS Files -->
 <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 <link id="pagestyle" href="../assets/css/custom.css" rel="stylesheet" />

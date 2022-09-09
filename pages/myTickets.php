@@ -19,11 +19,11 @@ require '../assets/api/conex/conexConfig.php';
 if ($_SESSION['userType'] == 0) {
   $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
   $result = $mysqli->query($sql);
-  while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+  while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
 
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="es">
 
     <head>
       <?php include('../assets/components/header.php') ?>
@@ -46,7 +46,7 @@ if ($_SESSION['userType'] == 0) {
                   <input type="button" value="Agregar Tickets" class="btn btn-primary mb-0" onclick="ticketsCreateGo(`<?php echo $idEvent ?>`, `<?php echo $nomEvent ?>`)">
                 </div>
                 <div class="card-body">
-                  <table class="display tabEvent  responsive nowrap" style="width:100%">
+                  <table class="display tabEvent table-responsive nowrap" style="width:100%">
                     <thead>
                       <tr>
                         <th scope="col">Nombre del Ticket</th>
@@ -62,9 +62,44 @@ if ($_SESSION['userType'] == 0) {
                     </thead>
                     <tbody>
                       <?php
-                      $sqlEvents = "SELECT * FROM `ticketsType` WHERE `idEvent`= " . $idEvent;
-                      $resultEvents = $mysqli->query($sqlEvents);
-                      while ($rowTickets = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
+                      $courtesyTotal = 0;
+                      $saleTotal = 0;
+                      $cancelTotal = 0;
+
+                      $sumaTotalSales = 0;
+                      $sumaTotalCancel = 0;
+                      $total = 0;
+
+                      $sqlTickets = "SELECT * FROM `ticketsType` WHERE `idEvent`= " . $idEvent;
+                      $resultTickets = $mysqli->query($sqlTickets);
+                      while ($rowTickets = $resultTickets->fetch_array(MYSQLI_ASSOC)) {
+
+                        $sqlCT = "SELECT * FROM `courtesyTickets` WHERE `idEvent`=" . $idEvent . " AND `ticketType` =" . $rowTickets['id'];
+                        $resultCT = $mysqli->query($sqlCT);;
+                        $courtesyCount = mysqli_num_rows($resultCT);
+                        $courtesyTotal += $courtesyCount;
+
+                        $sqlTS = "SELECT * FROM `ticketsSales` WHERE `idEvent`=" . $idEvent . " AND `ticketType` =" . $rowTickets['id'] . " AND `status` = 1";
+                        $resultTS = $mysqli->query($sqlTS);;
+                        $salesCount = mysqli_num_rows($resultTS);
+                        $saleTotal += $salesCount;
+
+                        $sqlCancelT = "SELECT * FROM `ticketsSales` WHERE `idEvent`=" . $idEvent . " AND `ticketType` =" . $rowTickets['id'] . " AND `status` = 0";
+                        $resultCancelT = $mysqli->query($sqlCancelT);;
+                        $cancelCount = mysqli_num_rows($resultCancelT);
+                        $cancelTotal += $cancelCount;
+
+                        $ticketsDisponibles = $rowTickets['cant'] - (($courtesyCount + $salesCount) - $cancelCount);
+
+                        $totalSales = $rowTickets['price'] * $salesCount;
+                        $totalCancel = $rowTickets['price'] * $cancelCount;
+
+                        $totalSalesTickets = $totalSales - $totalCancel;
+
+                        $sumaTotalSales += $totalSales;
+                        $sumaTotalCancel += $totalCancel;
+                        $total += $totalSalesTickets;
+
                         switch ($rowTickets['estado']) {
                           case 0:
                             $estado = '<span class="estatus active"><i class="fa-solid fa-check"></i>Activo</span>';
@@ -88,13 +123,13 @@ if ($_SESSION['userType'] == 0) {
                             <br>
                             <?php echo $estado ?>
                           </td>
-                          <td><?php echo $rowTickets['cant'] . ' de ' . $rowTickets['cant'] ?></td>
-                          <td>0</td>
-                          <td>0</td>
-                          <td>0</td>
-                          <td>0</td>
-                          <td>$<?php echo $rowTickets['price'] ?></td>
-                          <td>$<?php echo $rowTickets['price'] ?></td>
+                          <td><?php echo $ticketsDisponibles . ' de ' . $rowTickets['cant'] ?></td>
+                          <td style="text-align: center"><?php echo $salesCount ?></td>
+                          <td style="text-align: center"><?php echo $cancelCount ?></td>
+                          <td style="text-align: center"><?php echo $courtesyCount ?></td>
+                          <td style="text-align: center">0</td>
+                          <td style="text-align: right"><?php echo '$' . number_format($rowTickets['price'], 2) ?></td>
+                          <td style="text-align: right"><?php echo '$' . number_format($totalSalesTickets, 2) ?></td>
                           <td class="botonera">
                             <button class="btn btn-danger btn-lg btnTable" title="Cerrar">
                               <i class="fa-solid fa-power-off"></i>
@@ -127,44 +162,234 @@ if ($_SESSION['userType'] == 0) {
         }
         $(document).ready(function() {
           $('.tabEvent').DataTable({
-            dom: 'Blfrtp',
+            dom: 'Blfrt',
             responsive: true,
             buttons: [{
-              extend: 'excel',
-              text: 'Descargar Listado',
-              exportOptions: {
-                modifier: {
-                  page: 'current'
+                extend: 'excelHtml5',
+                text: '<i class="fas fa-file-excel"></i>',
+                exportOptions: {
+                  modifier: {
+                    page: 'all'
+                  }
+                }
+              },
+              {
+                extend: 'pdfHtml5',
+                text: '<i class="fas fa-file-pdf"></i>',
+                orientation: 'landscape',
+                pageSize: 'A4',
+                exportOptions: {
+                  modifier: {
+                    page: 'all'
+                  }
                 }
               }
-            }],
+            ],
             "lengthMenu": [
-              [50, -1],
-              [50, "Todos"]
+              [10, 25, 50, 75, 100, -1],
+              [10, 25, 50, 75, 100, "TODOS"]
             ],
             "language": {
-              "sProcessing": "Procesando...",
-              "sLengthMenu": "Mostrando _MENU_ Tickets Registradas",
-              "sZeroRecords": "No se encontraron resultados",
-              "sEmptyTable": "Ningún dato disponible en esta tabla",
-              "sInfo": "Mostrando Tickets del _START_ al _END_ de un total de _TOTAL_ Tickets",
-              "sInfoEmpty": "Mostrando Empresas del 0 al 0 de un total de 0 Tickets",
-              "sInfoFiltered": "(filtrado de un total de _MAX_ Tickets)",
-              "sInfoPostFix": "",
-              "sSearch": "Buscar Tickets:",
-              "sUrl": "",
-              "sInfoThousands": ",",
-              "sLoadingRecords": "Cargando...",
-              "oPaginate": {
-                "sFirst": "Primero",
-                "sLast": "Último",
-                "sNext": "Siguiente",
-                "sPrevious": "Anterior"
+              "aria": {
+                "sortAscending": ": orden ascendente",
+                "sortDescending": ": orden descendente"
               },
-              "oAria": {
-                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-              }
+              "autoFill": {
+                "cancel": "Cancelar",
+                "fill": "Llenar todas las celdas con <i>%d&lt;\\\/i&gt;<\/i>",
+                "fillHorizontal": "Llenar celdas horizontalmente",
+                "fillVertical": "Llenar celdas verticalmente"
+              },
+              "buttons": {
+                "collection": "Colección <span class=\"ui-button-icon-primary ui-icon ui-icon-triangle-1-s\"><\/span>",
+                "colvis": "Visibilidad de la columna",
+                "colvisRestore": "Restaurar visibilidad",
+                "copy": "Copiar",
+                "copyKeys": "Presiona ctrl or u2318 + C para copiar los datos de la tabla al portapapeles.<br \/><br \/>Para cancelar, haz click en este mensaje o presiona esc.",
+                "copySuccess": {
+                  "_": "Copió %ds registros al portapapeles",
+                  "1": "Copió un registro al portapapeles"
+                },
+                "copyTitle": "Copiado al portapapeles",
+                "csv": "CSV",
+                "excel": "Excel",
+                "pageLength": {
+                  "_": "Mostrar %ds registros",
+                  "-1": "Mostrar todos los registros"
+                },
+                "pdf": "PDF",
+                "print": "Imprimir"
+              },
+              "datetime": {
+                "amPm": [
+                  "AM",
+                  "PM"
+                ],
+                "hours": "Horas",
+                "minutes": "Minutos",
+                "months": {
+                  "0": "Enero",
+                  "1": "Febrero",
+                  "10": "Noviembre",
+                  "11": "Diciembre",
+                  "2": "Marzo",
+                  "3": "Abril",
+                  "4": "Mayo",
+                  "5": "Junio",
+                  "6": "Julio",
+                  "7": "Agosto",
+                  "8": "Septiembre",
+                  "9": "Octubre"
+                },
+                "next": "Siguiente",
+                "previous": "Anterior",
+                "seconds": "Segundos",
+                "weekdays": [
+                  "Dom",
+                  "Lun",
+                  "Mar",
+                  "Mie",
+                  "Jue",
+                  "Vie",
+                  "Sab"
+                ]
+              },
+              "decimal": ",",
+              "editor": {
+                "close": "Cerrar",
+                "create": {
+                  "button": "Nuevo",
+                  "submit": "Crear",
+                  "title": "Crear nuevo registro"
+                },
+                "edit": {
+                  "button": "Editar",
+                  "submit": "Actualizar",
+                  "title": "Editar registro"
+                },
+                "error": {
+                  "system": "Ocurrió un error de sistema (&lt;a target=\"\\\" rel=\"nofollow\" href=\"\\\"&gt;Más información)."
+                },
+                "multi": {
+                  "info": "Los elementos seleccionados contienen diferentes valores para esta entrada. Para editar y configurar todos los elementos de esta entrada con el mismo valor, haga clic o toque aquí, de lo contrario, conservarán sus valores individuales.",
+                  "noMulti": "Esta entrada se puede editar individualmente, pero no como parte de un grupo.",
+                  "restore": "Deshacer cambios",
+                  "title": "Múltiples valores"
+                },
+                "remove": {
+                  "button": "Eliminar",
+                  "confirm": {
+                    "_": "¿Está seguro de que desea eliminar %d registros?",
+                    "1": "¿Está seguro de que desea eliminar 1 registro?"
+                  },
+                  "submit": "Eliminar",
+                  "title": "Eliminar registro"
+                }
+              },
+              "emptyTable": "Sin registros",
+              "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+              "infoEmpty": "Mostrando 0 a 0 de 0 registros",
+              "infoFiltered": "(filtrado de _MAX_ registros)",
+              "infoThousands": ".",
+              "lengthMenu": "Mostrar _MENU_ registros",
+              "loadingRecords": "Cargando...",
+              "paginate": {
+                "first": "Primero",
+                "last": "Último",
+                "next": "Siguiente",
+                "previous": "Anterior"
+              },
+              "processing": "Procesando...",
+              "search": "Buscar:",
+              "searchBuilder": {
+                "add": "Agregar Condición",
+                "button": {
+                  "_": "Filtros (%d)",
+                  "0": "Filtrar"
+                },
+                "clearAll": "Limpiar Todo",
+                "condition": "Condición",
+                "conditions": {
+                  "array": {
+                    "contains": "Contiene",
+                    "empty": "Vacío",
+                    "equals": "Igual",
+                    "not": "Distinto",
+                    "notEmpty": "No vacío",
+                    "without": "Sin"
+                  },
+                  "date": {
+                    "after": "Mayor",
+                    "before": "Menor",
+                    "between": "Entre",
+                    "empty": "Vacío",
+                    "equals": "Igual",
+                    "not": "Distinto",
+                    "notBetween": "No entre",
+                    "notEmpty": "No vacío"
+                  },
+                  "number": {
+                    "between": "Entre",
+                    "empty": "Vacío",
+                    "equals": "Igual",
+                    "gt": "Mayor",
+                    "gte": "Mayor o igual",
+                    "lt": "Menor",
+                    "lte": "Menor o igual",
+                    "not": "Distinto",
+                    "notBetween": "No entre",
+                    "notEmpty": "No vacío"
+                  },
+                  "string": {
+                    "contains": "Contiene",
+                    "empty": "Vacío",
+                    "endsWith": "Termina con",
+                    "equals": "Igual",
+                    "not": "Distinto",
+                    "notEmpty": "No vacío",
+                    "startsWith": "Comienza con"
+                  }
+                },
+                "data": "Datos",
+                "deleteTitle": "Eliminar regla de filtrado",
+                "leftTitle": "Filtros anulados",
+                "logicAnd": "Y",
+                "logicOr": "O",
+                "rightTitle": "Filtro",
+                "title": {
+                  "_": "Filtros (%d)",
+                  "0": "Filtrar"
+                },
+                "value": "Valor"
+              },
+              "searchPanes": {
+                "clearMessage": "Limpiar todo",
+                "collapse": {
+                  "_": "Paneles de búsqueda (%d)",
+                  "0": "Paneles de búsqueda"
+                },
+                "count": "{total}",
+                "countFiltered": "{shown} ({total})",
+                "emptyPanes": "Sin paneles de búsqueda",
+                "loadMessage": "Cargando paneles de búsqueda...",
+                "title": "Filtros activos - %d"
+              },
+              "select": {
+                "cells": {
+                  "_": "%d celdas seleccionadas",
+                  "1": "Una celda seleccionada"
+                },
+                "columns": {
+                  "_": "%d columnas seleccionadas",
+                  "1": "Una columna seleccionada"
+                },
+                "rows": {
+                  "1": "Una fila seleccionada",
+                  "_": "%d filas seleccionadas"
+                }
+              },
+              "thousands": ".",
+              "zeroRecords": "No se encontraron registros"
             }
           });
         });

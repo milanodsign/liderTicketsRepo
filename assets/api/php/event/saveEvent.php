@@ -22,13 +22,6 @@ $dir = $_POST['dir'];
 $lugar = $_POST['lugar'];
 $link = $_POST['link'];
 
-// $type = $_FILES['flyer']['type'];
-// $tmp_name = $_FILES['flyer']["tmp_name"];
-// $tmp_name = $_FILES['flyer']["name"];
-// $imgEvntRuta = 'flyerEvents/' . $tmp_name;
-// $imgEvnt = '../assets/php/event/' . $imgEvntRuta;
-// move_uploaded_file($tmp_name, $imgEvntRuta);
-
 //Recogemos el archivo enviado por el formulario
 $flyer = $_FILES['flyer']['name'];
 //Si el archivo contiene algo y es diferente de vacio
@@ -61,7 +54,7 @@ $saveBD = $mysqli->query($sql);
 $title = "Registro Evento Exitoso";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
