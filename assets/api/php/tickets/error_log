@@ -1,34 +1,567 @@
-[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: flyer in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 289
-[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: nomEvent in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 290
-[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: nomEvent in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 307
-[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: lugar in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 311
-[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: dir in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 316
-[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: fechaIni in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 321
-[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: horaIni in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 326
-[04-Sep-2022 20:23:22 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 331
-[06-Sep-2022 18:53:12 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 331
-[06-Sep-2022 18:58:54 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 331
-[06-Sep-2022 19:12:19 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: idEvent in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 35
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: ticketType in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 60
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: email in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 235
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: name in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 267
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: flyer in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 291
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: nomEvent in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 292
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: nomEvent in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 309
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: lugar in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 313
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: dir in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 318
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: fechaIni in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 323
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: horaIni in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 328
-[06-Sep-2022 19:18:52 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 19:21:18 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 19:22:58 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 19:23:04 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 19:24:22 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 19:24:55 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 19:25:48 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 19:26:03 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 19:27:20 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 19:28:21 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 20:21:28 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/actStatus.php on line 333
-[06-Sep-2022 21:00:47 America/Bogota] PHP Notice:  Undefined variable: ticketName in /home2/hotshipi/public_html/lidertickets/assets/api/php/tickets/sendTicket.php on line 165
+[15-Nov-2022 22:43:20 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(23): Transbank\Webpay\WebpayPlus\Transaction->commit('113126992755ea7...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[15-Nov-2022 22:43:27 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(23): Transbank\Webpay\WebpayPlus\Transaction->commit('12314929de3a579...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[15-Nov-2022 22:45:03 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(23): Transbank\Webpay\WebpayPlus\Transaction->commit('12314929de3a579...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[15-Nov-2022 22:51:40 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(23): Transbank\TransaccionCompleta\Transaction->commit('123129907dd35c1...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[15-Nov-2022 22:52:00 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(23): Transbank\TransaccionCompleta\Transaction->commit('123129907dd35c1...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[15-Nov-2022 22:52:25 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(23): Transbank\TransaccionCompleta\Transaction->commit('123129907dd35c1...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[15-Nov-2022 23:25:39 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('1131216522c0aa9...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[15-Nov-2022 23:25:53 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('1131216522c0aa9...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[15-Nov-2022 23:28:12 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('1131216522c0aa9...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[16-Nov-2022 11:09:18 America/Bogota] PHP Notice:  Undefined variable: response in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/sendTicket.php on line 456
+[18-Nov-2022 06:55:32 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('12317f80a9a74b4...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[18-Nov-2022 06:55:42 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('12317f80a9a74b4...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[18-Nov-2022 06:55:51 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('12317f80a9a74b4...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[18-Nov-2022 06:56:32 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('12317f80a9a74b4...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[18-Nov-2022 06:57:10 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('12317f80a9a74b4...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[20-Nov-2022 12:57:35 America/Bogota] PHP Notice:  Undefined variable: response in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/sendTicket.php on line 456
+[20-Nov-2022 12:58:38 America/Bogota] PHP Notice:  Undefined variable: response in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/sendTicket.php on line 456
+[20-Nov-2022 12:59:37 America/Bogota] PHP Notice:  Undefined variable: response in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/sendTicket.php on line 456
+[20-Nov-2022 14:52:57 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('1131216522c0aa9...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[23-Nov-2022 12:30:45 America/Bogota] PHP Notice:  Undefined index: cant in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsLoged.php on line 13
+[23-Nov-2022 12:30:45 America/Bogota] PHP Notice:  Undefined index: idTickets in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsLoged.php on line 14
+[23-Nov-2022 12:30:45 America/Bogota] PHP Notice:  Undefined index: porcentaje in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsLoged.php on line 20
+[23-Nov-2022 12:30:45 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsLoged.php on line 32
+[23-Nov-2022 12:30:46 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Invalid value for parameter: amount" [422] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsLoged.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('kb34ofi6uqcd8', '637e58c51e760', 0, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[23-Nov-2022 12:45:56 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('11315cd10fd752f...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[23-Nov-2022 12:46:00 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('11315cd10fd752f...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[23-Nov-2022 12:46:07 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('11315cd10fd752f...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[23-Nov-2022 12:46:09 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('11315cd10fd752f...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[23-Nov-2022 12:46:22 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('11315cd10fd752f...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[23-Nov-2022 12:51:11 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('12313d997861ebb...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[23-Nov-2022 12:51:41 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('12313d997861ebb...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[23-Nov-2022 12:52:15 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('12313d997861ebb...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[23-Nov-2022 13:08:57 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('12313d997861ebb...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[23-Nov-2022 13:14:14 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCommitException: API Response: "Invalid value for parameter: token" [422] - The transaction could not be confirmed in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(87): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(19): Transbank\Webpay\WebpayPlus\Transaction->commit('12313d997861ebb...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[25-Nov-2022 21:33:29 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('11311476f3b466a...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[25-Nov-2022 21:34:38 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('11311476f3b466a...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[25-Nov-2022 21:34:42 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('11311476f3b466a...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[25-Nov-2022 21:35:00 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('11311476f3b466a...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[25-Nov-2022 21:38:30 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('11311476f3b466a...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[25-Nov-2022 21:41:44 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('1131af38c3aa515...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[25-Nov-2022 21:42:00 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('1131af38c3aa515...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[25-Nov-2022 21:42:07 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('1131af38c3aa515...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[25-Nov-2022 21:42:18 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction could not be found" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('1131af38c3aa515...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[25-Nov-2022 21:58:11 America/Bogota] PHP Recoverable fatal error:  Object of class Transbank\TransaccionCompleta\Responses\TransactionCommitResponse could not be converted to string in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php on line 42
+[25-Nov-2022 21:58:41 America/Bogota] PHP Recoverable fatal error:  Object of class Transbank\TransaccionCompleta\Responses\TransactionCommitResponse could not be converted to string in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php on line 42
+[25-Nov-2022 21:58:51 America/Bogota] PHP Recoverable fatal error:  Object of class Transbank\TransaccionCompleta\Responses\TransactionCommitResponse could not be converted to string in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php on line 42
+[25-Nov-2022 21:58:59 America/Bogota] PHP Recoverable fatal error:  Object of class Transbank\TransaccionCompleta\Responses\TransactionCommitResponse could not be converted to string in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php on line 42
+[25-Nov-2022 21:59:03 America/Bogota] PHP Recoverable fatal error:  Object of class Transbank\TransaccionCompleta\Responses\TransactionCommitResponse could not be converted to string in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php on line 42
+[25-Nov-2022 22:05:59 America/Bogota] PHP Recoverable fatal error:  Object of class Transbank\TransaccionCompleta\Responses\TransactionCommitResponse could not be converted to string in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php on line 44
+[25-Nov-2022 22:06:20 America/Bogota] PHP Recoverable fatal error:  Object of class Transbank\TransaccionCompleta\Responses\TransactionCommitResponse could not be converted to string in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php on line 44
+[25-Nov-2022 22:06:29 America/Bogota] PHP Recoverable fatal error:  Object of class Transbank\TransaccionCompleta\Responses\TransactionCommitResponse could not be converted to string in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php on line 44
+[25-Nov-2022 22:06:32 America/Bogota] PHP Recoverable fatal error:  Object of class Transbank\TransaccionCompleta\Responses\TransactionCommitResponse could not be converted to string in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php on line 44
+[25-Nov-2022 22:06:45 America/Bogota] PHP Recoverable fatal error:  Object of class Transbank\TransaccionCompleta\Responses\TransactionCommitResponse could not be converted to string in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php on line 44
+[29-Nov-2022 14:50:07 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[30-Nov-2022 12:45:35 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[30-Nov-2022 21:45:39 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 14:21:59 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 15:02:06 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 15:47:19 America/Bogota] PHP Notice:  Undefined index: cant in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 14
+[01-Dec-2022 15:47:19 America/Bogota] PHP Notice:  Undefined index: idTickets in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 15
+[01-Dec-2022 15:47:19 America/Bogota] PHP Notice:  Undefined index: porcentaje in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 21
+[01-Dec-2022 15:47:19 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 31
+[01-Dec-2022 15:47:19 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Invalid value for parameter: amount" [422] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('sdzo3tc5hjb2p', 597036125462, 0, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 15:47:35 America/Bogota] PHP Notice:  Undefined index: cant in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 14
+[01-Dec-2022 15:47:35 America/Bogota] PHP Notice:  Undefined index: idTickets in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 15
+[01-Dec-2022 15:47:35 America/Bogota] PHP Notice:  Undefined index: porcentaje in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 21
+[01-Dec-2022 15:47:35 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 31
+[01-Dec-2022 15:47:36 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Invalid value for parameter: amount" [422] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('sdzo3tc5hjb2p', 597036125462, 0, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 15:48:18 America/Bogota] PHP Notice:  Undefined index: cant in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 14
+[01-Dec-2022 15:48:18 America/Bogota] PHP Notice:  Undefined index: idTickets in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 15
+[01-Dec-2022 15:48:18 America/Bogota] PHP Notice:  Undefined index: porcentaje in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 21
+[01-Dec-2022 15:48:18 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 31
+[01-Dec-2022 15:48:19 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Invalid value for parameter: amount" [422] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('sdzo3tc5hjb2p', 597036125462, 0, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 19:01:25 America/Bogota] PHP Notice:  Undefined index: cant in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 14
+[01-Dec-2022 19:01:25 America/Bogota] PHP Notice:  Undefined index: idTickets in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 15
+[01-Dec-2022 19:01:25 America/Bogota] PHP Notice:  Undefined index: porcentaje in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 21
+[01-Dec-2022 19:01:25 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 31
+[01-Dec-2022 19:01:26 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Invalid value for parameter: amount" [422] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('1bq0734wkxfr2', 597036125462, 0, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 19:51:58 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:42:37 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Not Authorized" [401] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('37bswu98vftjn', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:43:05 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Not Authorized" [401] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('37bswu98vftjn', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:43:37 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Not Authorized" [401] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('37bswu98vftjn', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:46:52 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Not Authorized" [401] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('bwd5cx80uzaqg', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:47:22 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Unexpected error" [500] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('bwd5cx80uzaqg', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:49:14 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Unexpected error" [500] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('ger014hyab9lw', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:49:19 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Unexpected error" [500] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('ger014hyab9lw', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:50:55 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Not Authorized" [401] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('4o5wj038flai9', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:50:59 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Not Authorized" [401] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('4o5wj038flai9', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:51:25 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Unexpected error" [500] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('4o5wj038flai9', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:51:43 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Not Authorized" [401] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('4o5wj038flai9', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:52:02 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Not Authorized" [401] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('4o5wj038flai9', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:52:16 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Not Authorized" [401] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('4o5wj038flai9', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:52:36 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Unexpected error" [500] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('4o5wj038flai9', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:53:21 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Unexpected error" [500] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('4o5wj038flai9', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[01-Dec-2022 22:53:34 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Unexpected error" [500] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('4o5wj038flai9', 597036125462, 46000, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[02-Dec-2022 00:11:38 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[02-Dec-2022 06:22:48 America/Bogota] PHP Notice:  Undefined index: cant in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 14
+[02-Dec-2022 06:22:48 America/Bogota] PHP Notice:  Undefined index: idTickets in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 15
+[02-Dec-2022 06:22:48 America/Bogota] PHP Notice:  Undefined index: porcentaje in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 21
+[02-Dec-2022 06:22:48 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 31
+[02-Dec-2022 06:22:48 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Invalid value for parameter: amount" [422] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('mx4uvtsn8f1jp', 597036125462, 0, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[02-Dec-2022 06:23:21 America/Bogota] PHP Notice:  Undefined index: cant in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 14
+[02-Dec-2022 06:23:21 America/Bogota] PHP Notice:  Undefined index: idTickets in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 15
+[02-Dec-2022 06:23:21 America/Bogota] PHP Notice:  Undefined index: porcentaje in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 21
+[02-Dec-2022 06:23:21 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 31
+[02-Dec-2022 06:23:21 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Invalid value for parameter: amount" [422] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('mx4uvtsn8f1jp', 597036125462, 0, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[02-Dec-2022 08:10:19 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[03-Dec-2022 05:33:52 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[03-Dec-2022 09:13:25 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[03-Dec-2022 11:21:25 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Transaction already locked by another process" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('123194e359e9ac9...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[03-Dec-2022 11:21:25 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Invalid status '10' for transaction while authorizing. Commerce will be notified by webpay to authorize" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('123194e359e9ac9...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[03-Dec-2022 16:58:51 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[03-Dec-2022 16:58:52 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[03-Dec-2022 17:29:00 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[03-Dec-2022 20:54:41 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[03-Dec-2022 23:11:47 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[04-Dec-2022 00:02:19 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[04-Dec-2022 08:52:46 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[04-Dec-2022 12:00:45 America/Bogota] PHP Notice:  Undefined index: cant in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 14
+[04-Dec-2022 12:00:45 America/Bogota] PHP Notice:  Undefined index: idTickets in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 15
+[04-Dec-2022 12:00:45 America/Bogota] PHP Notice:  Undefined index: porcentaje in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 21
+[04-Dec-2022 12:00:45 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 31
+[04-Dec-2022 12:00:45 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Invalid value for parameter: amount" [422] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('1kth7b0iwarqg', 597036125462, 0, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[04-Dec-2022 12:01:07 America/Bogota] PHP Notice:  Undefined index: cant in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 14
+[04-Dec-2022 12:01:07 America/Bogota] PHP Notice:  Undefined index: idTickets in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 15
+[04-Dec-2022 12:01:07 America/Bogota] PHP Notice:  Undefined index: porcentaje in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 21
+[04-Dec-2022 12:01:07 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 31
+[04-Dec-2022 12:01:08 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Invalid value for parameter: amount" [422] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('1kth7b0iwarqg', 597036125462, 0, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[04-Dec-2022 12:01:26 America/Bogota] PHP Notice:  Undefined index: cant in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 14
+[04-Dec-2022 12:01:26 America/Bogota] PHP Notice:  Undefined index: idTickets in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 15
+[04-Dec-2022 12:01:26 America/Bogota] PHP Notice:  Undefined index: porcentaje in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 21
+[04-Dec-2022 12:01:26 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php on line 31
+[04-Dec-2022 12:01:27 America/Bogota] PHP Fatal error:  Uncaught Transbank\Webpay\WebpayPlus\Exceptions\TransactionCreateException: API Response: "Invalid value for parameter: amount" [422] - The transaction could not be created. in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/WebpayPlus/Transaction.php(57): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/saleTicketsIndex.php(50): Transbank\Webpay\WebpayPlus\Transaction->create('1kth7b0iwarqg', 597036125462, 0, 'https://liderti...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[04-Dec-2022 13:06:16 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Invalid status '19' for transaction while authorizing. Commerce will be notified by webpay to authorize" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('1231b2854d535cc...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[04-Dec-2022 13:06:29 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Invalid status '19' for transaction while authorizing. Commerce will be notified by webpay to authorize" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('1231b2854d535cc...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[04-Dec-2022 14:01:13 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Invalid status '19' for transaction while authorizing. Commerce will be notified by webpay to authorize" [422] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit('1231ac4c1247d08...')
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[04-Dec-2022 14:38:15 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[04-Dec-2022 18:15:41 America/Bogota] PHP Notice:  Undefined variable: response in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/sendTicket.php on line 456
+[04-Dec-2022 18:16:52 America/Bogota] PHP Notice:  Undefined variable: response in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/sendTicket.php on line 456
+[04-Dec-2022 18:17:13 America/Bogota] PHP Notice:  Undefined variable: response in /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/sendTicket.php on line 456
+[06-Dec-2022 17:10:30 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76
+[07-Dec-2022 11:39:08 America/Bogota] PHP Fatal error:  Uncaught Transbank\TransaccionCompleta\Exceptions\TransactionCommitException: API Response: "Request method 'PUT' not supported" [405] - An error has happened on the request in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php:76
+Stack trace:
+#0 /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/TransaccionCompleta/Transaction.php(128): Transbank\Webpay\Exceptions\WebpayRequestException::raise(Object(Transbank\Webpay\Exceptions\WebpayRequestException))
+#1 /home2/hotshipi/public_html/lidertickets_cl/assets/api/php/tickets/transactionResult.php(17): Transbank\TransaccionCompleta\Transaction->commit(NULL)
+#2 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/vendor/transbank/transbank-sdk/src/Webpay/Exceptions/WebpayRequestException.php on line 76

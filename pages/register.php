@@ -15,7 +15,7 @@ $title = "Registro";
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-5 text-center mx-auto">
-            <img class="logoRegister" src="../assets/img/small-logos/Logo_Home_Svg.svg" alt="">
+            <img class="logoRegister" src="../assets/img/logo.svg" alt="">
           </div>
         </div>
       </div>

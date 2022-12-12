@@ -14,10 +14,10 @@ if (isset($_SESSION['tiempo'])) {
 
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
     $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
     $result = $mysqli->query($sql);
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
         <!DOCTYPE html>
         <html lang="es">
@@ -42,7 +42,7 @@ if ($_SESSION['userType'] == 0) {
                                         <h3><?php echo $title . ' - Usuarios que han asistido a tus eventos' ?></h3>
                                         <h4>Asistencia de usuarios a tus eventos en los ultimos 3 meses</h4>
                                     </div>
-                                    <table class="display tabEvent  table-responsive nowrap" style="width:100%">
+                                    <table class="display tabEvent table-responsive" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>Ult. Fecha de Compra</th>

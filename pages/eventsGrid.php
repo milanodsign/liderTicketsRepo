@@ -15,7 +15,7 @@ if (isset($_SESSION['tiempo'])) {
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
 include('../assets/api/php/functions/fechaEs.php');
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
     $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
     $result = $mysqli->query($sql);
     while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -37,15 +37,34 @@ if ($_SESSION['userType'] == 0) {
                 <div class="container-fluid py-4">
                     <div class="row">
                         <?php
-                        $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 ";
+                        // $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 ";
+                        // $resultEvents = $mysqli->query($sqlEvents);
+                        // while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
+                        //     $id = $rowEvents['id']; 
+                        $date = date('Y-m-d');
+                        if (isset($_GET['pageno'])) {
+                            $pageno = $_GET['pageno'];
+                        } else {
+                            $pageno = 1;
+                        }
+                        $no_of_records_per_page = 8;
+                        $offset = ($pageno - 1) * $no_of_records_per_page;
+
+                        $total_pages_sql = "SELECT COUNT(*) FROM `eventos` WHERE `estado`= 1 ";
+                        $result = $mysqli->query($total_pages_sql);
+                        $total_rows = mysqli_fetch_array($result)[0];
+                        $total_pages = ceil((float)$total_rows / $no_of_records_per_page);
+
+
+                        $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 AND `fechaIni`>='" . $date . "'  ORDER BY `fechaIni` ASC  LIMIT $offset, $no_of_records_per_page";
                         $resultEvents = $mysqli->query($sqlEvents);
                         while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
                             $id = $rowEvents['id'];
                         ?>
-                            <div class="col-md-3">
+                            <div class="col-md-3 mb-3">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="imgEvent" style="background: url(<?php echo '..' . $rowEvents['flyer'] ?>);background-position: center; background-repeat: no-repeat;background-size: cover;">
+                                        <div class="imgEvent" style="background: url('<?php echo '..' . $rowEvents['flyer'] ?>');background-position: center; background-repeat: no-repeat;background-size: cover;">
                                         </div>
                                         <div class="infoEvent">
                                             <span>
@@ -76,8 +95,7 @@ if ($_SESSION['userType'] == 0) {
                                                 </span>
                                             </span>
                                             <span class="btn btn-primary" onclick="eventGo(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
-                                                <i class="fa-solid fa-ticket"></i>
-                                                <span>Comprar Tickets</span>
+                                                <img src="../assets/img/saleTickets.png" alt="">
                                             </span>
                                         </div>
 
@@ -85,6 +103,21 @@ if ($_SESSION['userType'] == 0) {
                                 </div>
                             </div>
                         <?php } ?>
+                        <nav aria-label="Page navigation" class="navPagination">
+                            <ul class="pagination justify-content-center">
+                                <?php
+                                for ($page = 1; $page <= $total_pages; $page++) {
+                                ?>
+                                    <li class="page-item <?php if ($page == $pageno) {
+                                                                echo 'active';
+                                                            } ?>">
+                                        <a class="page-link" href="<?php echo "?pageno=" . $page . "#eventGrid" ?>"><?php echo $page ?></a>
+                                    </li>
+                                <?php
+                                }
+                                ?>
+                            </ul>
+                        </nav>
                     </div>
                     <?php include('../assets/components/footer.php') ?>
                 </div>

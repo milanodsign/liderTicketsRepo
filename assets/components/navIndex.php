@@ -17,25 +17,25 @@
           <li><a href="<?php if ($title == 'Colombia') {
                           echo '#banner';
                         } else {
-                          echo 'https://lidertickets.co';
+                          echo 'https://lidertickets.cl';
                         } {
                         } ?>">Inicio</a></li>
           <li><a href="<?php if ($title == 'Colombia') {
                           echo '#eventGrid';
                         } else {
-                          echo 'https://lidertickets.co#eventGrid';
+                          echo 'https://lidertickets.cl#eventGrid';
                         } {
                         } ?>">Eventos</a></li>
           <li><a href="<?php if ($title == 'Colombia') {
                           echo '#commingSoon';
                         } else {
-                          echo 'https://lidertickets.co#commingSoon';
+                          echo 'https://lidertickets.cl#commingSoon';
                         } {
                         } ?>">Proximo Evento</a></li>
           <li><a href="<?php if ($title == 'Colombia') {
                           echo '#contact';
                         } else {
-                          echo 'https://lidertickets.co#contact';
+                          echo 'https://lidertickets.cl#contact';
                         } {
                         } ?>">Contáctanos</a></li>
           <?php

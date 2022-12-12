@@ -14,10 +14,10 @@ if (isset($_SESSION['tiempo'])) {
 
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
     $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
     $result = $mysqli->query($sql);
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
         <!DOCTYPE html>
         <html lang="es">
@@ -36,7 +36,7 @@ if ($_SESSION['userType'] == 0) {
                 <div class="container-fluid py-4">
                     <div class="row">
                         <div class="align-items-start col-md-4 d-flex justify-content-center">
-                            <img class="w-100" src="../assets/img/small-logos/Logo_Home_Svg.svg" alt="" srcset="">
+                            <img class="w-100" src="../assets/img/logo.svg" alt="" srcset="">
                         </div>
                         <div class="col-md-8">
                             <div class="card">
@@ -55,7 +55,7 @@ if ($_SESSION['userType'] == 0) {
                                                 <option value="peru">Perú</option>
                                                 <option value="uruguay">Uruguay</option>
                                                 <option value="bolivia">Bolivia</option>
-                                                <option value="colombia" selected="">Colombia</option>
+                                                <option value="colombia">Colombia</option>
                                                 <option value="ecuador">Ecuador</option>
                                                 <option value="usa">USA</option>
                                                 <option value="espana">España</option>
@@ -74,10 +74,8 @@ if ($_SESSION['userType'] == 0) {
                                             <label for="tDoc"><span class="t_ubicacion">Tipo de Documento:</span></label>
                                             <select name="tDoc" id="tDoc" class="form-control form-control-lg">
                                                 <option value="">Seleccione</option>
-                                                <option value="0">CC</option>
-                                                <option value="1">CE</option>
+                                                <option value="4">RUT</option>
                                                 <option value="2">PAS</option>
-                                                <option value="3">PPT</option>
                                             </select>
                                         </div>
                                         <div class="col-md-4">

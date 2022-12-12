@@ -16,10 +16,10 @@ if (isset($_SESSION['tiempo'])) {
 
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
   $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
   $result = $mysqli->query($sql);
-  while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+  while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
 
     <!DOCTYPE html>
@@ -46,7 +46,7 @@ if ($_SESSION['userType'] == 0) {
                   <input type="button" value="Enviar Ticket de Cortesía" class="btn btn-primary mb-0" onclick="sendTicketCourtesy(`<?php echo $idEvent ?>`, `<?php echo $nomEvent ?>`)">
                 </div>
                 <div class="card-body">
-                  <table class="display tabEvent table-responsive nowrap" style="width:100%">
+                  <table class="display tabEvent table-responsive" style="width:100%">
                     <thead>
                       <tr>
                         <th scope="col">Fecha de Envío</th>
@@ -63,7 +63,8 @@ if ($_SESSION['userType'] == 0) {
                       while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
                       ?>
                         <tr>
-                          <td><?php echo $rowEvents['sendDate'] ?></td>
+                          <td><?php echo $rowEvents['sendDate'] ?>
+                          <span class="arrowResponsive"><i class="fa-sharp fa-solid fa-circle-chevron-down"></i></span></td>
                           <td><?php echo $rowEvents['name'] ?></td>
                           <td><?php echo $rowEvents['email'] ?></td>
                           <?php

@@ -2,7 +2,7 @@
 date_default_timezone_set('America/Bogota');
 	
 // $mysqli = new mysqli('localhost', 'root', 'Lm16541651lM', 'lidertickets');
-$mysqli = new mysqli('localhost', 'hotshipi_liderti', 'Lm16541651lM', 'hotshipi_lidertickets');
+$mysqli = new mysqli('localhost', 'hotshipi_liderti', 'Lm16541651lM', 'hotshipi_lidertickets_cl');
 
 
 if ($mysqli->connect_errno) {

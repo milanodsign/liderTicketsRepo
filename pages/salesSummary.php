@@ -15,10 +15,10 @@ if (isset($_SESSION['tiempo'])) {
 }
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
     $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
     $result = $mysqli->query($sql);
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
         <!DOCTYPE html>
         <html lang="es">
@@ -37,12 +37,13 @@ if ($_SESSION['userType'] == 0) {
                 <div class="container-fluid py-4">
                     <div class="row">
                         <div class="col-md-12">
+
                             <div class="card">
                                 <div class="card-header pb-0">
-                                    <h3><?php echo $title . ' - Venta de Tickets' ?></h3>
+                                    <h1><?php echo $title . ' - Venta de Tickets' ?></h1>
                                 </div>
                                 <div class="card-body">
-                                    <table class="display tabEvent  table-responsive nowrap" style="width:100%">
+                                    <table class="display tabEvent table-responsive" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Tipo de Ticket</th>
@@ -57,7 +58,7 @@ if ($_SESSION['userType'] == 0) {
                                         </thead>
                                         <tbody>
                                             <?php
-                                            
+
                                             $courtesyTotal = 0;
                                             $saleTotal = 0;
                                             $cancelTotal = 0;
@@ -66,7 +67,7 @@ if ($_SESSION['userType'] == 0) {
                                             $sumaTotalCancel = 0;
                                             $total = 0;
 
-                                            $sqlTickets = "SELECT * FROM `ticketsType` WHERE `idEvent`= " . $idEvent;
+                                            $sqlTickets = "SELECT * FROM `ticketsType` WHERE `idEvent` = '" . $idEvent . "'";
                                             $resultTickets = $mysqli->query($sqlTickets);
                                             while ($rowTickets = $resultTickets->fetch_array(MYSQLI_ASSOC)) {
 
@@ -80,7 +81,7 @@ if ($_SESSION['userType'] == 0) {
                                                 $salesCount = mysqli_num_rows($resultTS);
                                                 $saleTotal += $salesCount;
 
-                                                $sqlCancelT = "SELECT * FROM `ticketsSales` WHERE `idEvent`=" . $idEvent . " AND `ticketType` =" . $rowTickets['id'] . " AND `status` = 0";
+                                                $sqlCancelT = "SELECT * FROM `ticketsSales` WHERE `idEvent`=" . $idEvent . " AND `ticketType` =" . $rowTickets['id'] . " AND `status` = 2";
                                                 $resultCancelT = $mysqli->query($sqlCancelT);;
                                                 $cancelCount = mysqli_num_rows($resultCancelT);
                                                 $cancelTotal += $cancelCount;
@@ -100,6 +101,7 @@ if ($_SESSION['userType'] == 0) {
                                                     <td scope="row"><?php echo $rowTickets['name'] ?>
                                                         <br>
                                                         <span style="font-size: 12px"><strong>Disponibles:</strong> <?php echo $ticketsDisponibles . ' de ' . $rowTickets['cant'] ?></span>
+                                                        <span class="arrowResponsive"><i class="fa-sharp fa-solid fa-circle-chevron-down"></i></span>
                                                     </td>
                                                     <td style="text-align: center"><?php echo $salesCount ?></td>
                                                     <td style="text-align: center"><?php echo $cancelCount ?></td>
@@ -126,6 +128,136 @@ if ($_SESSION['userType'] == 0) {
                                     </table>
                                 </div>
                             </div>
+
+                            <div class="card mt-3">
+                                <div class="card-header pb-0">
+                                    <h1><?php echo $title . ' - Venta de Consumos' ?></h1>
+                                </div>
+                                <div class="card-body">
+                                    <table class="display tabEvent table-responsive" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Tipo de Consumo</th>
+                                                <th scope="col">Vendidos</th>
+                                                <th scope="col">Devueltos</th>
+                                                <th scope="col">Cortesías</th>
+                                                <th scope="col">Valor Unitario</th>
+                                                <th scope="col">Monto Vendido</th>
+                                                <th scope="col">Monto Devuelto</th>
+                                                <th scope="col">Monto Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+
+
+                                            ?>
+                                            <tr>
+                                                <td scope="row"></td>
+                                                <td style="text-align: center"></td>
+                                                <td style="text-align: center"></td>
+                                                <td style="text-align: center"></td>
+                                                <td style="text-align: right"></td>
+                                                <td style="text-align: right"></td>
+                                                <td style="text-align: right"></td>
+                                                <td style="text-align: right"></td>
+                                            </tr>
+                                            <?php  ?>
+                                        </tbody>
+                                        <tfood>
+                                            <tr>
+                                                <th>Total Consumos</th>
+                                                <th style="text-align: center"><?php echo 0 ?></th>
+                                                <th style="text-align: center"><?php echo 0 ?></th>
+                                                <th style="text-align: center"><?php echo 0 ?></th>
+                                                <th style="text-align: center"></th>
+                                                <td style="text-align: right"><?php echo '$' . number_format(0, 2) ?></td>
+                                                <td style="text-align: right"><?php echo '$' . number_format(0, 2) ?></td>
+                                                <td style="text-align: right"><?php echo '$' . number_format(0, 2) ?></td>
+                                            </tr>
+                                        </tfood>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="card mt-3">
+                                <div class="card-header pb-0">
+                                    <h1><?php echo $title . ' - Ventas Boletería' ?></h1>
+                                </div>
+                                <div class="card-body">
+                                    <table class="display tabEvent table-responsive" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Tipo de Boleto</th>
+                                                <th scope="col">Vendidos</th>
+                                                <th scope="col">Valor Unitario</th>
+                                                <th scope="col">Monto Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+
+
+                                            ?>
+                                            <tr>
+                                                <td scope="row"></td>
+                                                <td style="text-align: center"></td>
+                                                <td style="text-align: right"></td>
+                                                <td style="text-align: right"></td>
+                                            </tr>
+                                            <?php  ?>
+                                        </tbody>
+                                        <tfood>
+                                            <tr>
+                                                <th>Total Boletería</th>
+                                                <th style="text-align: center"><?php echo 0 ?></th>
+                                                <th style="text-align: center"></th>
+                                                <td style="text-align: right"><?php echo '$' . number_format(0, 2) ?></td>
+                                            </tr>
+                                        </tfood>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="card mt-3">
+                                <div class="card-header pb-0">
+                                    <h1><?php echo $title . ' - Ventas Planimetria por Boletería' ?></h1>
+                                </div>
+                                <div class="card-body">
+                                    <table class="display tabEvent table-responsive" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Tipo de Ticket</th>
+                                                <th scope="col">Vendidos</th>
+                                                <th scope="col">Valor Unitario</th>
+                                                <th scope="col">Monto Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+
+                                            ?>
+                                            <tr>
+                                                <td scope="row"></span>
+                                                </td>
+                                                <td style="text-align: center"></td>
+                                                <td style="text-align: right"><?php echo '$' . number_format(0, 2) ?></td>
+                                                <td style="text-align: right"><?php echo '$' . number_format(0, 2) ?></td>
+                                            </tr>
+                                            <?php  ?>
+                                        </tbody>
+                                        <tfood>
+                                            <tr>
+                                                <th>Total Tickets</th>
+                                                <th style="text-align: center"></th>
+                                                <th style="text-align: center"></th>
+                                                <td style="text-align: right"><?php echo '$' . number_format(0, 2) ?></td>
+                                            </tr>
+                                        </tfood>
+                                    </table>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <?php include('../assets/components/footer.php') ?>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#departamento").load('../assets/api/ajaxSearch/selectDep.php');
+  $("#region").load('../assets/api/ajaxSearch/selectDep.php');
 });
 // register
 const register = () => {
@@ -40,22 +40,22 @@ const valPass = () => {
   }
 };
 
-$("#departamento").change(function () {
-  let dep = $("#departamento").val();
-  $("#municipio").load('../assets/api/ajaxSearch/selectMun.php?dep=' + dep);
+$("#region").change(function () {
+  let dep = $("#region").val();
+  $("#comuna").load('../assets/api/ajaxSearch/selectMun.php?dep=' + dep);
 });
 
 const saveTickets = (idEvent, ticketType, cant, referencia) => {
-  let idEvent = idEvent;
-  let ticketType = ticketType;
-  let cant = cant;
+  let idEvnt = idEvent;
+  let tType = ticketType;
+  let qty = cant;
   let name = $("#name").val();
   let email = $("#email").val();
   let docType = $("#phone").val();
   let numDoc = $("#type").val();
   let phone = $("#numDoc").val();
-  let referencia = referencia
-  console.log(idEvent,
+  let ref = referencia
+  console.log(idEvnt,
       ticketType,
       name,
       email,
@@ -64,7 +64,7 @@ const saveTickets = (idEvent, ticketType, cant, referencia) => {
       phone)
   // let referencia = <?php echo $referencia ?>;
   $.ajax({
-      url: "../assets/api/php/tickets/saveTicketsSale.php?idEvent=" + idEvent + "&ticketType=" + ticketType + "&cant=" + cant + "&name=" + name + "&email=" + email + "&docType=" + docType + "&numDoc=" + numDoc + "&phone=" + phone + "&referencia=" + referencia,
+      url: "../assets/api/php/tickets/saveTicketsSale.php?idEvent=" + idEvnt + "&ticketType=" + tType + "&cant=" + qty + "&name=" + name + "&email=" + email + "&docType=" + docType + "&numDoc=" + numDoc + "&phone=" + phone + "&referencia=" + ref,
       type: "get",
       dataType: "json",
       success: function(response) {

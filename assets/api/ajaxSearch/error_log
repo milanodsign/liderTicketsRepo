@@ -1,0 +1,14 @@
+[28-Sep-2022 09:33:32 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home2/hotshipi/public_html/lidertickets_cl/assets/api/ajaxSearch/selectDep.php:8
+Stack trace:
+#0 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/assets/api/ajaxSearch/selectDep.php on line 8
+[28-Sep-2022 20:07:47 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home2/hotshipi/public_html/lidertickets_cl/assets/api/ajaxSearch/selectDep.php:8
+Stack trace:
+#0 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/assets/api/ajaxSearch/selectDep.php on line 8
+[28-Sep-2022 23:25:17 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home2/hotshipi/public_html/lidertickets_cl/assets/api/ajaxSearch/selectDep.php:8
+Stack trace:
+#0 {main}
+  thrown in /home2/hotshipi/public_html/lidertickets_cl/assets/api/ajaxSearch/selectDep.php on line 8
+[11-Oct-2022 21:14:54 America/Bogota] PHP Notice:  Undefined variable: response in /home2/hotshipi/public_html/lidertickets_cl/assets/api/ajaxSearch/searchDataEvent.php on line 23
+[20-Oct-2022 20:55:31 America/Bogota] PHP Notice:  Undefined variable: response in /home2/hotshipi/public_html/lidertickets_cl/assets/api/ajaxSearch/searchDataEvent.php on line 23

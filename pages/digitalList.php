@@ -16,11 +16,11 @@ if (isset($_SESSION['tiempo'])) {
 }
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
     $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
     $result = $mysqli->query($sql);
     while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
-?>
+        ?>
         <!DOCTYPE html>
         <html lang="es">
 
@@ -43,7 +43,34 @@ if ($_SESSION['userType'] == 0) {
                                     <h3><?php echo $title . ' ' . $nomEvent ?></h3>
                                 </div>
                                 <div class="card-body">
-                                    <table class="display tabTicketsSale  table-responsive nowrap" style="width:100%">
+                                    <?php
+                                            $courtesyCount = 0;
+        $salesCount = 0;
+        $saleValidated = 0;
+        $courtesyValidated = 0;
+        $sqlCT = "SELECT * FROM `courtesyTickets` WHERE `idEvent`='" . $idEvent . "'";
+        $resultCT = $mysqli->query($sqlCT);
+        $courtesyCount = mysqli_num_rows($resultCT);
+
+        $sqlCTV = "SELECT * FROM `courtesyTickets` WHERE `validated` = 1 AND `idEvent`='" . $idEvent . "'";
+        $resultCTV = $mysqli->query($sqlCTV);
+        $courtesyValidated = mysqli_num_rows($resultCTV);
+
+        $sqlTS = "SELECT * FROM `ticketsSales` WHERE `idEvent`='" . $idEvent . "'";
+        $resultTS = $mysqli->query($sqlTS);
+        $salesCount = mysqli_num_rows($resultTS);
+
+        $sqlTSV = "SELECT * FROM `ticketsSales` WHERE `validated` = 1 AND `idEvent`='" . $idEvent . "'";
+        $resultTSV = $mysqli->query($sqlTSV);
+        $saleValidated = mysqli_num_rows($resultTSV);
+
+        $totalTickets = $courtesyCount + $salesCount;
+
+        echo '<span class="align-items-center countTickets d-flex">
+                                    <h4><b>Total de tickets:</b> ' . $totalTickets . '</h4>  |  <h4><b>Total vendidos:</b> ' . $salesCount . '</h4>  |  <h4><b>Total cortesias:</b> ' . $courtesyCount . '</h4>  |  <h4><b>Total vendidos validados:</b> ' . $saleValidated . '</h4>  |  <h4><b>Total cortesias validadas:</b> ' . $courtesyValidated . '</h4>
+                                    </span>';
+        ?>
+                                    <table class="display tabTicketsSale  table-responsive table table-striped table-bordered" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Nombre</th>
@@ -51,22 +78,106 @@ if ($_SESSION['userType'] == 0) {
                                                 <th scope="col">N° Documento</th>
                                                 <th scope="col">Producto</th>
                                                 <th scope="col">Costo</th>
+                                                <th scope="col">Fecha</th>
+                                                <th scope="col">Hora</th>
                                                 <th scope="col">ID Ticket</th>
                                                 <th scope="col">Validado</th>
-                                                <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
+                                            <?php
+                $sqlTC = "SELECT * FROM `courtesyTickets` WHERE `idEvent`='" . $idEvent . "'";
+        $resultTC = $mysqli->query($sqlTC);
+        while ($rowTC = $resultTC->fetch_array(MYSQLI_ASSOC)) {
+            $sqlTTC = "SELECT * FROM `ticketsType` WHERE `id`= " . $rowTC['ticketType'];
+            $resultTTC = $mysqli->query($sqlTTC);
+            while ($rowTTC = $resultTTC->fetch_array(MYSQLI_ASSOC)) {
+                $ticketNameTC = $rowTTC['name'];
+            }
+            $itemsTC[] = array(
+                'name' => $rowTC['name'],
+                'email' => $rowTC['email'],
+                'numDoc' => '',
+                'ticketName' => $ticketNameTC,
+                'price' => 'Cortesía',
+                'codTicket' => $rowTC['codTicket'],
+                'validated' => $rowTC['validated'],
+                'date' => $rowTC['sendDate'],
+                'times' => $rowTC['sendTime']
+            );
+        }
+
+        $total = 0;
+        $sqlT = "SELECT * FROM `ticketsSales` WHERE `status`=1 AND `idEvent`='" . $idEvent . "'";
+        $resultT = $mysqli->query($sqlT);
+        while ($rowT = $resultT->fetch_array(MYSQLI_ASSOC)) {
+            $sqlTT = "SELECT * FROM `ticketsType` WHERE `id`= " . $rowT['ticketType'];
+            $resultTT = $mysqli->query($sqlTT);
+            while ($rowTT = $resultTT->fetch_array(MYSQLI_ASSOC)) {
+                $ticketNameTS = $rowTT['name'];
+                $price = $rowTT['price'];
+            }
+            $itemsTS[] = array(
+                'name' => $rowT['name'],
+                'email' => $rowT['email'],
+                'numDoc' => $rowT['numDoc'],
+                'ticketName' => $ticketNameTS,
+                'price' => $price,
+                'codTicket' => $rowT['codTicket'],
+                'validated' => $rowT['validated'],
+                'date' => $rowT['shoppingDate'],
+                'times' => $rowT['shoppingTime']
+            );
+        }
+
+        if (isset($itemsTC)) {
+            $arrayUnion = array_merge($itemsTS, $itemsTC);
+        } elseif (isset($itemsTS)) {
+            $arrayUnion = $itemsTS;
+        } else {
+            $arrayUnion[] = array(
+                'name' => '',
+                'email' => '',
+                'numDoc' => '',
+                'ticketName' => '',
+                'price' => 'Cortesía',
+                'codTicket' => '',
+                'validated' => '',
+                'date' => '',
+                'times' => '',
+            );
+        }
+
+        foreach ($arrayUnion as $item) {
+            if ($item['price'] === 'Cortesía' || $item['price'] === '') {
+                $price = $item['price'];
+            } else {
+                $price = '$' . number_format($item['price'], 2);
+            }
+            switch ($item['validated']) {
+                case '1':
+                    $validated = 'Si';
+                    break;
+
+                default:
+                    $validated = '';
+                    break;
+            }
+            ?>
+                                                <tr>
+                                                    <td><?php echo $item['name'] ?></td>
+                                                    <td><?php echo $item['email'] ?></td>
+                                                    <td><?php echo $item['numDoc'] ?></td>
+                                                    <td><?php echo $item['ticketName'] ?></td>
+                                                    <td><?php echo $price ?></td>
+                                                    <td><?php echo date("d/m/Y", strtotime($item['date'])) ?></td>
+                                                    <td><?php echo date('h:i A', strtotime($item['times'])) ?></td>
+                                                    <td><?php echo $item['codTicket'] ?></td>
+                                                    <td><?php echo $validated ?></td>
+                                                </tr>
+                                            <?php
+        }
+        ?>
                                         </tbody>
                                     </table>
                                 </div>

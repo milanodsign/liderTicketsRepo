@@ -22,7 +22,7 @@ $referencia = substr(str_shuffle($permitted_chars), 0, 13);
 <body class="checkOut">
   <!-- header section -->
   <?php include('./assets/components/navIndex.php') ?>
-  <script type="text/javascript" src="https://checkout.wompi.co/widget.js"></script>
+  <script type="text/javascript" src="https://checkout.webPay.co/widget.js"></script>
 
 
   <section class="container-fluid checkOutIndex">
@@ -31,9 +31,9 @@ $referencia = substr(str_shuffle($permitted_chars), 0, 13);
       <div class="col-md-12">
         <div class="card">
           <div class="card-body">
-            <img src="../assets/img/small-logos/Logo_Home_Svg.svg" class="imgCheckOut" alt="main_logo">
+            <img src="../assets/img/logo.svg" class="imgCheckOut" alt="main_logo">
             <h4 style="margin-top: 15px">Información de la compra</h4>
-            <table class="table table-responsive">
+            <table class="table checkout">
               <thead>
                 <tr>
                   <th scope="col">Flyer</th>
@@ -47,51 +47,63 @@ $referencia = substr(str_shuffle($permitted_chars), 0, 13);
               <tbody>
                 <?php
                 $cant = 0;
-                $subTotal = 0;
-                $sql = "SELECT * FROM `eventos` WHERE `id`= " . $id;
-                $result = $mysqli->query($sql);
-                while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                  foreach ($_POST['idTicket'] as $idTicket) {
-                    $cantidad = $_POST['cant'][$cant];
-                    if ($cantidad != '0') {
-                      $sqlTickets = "SELECT * FROM `ticketsType` WHERE `id`= " . $idTicket;
-                      $resultTickets = $mysqli->query($sqlTickets);
-                      while ($rowTickets = $resultTickets->fetch_array(MYSQLI_ASSOC)) {
-                        $ticket = $rowTickets['name'];
-                        $price = $rowTickets['price'];
-                        $subTotal = ($price * $cantidad) + $subTotal;
-                      }
-                ?>
+$subTotal = 0;
+$sql = "SELECT * FROM `eventos` WHERE `id`= " . $id;
+$result = $mysqli->query($sql);
+while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    foreach ($_POST['idTicket'] as $idTicket) {
+        $cantidad = $_POST['cant'][$cant];
+        if ($cantidad != '0') {
+            $sqlTickets = "SELECT * FROM `ticketsType` WHERE `id`= " . $idTicket;
+            $resultTickets = $mysqli->query($sqlTickets);
+            while ($rowTickets = $resultTickets->fetch_array(MYSQLI_ASSOC)) {
+                $ticket = $rowTickets['name'];
+                $price = $rowTickets['price'];
+                $subTotal = ($price * $cantidad) + $subTotal;
+            }
+            ?>
                       <tr>
                         <td scope="row"><img class="imgCheckOutTable" src="<?php echo '..' . $row['flyer'] ?>" /></td>
                         <td><?php echo $row['nomEvent'] ?></td>
                         <td><?php echo $ticket ?></td>
                         <td>
-                          <?php echo 'COP$' . number_format($price, 2) ?>
+                          <?php echo '$' . number_format($price, 2) ?>
                         </td>
                         <td style="text-align: center"><?php echo $cantidad ?></td>
-                        <td style="text-align: right"><?php echo 'COP$' . number_format(($price * $cantidad), 2) ?></td>
+                        <td style="text-align: right"><?php echo '$' . number_format(($price * $cantidad), 2) ?></td>
                       </tr>
                 <?php
-                    }
-                    $cant = $cant + 1;
-                  }
-                  $porcentaje = $subTotal * 0.15;
-                }
-                ?>
+        }
+        $cant = $cant + 1;
+    }
+    $porcentaje = $subTotal * 0.15;
+}
+?>
               </tbody>
               <tfoot>
                 <tr>
-                  <td colspan="5" style="text-align: right"><b>Sub-total:</b></td>
-                  <td style="text-align: right"><?php echo 'COP$' . number_format($subTotal, 2) ?></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td style="text-align: right"><b>Sub-total:</b></td>
+                  <td style="text-align: right"><?php echo '$' . number_format($subTotal, 2) ?></td>
                 </tr>
                 <tr>
-                  <td colspan="5" style="text-align: right"><b>Tarifa de servicio:</b></td>
-                  <td style="text-align: right"><?php echo 'COP$' . number_format($porcentaje, 2) ?></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td style="text-align: right"><b>Comisión de transacción:</b></td>
+                  <td style="text-align: right"><?php echo '$' . number_format($porcentaje, 2) ?></td>
                 </tr>
                 <tr>
-                  <td colspan="5" style="text-align: right"><b>Total:</b></td>
-                  <td style="text-align: right"><?php echo 'COP$' . number_format(($subTotal + $porcentaje), 2) ?></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td style="text-align: right"><b>Total:</b></td>
+                  <td style="text-align: right"><?php echo '$' . number_format(($subTotal + $porcentaje), 2) ?></td>
               </tfoot>
             </table>
           </div>
@@ -112,22 +124,23 @@ $referencia = substr(str_shuffle($permitted_chars), 0, 13);
         <div class="card">
           <div class="card-body row">
             <h4 style="margin-top: 15px">Información del comprador</h4>
-            <form action="./assets/api/php/tickets/saleTicketsIndex.php" method="post">
+            <!-- <form action="./assets/api/php/tickets/payments/create.php" method="post"> -->
+              <form action="./assets/api/php/tickets/saleTicketsIndex.php" method="post">
               <input type="hidden" name="referencia" value="<?php echo $referencia ?>">
               <input type="hidden" name="idEvent" value="<?php echo $id ?>">
               <?php
               $cant = 0;
-              foreach ($_POST['idTicket'] as $idTicket) {
-                echo '<script>console.log(' . $_POST['cant'][$cant] . ')</script>';
-                $cantidad = $_POST['cant'][$cant];
-                if ($cantidad != '0') {
-                  echo '<input type="hidden" name="cant[]" value="' . $cantidad . '">
+foreach ($_POST['idTicket'] as $idTicket) {
+    echo '<script>console.log(' . $_POST['cant'][$cant] . ')</script>';
+    $cantidad = $_POST['cant'][$cant];
+    if ($cantidad != '0') {
+        echo '<input type="hidden" name="cant[]" value="' . $cantidad . '">
                   <input type="hidden" name="idTickets[]" value="' . $idTicket . '">
                   <input type="hidden" name="porcentaje" value="' . $porcentaje . '">';
-                }
-                $cant++;
-              }
-              ?>
+    }
+    $cant++;
+}
+?>
 
               <div class="col-md-12">
                 <label for=""><span class="t_ubicacion">Nombre del comprador</span></label>
@@ -145,22 +158,21 @@ $referencia = substr(str_shuffle($permitted_chars), 0, 13);
                 <label for=""><span class="t_ubicacion">Tipo de Documentos</span></label>
                 <select name="type" class="form-control form-control-lg">
                   <option value="" disabled="">Tipo</option>
-                  <option value="CC">CC - Cédula de Ciudadanía</option>
-                  <option value="CE">CE - Cédula de Extranjería</option>
-                  <option value="NIT">NIT - Número de Identificación Tributaria</option>
+                  <option value="RUT">RUT - Rol Único Tributario</option>
                   <option value="PP">PP - Pasaporte</option>
-                  <option value="TI">TI - Tarjeta de Identidad</option>
-                  <option value="DNI">DNI - Documento Nacional de Identidad</option>
-                  <option value="RG">RG - Carteira de Identidade / Registro Geral</option>
-                  <option value="OTHER">Otro</option>
                 </select>
               </div>
               <div class="col-md-3">
                 <label for=""><span class="t_ubicacion">N° Documento</span></label>
                 <input class="form-control form-control-lg" type="text" name="numDoc" value="" />
               </div>
-              <button class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0 wompi">Pagar
-                con Wompi</button>
+              <!-- <button class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0 webPay">
+                <img src="./assets/img/logos/logo-flow.svg" alt="">
+              </button> -->
+
+              <button class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0 webPay">
+                <img src="./assets/img/logos/webPay.png" alt="">
+              </button>
 
             </form>
           </div>
@@ -200,7 +212,7 @@ $referencia = substr(str_shuffle($permitted_chars), 0, 13);
 
         if (min === 0 && sec === 0) {
           alert('El tiempo para la compra ah caducado, usted sera redirigido a la pagina de inicio'),
-            window.location.href = "https://lidertickets.co"
+            window.location.href = "https://lidertickets.cl"
         }
       }, 1000);
     }

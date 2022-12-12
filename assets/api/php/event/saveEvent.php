@@ -20,7 +20,7 @@ $region = $_POST['region'];
 $comuna = $_POST['comuna'];
 $dir = $_POST['dir'];
 $lugar = $_POST['lugar'];
-$link = $_POST['link'];
+$link = '';
 
 //Recogemos el archivo enviado por el formulario
 $flyer = $_FILES['flyer']['name'];
@@ -40,7 +40,51 @@ if (isset($flyer) && $flyer != "") {
         if (move_uploaded_file($temp, 'flyerEvents/' . $flyer)) {
             //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
             chmod('flyerEvents/' . $flyer, 0777);
-            $imgEvnt = '../assets/api/php/event/flyerEvents/' . $flyer;
+            $imgEvnt = '/assets/api/php/event/flyerEvents/' . $flyer;
+        }
+    }
+}
+//Recogemos el archivo enviado por el formulario
+$banner = $_FILES['banner']['name'];
+//Si el archivo contiene algo y es diferente de vacio
+if (isset($banner) && $banner != "") {
+    //Obtenemos algunos datos necesarios sobre el archivo
+    $type = $_FILES['banner']['type'];
+    $tamano = $_FILES['banner']['size'];
+    $temp = $_FILES['banner']['tmp_name'];
+    //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+    if (!((strpos($type, "gif") || strpos($type, "jpeg") || strpos($type, "jpg") || strpos($type, "png")) && ($tamano < 2000000))) {
+        echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
+     - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.</b></div>';
+    } else {
+        //Si la imagen es correcta en tamaño y tipo
+        //Se intenta subir al servidor
+        if (move_uploaded_file($temp, 'bannerEvents/' . $banner)) {
+            //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+            chmod('bannerEvents/' . $banner, 0777);
+            $imgBanner = '/assets/api/php/event/bannerEvents/' . $banner;
+        }
+    }
+}
+//Recogemos el archivo enviado por el formulario
+$secflyer = $_FILES['secflyer']['name'];
+//Si el archivo contiene algo y es diferente de vacio
+if (isset($secflyer) && $secflyer != "") {
+    //Obtenemos algunos datos necesarios sobre el archivo
+    $type = $_FILES['secflyer']['type'];
+    $tamano = $_FILES['secflyer']['size'];
+    $temp = $_FILES['secflyer']['tmp_name'];
+    //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+    if (!((strpos($type, "gif") || strpos($type, "jpeg") || strpos($type, "jpg") || strpos($type, "png")) && ($tamano < 2000000))) {
+        echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
+     - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.</b></div>';
+    } else {
+        //Si la imagen es correcta en tamaño y tipo
+        //Se intenta subir al servidor
+        if (move_uploaded_file($temp, 'flyerEvents/' . $secflyer)) {
+            //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+            chmod('flyerEvents/' . $secflyer, 0777);
+            $imgSecFlyer = '/assets/api/php/event/flyerEvents/' . $secflyer;
         }
     }
 }
@@ -48,8 +92,23 @@ $estado = 1;
 
 $txt = $_GET['txt'];
 
-$sql = "INSERT INTO `eventos`(`id`, `idUser`, `eventType`, `pais`, `tipo`, `mayores`, `nomEvent`, `categoria`, `artista`, `descripcion`, `fechaIni`, `horaIni`, `fechaFin`, `horaFin`, `region`, `comuna`, `dir`, `lugar`, `link`, `flyer`, `estado`) VALUES (NULL, '" . $idUser . "','" . $eventType . "', '" . $pais . "', '" . $tipo . "', '" . $mayores . "', '" . $nomEvent . "', '" . $categoria . "', '" . $artista . "', '" . $descripcion . "', '" . $fechaIni . "', '" . $horaIni . "', '" . $fechaFin . "', '" . $horaFin . "', '" . $region . "', '" . $comuna . "', '" . $dir . "', '" . $lugar . "', '" . $link . "', '" . $imgEvnt . "', '" . $estado . "' )";
+$sql = "INSERT INTO `eventos`(`id`, `idUser`, `eventType`, `pais`, `tipo`, `mayores`, `nomEvent`, `categoria`, `artista`, `descripcion`, `fechaIni`, `horaIni`, `fechaFin`, `horaFin`, `region`, `comuna`, `dir`, `lugar`, `link`, `flyer`, `banner`, `secflyer`, `estado`) VALUES (NULL, '" . $idUser . "','" . $eventType . "', '" . $pais . "', '" . $tipo . "', '" . $mayores . "', '" . $nomEvent . "', '" . $categoria . "', '" . $artista . "', '" . $descripcion . "', '" . $fechaIni . "', '" . $horaIni . "', '" . $fechaFin . "', '" . $horaFin . "', '" . $region . "', '" . $comuna . "', '" . $dir . "', '" . $lugar . "', '" . $link . "', '" . $imgEvnt . "', '" . $imgBanner . "', '" . $imgSecFlyer . "', 2 )";
 $saveBD = $mysqli->query($sql);
+
+$selectUser = "SELECT * FROM `user` WHERE `id` = '" . $idUser . "'";
+$respUser = $mysqli->query($selectUser);
+while ($rowUser = $respUser->fetch_array(MYSQLI_ASSOC)) {
+    if ($rowUser['userType'] == 2) {
+        $sqlUser = "UPDATE `user` SET `userType`=2 WHERE `id` = '" . $idUser . "'";
+        $response = $mysqli->query($sqlUser);
+    } else {
+        $sqlUser = "UPDATE `user` SET `userType`=1 WHERE `id` = '" . $idUser . "'";
+        $response = $mysqli->query($sqlUser);
+    }
+}
+
+
+
 
 $title = "Registro Evento Exitoso";
 ?>

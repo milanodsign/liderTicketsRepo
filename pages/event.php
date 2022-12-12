@@ -32,7 +32,7 @@ if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userT
 
             <head>
                 <?php include('../assets/components/header.php') ?>
-                <script type="text/javascript" src="https://checkout.wompi.co/widget.js"></script>
+                <script type="text/javascript" src="https://checkout.webPay.co/widget.js"></script>
             </head>
 
             <body class="g-sidenav-show   bg-gray-100 eventSale">
@@ -63,6 +63,13 @@ if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userT
                                     <form class="cantTickets d-flex flex-column" action="./checkOut.php" method="POST">
                                         <input type="hidden" name="nomEvent" value="<?php echo $nomEvent ?>">
                                         <input type="hidden" name="idEvent" value="<?php echo $idEvent ?>">
+                                        <?php
+                                        if ($row['secflyer'] != '') {
+                                        ?>
+                                            <img src="<?php echo 'https://lidertickets.co' . $row['secflyer'] ?>" alt="">
+                                        <?php
+                                        }
+                                        ?>
                                         <table class="table">
                                             <thead>
                                                 <tr>
@@ -74,7 +81,7 @@ if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userT
                                             <tbody>
                                                 <?php
                                                 $cont = 0;
-                                                $sqlTickets = "SELECT * FROM `ticketsType` WHERE `idEvent`=" . $row['id'];
+                                                $sqlTickets = "SELECT * FROM `ticketsType` WHERE `idEvent`='" . $row['id'] . "' AND estado=0";
                                                 $resultTickets = $mysqli->query($sqlTickets);
                                                 while ($rowTickets = $resultTickets->fetch_array(MYSQLI_ASSOC)) {
                                                     $courtesyTotal = 0;
@@ -105,6 +112,8 @@ if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userT
                                                     <tr>
                                                         <td>
                                                             <?php echo $rowTickets['name'] ?>
+                                                            <span class="onlyResponsive" style="font-weight: 600; font-size: 12px"><?php echo '$' . number_format($rowTickets['price'], 2) ?></span>
+                                                            <span class="d-block" style="font-weight: 600><?php echo $rowTickets['descriptionTickets'] ?></span>
                                                             <input type="hidden" name="idTicket[]" value="<?php echo $rowTickets['id'] ?>" />
                                                         </td>
                                                         <td>

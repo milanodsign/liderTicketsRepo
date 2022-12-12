@@ -14,10 +14,10 @@ if (isset($_SESSION['tiempo'])) {
 $_SESSION['tiempo'] = time();
 include('../assets/api/php/functions/fechaEs.php');
 require '../assets/api/conex/conexConfig.php';
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
   $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
   $result = $mysqli->query($sql);
-  while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+  while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
     <!DOCTYPE html>
     <html lang="es">
@@ -41,24 +41,24 @@ if ($_SESSION['userType'] == 0) {
                   <h3><?php echo $title ?></h3>
                 </div>
                 <div class="card-body">
-                  <table class="display tabEvent  table-responsive nowrap" style="width:100%">
+                  <table class="display tabEvent table-responsive" style="width:100%">
                     <thead>
                       <tr>
-                        <th scope="col">Afiche del Evento</th>
+                        <!-- <th scope="col">Afiche del Evento</th> -->
                         <th scope="col">Nombre del evento</th>
                         <th scope="col">Pais</th>
                         <th scope="col">Lugar</th>
                         <th scope="col">Código</th>
                         <th scope="col">Fecha y hora del evento</th>
-                        <th scope="col">Entradas vendidas</th>
+                        <th scope="col">Tickets vendidos</th>
                         <th scope="col">Estado</th>
-                        <th scope="col">Suspender</th>
+                        <th scope="col">Suspender o Reactivar</th>
                         <th scope="col">Configuración</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php
-                      $sqlEvents = "SELECT * FROM `eventos` WHERE `idUser`= " . $_SESSION['id'];
+                      $sqlEvents = "SELECT * FROM `eventos` WHERE (`estado`=1 OR `estado`=0) AND `idUser`= " . $_SESSION['id'];
                       $resultEvents = $mysqli->query($sqlEvents);
                       while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
                         switch ($rowEvents['estado']) {
@@ -71,49 +71,85 @@ if ($_SESSION['userType'] == 0) {
                         }
                       ?>
                         <tr>
-                          <td scope="row"><img src="<?php echo '..'.$rowEvents['flyer'] ?>" alt=""></td>
-                          <td><?php echo $rowEvents['nomEvent'] ?></td>
-                          <td><?php echo $rowEvents['pais'] ?></td>
+                          <!-- <td scope="row"><img src="<?php echo '..' . $rowEvents['flyer'] ?>" alt=""></td> -->
+                          <td style="text-transform: uppercase"><?php echo $rowEvents['nomEvent'] ?><span class="arrowResponsive"><i class="fa-sharp fa-solid fa-circle-chevron-down"></i></span></td>
+                          <td style="text-transform: uppercase"><?php echo $rowEvents['pais'] ?></td>
                           <td><?php echo $rowEvents['lugar'] ?></td>
-                          <td><?php echo $rowEvents['id'] ?></td>
+                          <td style="text-align: center;"><?php echo $rowEvents['id'] ?></td>
                           <td><?php echo fechaEs($rowEvents['fechaIni']) . ' - ' . date('h:i A', strtotime($rowEvents['horaIni'])) ?></td>
-                          <td></td>
+                          <td style="text-align: center;">
+                            <?php
+                            $salesCount = 0;
+                            $sqlTS = "SELECT * FROM `ticketsSales` WHERE `idEvent`='" . $rowEvents['id'] . "' AND `status`=1";
+                            $resultTS = $mysqli->query($sqlTS);;
+                            $salesCount = mysqli_num_rows($resultTS);
+
+                            echo $salesCount;
+                            ?>
+                          </td>
                           <td><?php echo $estado ?></td>
-                          <td><button class="btn btn-danger btn-lg btnTable"><i class="fa-solid fa-power-off"></i></button></td>
+                          <td>
+                            <?php
+                            if ($rowEvents['estado'] == 1) {
+                            ?>
+                              <button class="btn btn-danger btn-lg btnTable" onclick="actionsEvent(`<?php echo $rowEvents['id'] ?>`,`<?php echo $rowEvents['nomEvent'] ?>`,0)" title="Suspender el Evento"><i class="fa-solid fa-power-off"></i></button>
+                            <?php
+                            } else {
+                            ?>
+                              <button class="btn btn-success btn-lg btnTable" onclick="actionsEvent(`<?php echo $rowEvents['id'] ?>`,`<?php echo $rowEvents['nomEvent'] ?>`,1)" title="Reactivar el Evento"><i class="fa-solid fa-power-off"></i></button>
+                            <?php
+                            }
+                            ?>
+                          </td>
                           <td class="botonera">
-                            <button class="btn btn-success btn-lg btnTable" title="Edita tu evento">
+                            <button class="btn btn-success btn-lg btnTable" title="Edita tu evento" onclick="eventEdit(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['eventType'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
                               <i class="fa-solid fa-pen-to-square"></i>
                             </button>
+
+                            <button class="btn btn-success btn-lg btnTable" title="Agregar banner del evento" onclick="addBanner(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
+                              <i class="fa-sharp fa-solid fa-images"></i>
+                            </button>
+
                             <button class="btn btn-success btn-lg btnTable" title="Crear Tickets" onclick="myTickets(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
                               <i class="fa-solid fa-ticket"></i>
                             </button>
+
                             <button class="btn btn-success btn-lg btnTable" title="Tickets vendidos y cortesías enviadas" onclick="ticketsSale(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
                               <i class="fa-solid fa-money-bill-transfer"></i>
                             </button>
-                            <button class="btn btn-success btn-lg btnTable" title="Link del evento">
+
+                            <button class="btn btn-success btn-lg btnTable" title="Link del evento" onclick="window.location = 'event.php?id='+<?php echo $rowEvents['id'] ?>+'&nomEvent=' + `<?php echo $rowEvents['nomEvent'] ?>`">
                               <i class="fa-solid fa-link"></i>
                             </button>
+
                             <button class="btn btn-success btn-lg btnTable" title="Lista digital" onclick="digitalList(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
                               <i class="fa-solid fa-users"></i>
                             </button>
+
                             <button class="btn btn-success btn-lg btnTable" title=" Activar Planimetría">
                               <i class="fa-solid fa-sitemap"></i>
                             </button>
-                            <button class="btn btn-success btn-lg btnTable" title="Envía cortesías"  onclick="sendCourtesy(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
+
+                            <button class="btn btn-success btn-lg btnTable" title="Envía cortesías" onclick="sendCourtesy(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
                               <i class="fa-solid fa-envelope-open-text"></i>
                             </button>
+
                             <button class="btn btn-success btn-lg btnTable" title="Resumen de Ventas" onclick="salesSummary(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
                               <i class="fa-solid fa-cash-register"></i>
                             </button>
-                            <button class="btn btn-success btn-lg btnTable" title="Envía cortesías por base de datos">
+
+                            <button class="btn btn-success btn-lg btnTable" title="Envía cortesías por base de datos" onclick="sendCourtesyMasive(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`)">
                               <i class="fa-solid fa-envelope-open-text"></i>
                             </button>
+
                             <button class="btn btn-success btn-lg btnTable" title="Informe de Ventas">
                               <i class="fa-solid fa-file-pen"></i>
                             </button>
+
                             <button class="btn btn-success btn-lg btnTable" title="Edita y administra tus tickets">
                               <i class="fa-solid fa-pen"></i>
                             </button>
+
                             <button class="btn btn-success btn-lg btnTable" title="Visitas">
                               <i class="fa-solid fa-chart-column"></i>
                             </button>
@@ -371,6 +407,25 @@ if ($_SESSION['userType'] == 0) {
             }
           });
         });
+        const actionsEvent = (idEvent, nomEvent, action) => {
+          let mensaje = ''
+          if (action === 0) {
+            mensaje = "¿Deseas suspender el evento " + nomEvent + "?"
+          } else {
+            mensaje = "¿Deseas reactivar el evento " + nomEvent + "?"
+          }
+          let confirmacion = confirm(mensaje);
+          if (confirmacion === true) {
+            window.location.href = '../assets/api/php/event/actionsEvent.php?idEvent=' + idEvent + '&action=' + action;
+          }
+
+        }
+        const eventEdit = (idEvent, type, nomEvent) => {
+          window.location.href = 'eventEdit.php?idEvent=' + idEvent + '&type=' + type + '&nomEvent=' + nomEvent;
+        }
+        const addBanner = (idEvent, nomEvent) => {
+          window.location.href = 'addBannerEvent.php?idEvent=' + idEvent + '&nomEvent=' + nomEvent;
+        }
         const myTickets = (id, nomEvent) => {
           window.location.href = 'myTickets.php?id=' + id + '&nomEvent=' + nomEvent;
         }
@@ -385,6 +440,9 @@ if ($_SESSION['userType'] == 0) {
         }
         const salesSummary = (id, nomEvent) => {
           window.location.href = 'salesSummary.php?id=' + id + '&nomEvent=' + nomEvent;
+        }
+        const sendCourtesyMasive = (idEvent, nomEvent) => {
+          window.location.href = 'courtesyDataBase.php?id=' + idEvent + '&nomEvent=' + nomEvent;
         }
       </script>
     </body>

@@ -17,10 +17,10 @@ if (isset($_SESSION['tiempo'])) {
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
 include('../assets/api/php/functions/fechaEs.php');
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
     $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
     $result = $mysqli->query($sql);
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
         <!DOCTYPE html>
         <html lang="es">
@@ -41,11 +41,11 @@ if ($_SESSION['userType'] == 0) {
                         <?php
                         $sql = "SELECT * FROM `eventos` WHERE `id`= " . $idEvent;
                         $result = $mysqli->query($sql);
-                        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                        while ($rowEvent = $result->fetch_array(MYSQLI_ASSOC)) {
                         ?>
                             <div class="col-md-4" style="max-width: 400px;max-height: 400px;box-sizing: border-box;padding: 0;">
                                 <div class="card imgEvent" style="height: 100%;">
-                                    <div class="card-body" style="background: url(<?php echo $row['flyer'] ?>);background-position: center; background-repeat: no-repeat;background-size: cover;width: 100%;">
+                                    <div class="card-body" style="background: url('<?php echo '..' . $rowEvent['flyer'] ?>');background-position: center; background-repeat: no-repeat;background-size: cover;width: 100%;">
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@ if ($_SESSION['userType'] == 0) {
                                         <h3><?php echo $title ?></h3>
                                     </div>
                                     <div class="card-body">
-                                        <form class="row" action="../assets/api/php/tickets/saveTickets.php?nomEvent=<?php echo $nomEvent?>" method="post" enctype="multipart/form-data">
+                                        <form class="row" action="../assets/api/php/tickets/saveTickets.php?nomEvent=<?php echo $nomEvent ?>" method="post" enctype="multipart/form-data">
                                             <input type="hidden" name="idEvent" value="<?php echo $idEvent ?>">
                                             <div class="form-group col-md-6">
                                                 <label for="">Tipo de entrada</label>

@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require('../../conex/conexConfig.php');
 include('../functions/fechaEs.php');
+include('../../../lib/phpqrcode/qrlib.php');
 
 $idEvent = $_POST['idEvent'];
 $ticketType = $_POST['ticketType'];
@@ -12,41 +13,42 @@ $email = $_POST['email'];
 $fechaValid = $_POST['fechaValid'];
 $horaValid = $_POST['horaValid'];
 
-$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-$codTicket = 'TC' . substr(str_shuffle($permitted_chars), 0, 10);
-$sendDate = date('Y-m-d');
-$sendTime = date('H:i:s');
 
-$sql = "INSERT INTO `courtesyTickets`(`id`, `idEvent`, `ticketType`, `ticketCant`, `name`, `email`, `fechaValid`, `horaValid`, `codTicket`, `sendDate`, `sendTime`, `wayPay`) VALUES (null, '" . $idEvent . "', '" . $ticketType . "', '" . $ticketCant . "', '" . $name . "', '" . $email . "', '" . $fechaValid . "', '" . $horaValid . "', '" . $codTicket . "', '" . $sendDate . "', '" . $sendTime . "', 'cortesia')";
-$saveBD = $mysqli->query($sql);
+for ($i=1; $i <= $ticketCant ; $i++) {
+    $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $codTicket = 'TC' . substr(str_shuffle($permitted_chars), 0, 10);
+    $sendDate = date('Y-m-d');
+    $sendTime = date('H:i:s');
+    $sql = "INSERT INTO `courtesyTickets`(`id`, `idEvent`, `ticketType`, `ticketCant`, `name`, `email`, `fechaValid`, `horaValid`, `codTicket`, `sendDate`, `sendTime`, `wayPay`) VALUES (null, '" . $idEvent . "', '" . $ticketType . "', '" . $ticketCant . "', '" . $name . "', '" . $email . "', '" . $fechaValid . "', '" . $horaValid . "', '" . $codTicket . "', '" . $sendDate . "', '" . $sendTime . "', 'cortesia')";
+    $saveBD = $mysqli->query($sql);
 
-$sqlEvents = "SELECT * FROM `eventos` WHERE `id`= " . $idEvent;
-$resultEvents = $mysqli->query($sqlEvents);
-while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
-    $flayer = $rowEvents['flyer'];
-    $nomEvent = $rowEvents['nomEvent'];
-    $dir = $rowEvents['dir'];
-    $lugar = $rowEvents['lugar'];
-    $fechaIni = fechaEs($rowEvents['fechaIni']);
-    $horaIni = $rowEvents['horaIni'];
-}
+    $sqlEvents = "SELECT * FROM `eventos` WHERE `id`= " . $idEvent;
+    $resultEvents = $mysqli->query($sqlEvents);
+    while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
+        $nomEvent = $rowEvents['nomEvent'];
+        $dir = $rowEvents['dir'];
+        $lugar = $rowEvents['lugar'];
+        $fechaIni = fechaEs($rowEvents['fechaIni']);
+        $horaIni = $rowEvents['horaIni'];
+    }
 
-$sqlTickets = "SELECT * FROM `ticketsType` WHERE `id`= " . $ticketType;
-$resultTickets = $mysqli->query($sqlTickets);
-while ($rowTickets = $resultTickets->fetch_array(MYSQLI_ASSOC)) {
-    $ticketName = $rowTickets['name'];
-}
+    $sqlTickets = "SELECT * FROM `ticketsType` WHERE `id`= " . $ticketType;
+    $resultTickets = $mysqli->query($sqlTickets);
+    while ($rowTickets = $resultTickets->fetch_array(MYSQLI_ASSOC)) {
+        $ticketName = $rowTickets['name'];
+        $flayer = $rowTickets['imgTickets'];
+    }
 
+    $flyerConvert = "https://lidertickets.cl" . $flayer;
 
-include_once '../../../lib/phpqrcode/qrlib.php';
-$cont2 = $codTicket;
-QRcode::png($cont2, "../temp/qrTickets.png", 'QR_ECLEVEL_Q', '10', '0');
-$qrTickets = '<img src="https://lidertickets.hotshiping.co/assets/api/php/temp/qrTickets.png"/>';
+    $cont2 = $codTicket;
+    QRcode::png($cont2, "../temp/qrTickets.png", 'QR_ECLEVEL_Q', '10', '0');
+    $qrTickets = '<img src="https://lidertickets.cl/assets/api/php/temp/qrTickets.png"/>';
 
-if ($saveBD == true) {
-    $para      = $email;
-    $titulo    = '¡Tu entrada de cortesia está aquí! | Cod: ' . $codTicket;
-    $mensaje   = '
+    if ($saveBD == true) {
+        $para      = $email;
+        $titulo    = '¡Tu entrada de cortesia está aquí! | Cod: ' . $codTicket;
+        $mensaje   = '
     <html lang="es">
 
     <head>
@@ -60,7 +62,7 @@ if ($saveBD == true) {
         <div style="background:#1e1f29;color:#333;font-family:Lato,Arial,sans-serif;font-size:16px!important;line-height:1;text-align:center;min-width:100%">
             <div style="margin:0 auto;text-align:center">
     
-                <img src="https://lidertickets.hotshiping.co/assets/img/small-logos/logoMail.png" alt="Lider Tickets"
+                <img src="https://lidertickets.cl/assets/img/small-logos/logoMail.png" alt="Lider Tickets"
                     border="0" style="margin:1.5rem 0" class="CToWUd">
             </div>
     
@@ -100,7 +102,7 @@ if ($saveBD == true) {
                                                             <div class="m_809902376527534251cupFoto"
                                                                 style="display:inline-block;font-size:18px;font-weight:700;vertical-align:top;width:260px">
                                                                 
-                                                                <img src="https://lidertickets.hotshiping.co' . $flayer . '"
+                                                                <img src="'.$flyerConvert.'"
                                                                     alt="' . $nomEvent . '" style="width:260px;max-width:100%" class="CToWUd a6T">
                                                                 <div class="a6S" dir="ltr" style="opacity: 0.01;">
                                                                     <div id=":2e2" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q"
@@ -160,7 +162,7 @@ if ($saveBD == true) {
     
                                                         <td style="padding-bottom:20px;text-align:center">
                                                             <div style="border:1px dotted #a4a4a4;margin:0 auto;text-align:center;vertical-align:top;width:100%, padding: 1.5rem 0;">
-                                                            <img src="https://lidertickets.hotshiping.co/assets/api/php/temp/qrTickets.png" style="margin-bottom: 1.5rem"/>
+                                                            <img src="https://lidertickets.cl/assets/api/php/temp/qrTickets.png" style="margin-bottom: 1.5rem"/>
                                                             <span style="display:block;font-size:26px;word-break:break-all">
                                                             ' . $codTicket . '
                                                             </span>
@@ -203,15 +205,16 @@ if ($saveBD == true) {
     </body>
     
     </html>';
-    $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
-    $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $cabeceras .= 'From: LiderTickets.com <info@lidertickets.com>' . "\r\n";
-    mail($para, $titulo, $mensaje, $cabeceras);
+        $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+        $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $cabeceras .= 'From: LiderTickets.com <info@lidertickets.com>' . "\r\n";
+        mail($para, $titulo, $mensaje, $cabeceras);
 
-    $txtSucces = 'El Ticket de cortesia para ' . $nomEvent . ' fue enviado satisfactoriamente';
-    $txtError = 'El Ticket no pudo ser enviado';
+        $txtSucces = 'El Ticket de cortesia para ' . $nomEvent . ' fue enviado satisfactoriamente';
+        $txtError = 'El Ticket no pudo ser enviado';
+    }
 
-?>
+    ?>
     <!DOCTYPE html>
     <html lang="es">
 
@@ -257,11 +260,11 @@ if ($saveBD == true) {
                             <div class="card-body">
                                 <h1>
                                     <?php
-                                    if ($saveBD) {
-                                        echo $txtSucces;
-                                    } else {
-                                        echo $txtError;
-                                    } ?></h1>
+                                        if ($saveBD) {
+                                            echo $txtSucces;
+                                        } else {
+                                            echo $txtError;
+                                        } ?></h1>
                             </div>
                         </div>
                     </div>

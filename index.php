@@ -1,7 +1,7 @@
 <?php
 require './assets/api/conex/conexConfig.php';
 include('./assets/api/php/functions/fechaEs.php');
-$title = 'Colombia';
+$title = 'Chile';
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -21,14 +21,17 @@ $title = 'Colombia';
   <!-- banner text -->
   <div id="bannerPrincipal" class="carousel slide">
     <?php
-    $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 ";
+    $date = date('Y-m-d');
+    $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 AND `fechaIni`>='" . $date . "'  ORDER BY `fechaIni` ASC ";
     $resultEvents = $mysqli->query($sqlEvents);
     while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
       if ($rowEvents['banner'] != '') {
 
     ?>
-        <div>
-          <img class="d-block w-100" src="<?php echo 'https://lidertickets.co' . $rowEvents['banner']  ?>" alt="<?php echo $rowEvents['nomEvent']  ?>">
+        <div class="itemBanner">
+          <a href="<?php echo 'https://lidertickets.cl/event.php?nomEvent=' . $rowEvents['nomEvent'] . '&id=' . $rowEvents['id'] . '&idUser' . $rowEvents['idUser'] ?>">
+            <img class="d-block w-100" src="<?php echo 'https://lidertickets.cl' . $rowEvents['banner']  ?>" alt="<?php echo $rowEvents['nomEvent']  ?>">
+          </a>
         </div>
     <?php
       }
@@ -39,17 +42,17 @@ $title = 'Colombia';
 
   <!-- search section -->
   <section class="search section">
-    <form action="" method="post" class="form-inline">
+    <form action="./searchView.php" method="post" class="form-inline">
       <input type="text" name="key" id="key" class="form-control" placeholder="Busca tu evento en Lider Tickets">
-      <select name="department" id="department" class="form-control">
-        <option value="-1">Seleccione Departamento</option>
+      <select name="region" id="region" class="form-control">
+        <option value="">Seleccione Región</option>
       </select>
-      <select name="municipality" id="municipality" class="form-control">
-        <option value="-1">Seleccione Municipio</option>
-        <option value="-1">Selecciona un Departamento</option>
+      <select name="comuna" id="comuna" class="form-control">
+        <option value="">Seleccione Comuna</option>
+        <option value="">Selecciona una Region</option>
       </select>
       <select name="month" id="month" class="form-control">
-        <option value="-1">Seleccione Mes</option>
+        <option value="">Seleccione Mes</option>
         <?php
         for ($i = 1; $i <= 12; $i++) {
           switch ($i) {
@@ -94,7 +97,7 @@ $title = 'Colombia';
         }
         ?>
       </select>
-      <button class="btn btn-primary" type="submit">Buscar</button>
+      <button class="btn btn-primary" type="submit"><img class="isotipo" src="./assets/img/search.png" alt="" class="corona"></button>
     </form>
   </section>
   <!-- search section -->
@@ -103,13 +106,13 @@ $title = 'Colombia';
   <section class="caroussel section">
     <div class="responsive">
       <?php
-      $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 ";
+      $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 AND `fechaIni`>='" . $date . "' ORDER BY `fechaIni` ASC";
       $resultEvents = $mysqli->query($sqlEvents);
       while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
       ?>
         <div>
-          <a href="<?php echo 'https://lidertickets.co/event.php?nomEvent=' . $rowEvents['nomEvent'] . '&id=' . $rowEvents['id'] . '&idUser' . $rowEvents['idUser'] ?>">
-            <img src="<?php echo 'https://lidertickets.co' . $rowEvents['flyer'] ?>" alt="<?php echo $rowEvents['nomEvent'] ?>" title="<?php echo $rowEvents['nomEvent'] ?>">
+          <a href="<?php echo 'https://lidertickets.cl/event.php?nomEvent=' . $rowEvents['nomEvent'] . '&id=' . $rowEvents['id'] . '&idUser' . $rowEvents['idUser'] ?>">
+            <img src="<?php echo 'https://lidertickets.cl' . $rowEvents['flyer'] ?>" alt="<?php echo $rowEvents['nomEvent'] ?>" title="<?php echo $rowEvents['nomEvent'] ?>">
           </a>
         </div>
       <?php
@@ -132,13 +135,13 @@ $title = 'Colombia';
         $no_of_records_per_page = 8;
         $offset = ($pageno - 1) * $no_of_records_per_page;
 
-        $total_pages_sql = "SELECT COUNT(*) FROM `eventos` WHERE `estado`= 1";
+        $total_pages_sql = "SELECT COUNT(*) FROM `eventos` WHERE `estado`= 1 ";
         $result = $mysqli->query($total_pages_sql);
         $total_rows = mysqli_fetch_array($result)[0];
         $total_pages = ceil((float)$total_rows / $no_of_records_per_page);
 
 
-        $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 LIMIT $offset, $no_of_records_per_page";
+        $sqlEvents = "SELECT * FROM `eventos` WHERE `estado`= 1 AND `fechaIni`>='" . $date . "'  ORDER BY `fechaIni` ASC  LIMIT $offset, $no_of_records_per_page";
         $resultEvents = $mysqli->query($sqlEvents);
         while ($rowEvents = $resultEvents->fetch_array(MYSQLI_ASSOC)) {
           $id = $rowEvents['id'];
@@ -146,7 +149,7 @@ $title = 'Colombia';
           <div class="eventContent" onclick="eventGo(`<?php echo $rowEvents['id'] ?>`, `<?php echo $rowEvents['nomEvent'] ?>`, `<?php echo $rowEvents['idUser'] ?>`)">
             <div class="card">
               <div class="card-body">
-                <div class="imgEvent" style="background: url(<?php echo 'https://lidertickets.co' . $rowEvents['flyer'] ?>);background-position: center; background-repeat: no-repeat;background-size: cover;">
+                <div class="imgEvent" style="background: url('<?php echo 'https://lidertickets.cl' . $rowEvents['flyer'] ?>');background-position: center; background-repeat: no-repeat;background-size: cover;">
                 </div>
                 <div class="infoEvent">
                   <span>
@@ -161,14 +164,15 @@ $title = 'Colombia';
                   <span>
                     <i class="fa-solid fa-dollar-sign"></i>
                     <?php
-                    $sqlTickets = "SELECT MIN(price), MAX(price) FROM `ticketsType` WHERE `idEvent`=$id";
+                    $sqlTickets = "SELECT MIN(price), MAX(price), price FROM `ticketsType` WHERE `idEvent`=$id";
                     $resultTickets = $mysqli->query($sqlTickets);
                     while ($rowTickets = $resultTickets->fetch_array(MYSQLI_ASSOC)) {
                     ?>
                       <span>
                         <? echo  'Desde $' . number_format($rowTickets['MIN(price)'], 2) . ' - Hasta $' . number_format($rowTickets['MAX(price)'], 2) ?>
                       </span>
-                    <? } ?>
+                    <?
+                    } ?>
                   </span>
                   <span>
                     <i class="fa-solid fa-map-pin"></i>
@@ -177,8 +181,7 @@ $title = 'Colombia';
                     </span>
                   </span>
                   <span class="btn btn-primary">
-                    <i class="fa-solid fa-ticket"></i>
-                    <span>Comprar Tickets</span>
+                    <img src="./assets/img/saleTickets.png" alt="">
                   </span>
                 </div>
 
@@ -259,7 +262,7 @@ $title = 'Colombia';
           }
         ?>
           <div class="col-md-6">
-            <img src="<?php echo 'https://lidertickets.co' . $row['flyer'] ?>" class="img-responsive" alt="">
+            <img src="<?php echo 'https://lidertickets.cl' . $row['flyer'] ?>" class="img-responsive" alt="">
           </div>
           <div class="col-md-6">
             <div class="col-md-11">
@@ -290,10 +293,13 @@ $title = 'Colombia';
   <!-- contact section -->
   <section id="contact" class="section">
     <div class="container">
-      <div class="section-header">
-        <h2 class="wow fadeInDown animated">Contáctanos</h2>
+      <div class="align-items-center d-flex justify-content-center">
+        <h1 style="color: #fff; margin-right: 10px;">Contactanos directamente a nuestro instagram</h1>
+        <a href="https://instagram.com/lidertickets?igshid=YmMyMTA2M2Y=" target="_blank">
+          <img src="./assets/img/instagram.png" alt="" style="width: 50px;">
+        </a>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-8 col-md-offset-2 conForm">
           <div id="message"></div>
           <form method="post" action="php/contact.php" name="cform" id="cform">
@@ -304,11 +310,16 @@ $title = 'Colombia';
             <div id="simple-msg"></div>
           </form>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
   <!-- contact section -->
 
+  <div class="instFloat">
+    <a href="https://instagram.com/lidertickets?igshid=YmMyMTA2M2Y=" target="_blank" title="Chatea con nosotros">
+      <img src="./assets/img/Icono-Chat.png" alt="" srcset="">
+    </a>
+  </div>
   <!-- Footer section -->
   <?php include('./assets/components/footerIndex.php') ?>
   <!-- Footer section -->

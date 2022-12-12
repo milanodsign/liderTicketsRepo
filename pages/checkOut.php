@@ -40,10 +40,10 @@ if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userT
 
         <head>
             <?php include('../assets/components/header.php') ?>
-            <script type="text/javascript" src="https://checkout.wompi.co/widget.js"></script>
+            <script type="text/javascript" src="https://checkout.webPay.co/widget.js"></script>
         </head>
 
-        <body class="g-sidenav-show bg-gray-100">
+        <body class="g-sidenav-show bg-gray-100 checkOut onSite">
             <div class="min-height-300 bg-primary position-absolute w-100"></div>
             <?php include('../assets/components/nav.php') ?>
             <main class="main-content position-relative border-radius-lg ">
@@ -57,9 +57,9 @@ if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userT
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <img src="../assets/img/small-logos/Logo_Home_Svg.svg" class="imgCheckOut" alt="main_logo">
+                                    <img src="../assets/img/logo.svg" class="imgCheckOut" alt="main_logo">
                                     <h4 style="margin-top: 15px">Información de la compra</h4>
-                                    <table class="table table-responsive">
+                                    <table class="table checkout">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Flyer</th>
@@ -96,10 +96,10 @@ if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userT
                                                             <td><?php echo $ticket ?></td>
                                                             </td>
                                                             <td>
-                                                                <?php echo 'COP$' . number_format($price, 2) ?>
+                                                                <?php echo 'CLP$' . number_format($price, 2) ?>
                                                             </td>
                                                             <td style="text-align: center"><?php echo $cantidad ?></td>
-                                                            <td><?php echo 'COP$' . number_format(($price * $cantidad), 2) ?></td>
+                                                            <td><?php echo 'CLP$' . number_format(($price * $cantidad), 2) ?></td>
                                                         </tr>
                                             <?php
                                                     }
@@ -111,19 +111,31 @@ if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userT
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td colspan="5" style="text-align: right"><b>Sub-total:</b></td>
-                                                <td style="text-align: right"><?php echo 'COP$' . number_format($subTotal, 2) ?>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td style="text-align: right"><b>Sub-total:</b></td>
+                                                <td style="text-align: right"><?php echo 'CLP$' . number_format($subTotal, 2) ?>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="5" style="text-align: right"><b>Tarifa de servicio:</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td style="text-align: right"><b>Comisión de transacción:</b></td>
                                                 <td style="text-align: right">
-                                                    <?php echo 'COP$' . number_format($porcentaje, 2) ?></td>
+                                                    <?php echo 'CLP$' . number_format($porcentaje, 2) ?></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="5" style="text-align: right"><b>Total:</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td style="text-align: right"><b>Total:</b></td>
                                                 <td style="text-align: right">
-                                                    <?php echo 'COP$' . number_format(($subTotal + $porcentaje), 2) ?></td>
+                                                    <?php echo 'CLP$' . number_format(($subTotal + $porcentaje), 2) ?></td>
                                         </tfoot>
                                     </table>
                                 </div>
@@ -176,22 +188,17 @@ if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userT
                                             <label for=""><span class="t_ubicacion">Tipo de Documentos</span></label>
                                             <select name="type" class="form-control form-control-lg">
                                                 <option value="" disabled="">Tipo</option>
-                                                <option value="CC">CC - Cédula de Ciudadanía</option>
-                                                <option value="CE">CE - Cédula de Extranjería</option>
-                                                <option value="NIT">NIT - Número de Identificación Tributaria</option>
+                                                <option value="RUT">RUT</option>
                                                 <option value="PP">PP - Pasaporte</option>
-                                                <option value="TI">TI - Tarjeta de Identidad</option>
-                                                <option value="DNI">DNI - Documento Nacional de Identidad</option>
-                                                <option value="RG">RG - Carteira de Identidade / Registro Geral</option>
-                                                <option value="OTHER">Otro</option>
                                             </select>
                                         </div>
                                         <div class="col-md-3">
                                             <label for=""><span class="t_ubicacion">N° Documento</span></label>
                                             <input class="form-control form-control-lg" type="text" name="numDoc" value="" />
                                         </div>
-                                        <button class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0 wompi">Pagar
-                                            con Wompi</button>
+                                        <button class="btn btn-lg btn-primary btn-lg mt-4 mb-0 webPay">
+                                            <img src="../assets/img/logos/webPay.png" alt="">
+                                        </button>
 
                                     </form>
                                 </div>

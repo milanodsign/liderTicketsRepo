@@ -36,9 +36,10 @@ ul {
   min-width: 50%;
 }
 body {
-  min-height: 100vh;
   background: #1e1f29;
   overflow-x: hidden;
+  position: relative;
+  height: 100%;
 }
 .register > main,
 .registerSuccess > main {
@@ -150,8 +151,8 @@ ul.dtr-details > li:last-child > span.dtr-data {
 }
 /* Custom Card Events */
 .events .card {
-  min-height: 500px;
-  height: 500px;
+  min-height: 600px;
+  height: 600px;
   overflow: hidden;
 }
 .events .card-body {
@@ -185,7 +186,7 @@ ul.dtr-details > li:last-child > span.dtr-data {
 }
 .infoEvent > span:first-child {
   width: 100%;
-  height: 40%;
+  height: 30%;
   font-size: 20px;
   padding: 15px;
   font-weight: 900;
@@ -205,10 +206,16 @@ ul.dtr-details > li:last-child > span.dtr-data {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 25%;
+  position: relative;
 }
 .infoEvent > span.btn.btn-primary > svg.svg-inline--fa.fa-ticket {
   color: #fff;
   transform: rotateZ(135deg);
+}
+.infoEvent > span.btn.btn-primary > img {
+  height: 80%;
+  width: auto;
 }
 span.valPass {
   font-size: 12px;
@@ -275,17 +282,7 @@ span.estatus.close > svg {
   justify-content: center;
   height: 20%;
 }
-button.btn.btn-lg.btn-primary.btn-lg.w-100.mt-4.mb-0:before {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  background-image: url('../img/wompi.svg');
-  background-size: contain;
-  vertical-align: middle;
-  transform: translateY(-8%);
-}
+
 /* dt */
 .dt-buttons > .btn {
   display: flex;
@@ -351,15 +348,17 @@ nav.navPagination .active a.page-link {
 img.imgCheckOut {
   max-width: 150px;
   height: auto;
-  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.8));
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
 }
 img.imgCheckOutTable {
   max-width: 100px;
 }
-section#contact {
+/* section#contact {
   padding-bottom: 0;
-}
-.slick-prev:before, .slick-next:before, .slick-dots li button:before {
+} */
+.slick-prev:before,
+.slick-next:before,
+.slick-dots li button:before {
   opacity: 1;
   color: #e09900;
 }
@@ -368,11 +367,12 @@ section#contact {
 }
 .slick-slide > a > img {
   width: 130px;
-  height: 130px;
+  /* height: 130px; */
   border-radius: 10px;
-  box-shadow: 0 10px 10px 0 rgb(0, 0, 0, .5);
+  box-shadow: 0 10px 10px 0 rgb(0, 0, 0, 0.5);
 }
-.search.section, .caroussel.section {
+.search.section,
+.caroussel.section {
   padding: 50px 50px 0;
 }
 .search.section form {
@@ -380,18 +380,21 @@ section#contact {
   flex-direction: row;
   justify-content: center;
 }
-section.search.section input, section.search.section select, section.search.section .btn {
+section.search.section input,
+section.search.section select,
+section.search.section .btn {
   border-radius: 0;
-  height: 40px;
+  height: 60px;
   margin: 0 !important;
   width: 20%;
+  position: relative;
 }
 .gridEvent {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   padding: 0 50px;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .eventContent {
   width: 330px;
@@ -423,7 +426,8 @@ div#bannerPrincipal .slick-slide > img {
   border-radius: 0;
   box-shadow: none;
 }
-body.event h1, body.event h2 {
+body.event h1,
+body.event h2 {
   color: var(--bs-white);
   font-weight: 600;
 }
@@ -433,13 +437,15 @@ body.event h1, body.event h2 {
 }
 .eventContentInfo > div:last-child {
   padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
 }
 .eventContentInfo > div:last-child svg {
   width: 65px;
   height: 65px;
   margin-right: 15px;
 }
-.eventContentInfo  .card-body {
+.eventContentInfo .card-body {
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
 }
 .eventContentInfo .card-body > span:last-child {
@@ -455,12 +461,12 @@ body.event h1, body.event h2 {
   line-height: 1.5;
   text-align: justify;
 }
-.eventContentInfo  .card {
+.eventContentInfo .card {
   border-radius: 10px;
   overflow: hidden;
 }
 .eventContentInfo > div:last-child > .card {
-  margin-top: 21px;
+  margin-top: 34px;
   padding: 0;
 }
 .eventContentInfo > div:last-child > .card > .card-body {
@@ -477,7 +483,8 @@ span.titleOtherEvent {
   border-bottom: 1px solid var(--bs-gray-400);
   padding: 1rem 0;
 }
-span.titleOtherEvent > h3, span.titleOtherEvent > h1 {
+span.titleOtherEvent > h3,
+span.titleOtherEvent > h1 {
   color: var(--bs-dark);
   margin: 0;
 }
@@ -522,7 +529,8 @@ button.goBack {
   color: #fff;
   margin: 0;
 }
-.eventSale h1, .eventSale h2 {
+.eventSale h1,
+.eventSale h2 {
   color: #fff;
 }
 .eventSale table.table span.soldOut {
@@ -537,4 +545,348 @@ button.goBack {
 }
 .table-responsive tfoot > tr {
   border-color: transparent;
+}
+/* .itemBanner.slick-slide > a > img {
+  width: 1583px !important;
+  height: 380px;
+} */
+span.alertBanner {
+  display: block;
+  color: #ff0000;
+}
+span.countTickets h4 {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1;
+}
+.table.ticketsSale td {
+  font-size: 12px;
+}
+p.notaRequest {
+  font-size: 10px;
+}
+.requestPrint td.sorting_1 > img {
+  max-width: 150px;
+}
+.onlyResponsive {
+  display: none;
+}
+img.isotipo {
+  position: relative;
+  width: auto;
+  height: 100%;
+}
+body.login button.enter {
+  height: 60px;
+  padding: 0;
+}
+button.btn.btn-lg.btn-primary.btn-lg.w-100.mt-4.mb-0.enter:before {
+  display: none;
+}
+body.login button.enter img {
+  height: 80%;
+}
+button.webPay > img {
+  height: 30px;
+}
+button.webPay {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  float: right;
+  position: relative;
+  margin-left: calc(100% - 210px);
+}
+i.eyePass,
+i.eyePass1,
+i.eyePass2 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+form#formLogin {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+}
+
+form#formLogin.active {
+  width: inherit;
+  height: initial;
+  position: relative;
+  z-index: 0;
+  opacity: 1;
+}
+
+form#formFogout {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+form#formFogout.active {
+  width: inherit;
+  height: inherit;
+  opacity: 1;
+}
+
+.forgoutPass > span {
+  background-image: linear-gradient(310deg, #e09900, #e09900);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+  font-weight: 600 !important;
+  cursor: pointer;
+  color: #e09900 !important;
+}
+
+span.arrowResponsive {
+  display: none;
+}
+
+span.arrowResponsive > svg.svg-inline--fa {
+  margin: 0;
+}
+
+body.registerSuccess img.logoRegister {
+  width: 250px;
+}
+body.registerSuccess a.btn.btn-primary.btn-lg.btn-block {
+  margin: 0;
+}
+
+/* icon X */
+.close {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  background: #ff0000;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 54px;
+  top: 10px;
+  content: " ";
+  height: 100px;
+  width: 10px;
+  background-color: #ffff;
+  border-radius: 5px;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.instFloat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  width: 100px;
+  height: 100px;
+  right: 15px;
+  bottom: 15px;
+}
+.instFloat img {
+  width: 80%;
+  filter: drop-shadow(0px 0px 3px #1e1f29);
+  -webkit-filter: drop-shadow(0px 0px 3px #1e1f29);
+}
+
+/* Responsive */
+@media only screen and (max-width: 1480px) {
+  span.arrowResponsive {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  body.checkOut .card-body {
+    overflow: auto hidden;
+  }
+  .navigation {
+    background-color: rgb(224, 153, 0, 0.62);
+  }
+  .navigation .primary-nav {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  div#reader {
+    width: 100% !important;
+    height: auto !important;
+  }
+  div#reader video {
+    width: 100% !important;
+  }
+  a#html5-qrcode-anchor-scan-type-change {
+    display: none !important;
+  }
+  .eventResponsive {
+    display: block;
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .eventContentInfo > div:last-child {
+    display: none;
+  }
+  img.isotipo {
+    height: 65% !important;
+  }
+  .onlyResponsive {
+    display: block !important;
+  }
+  form.cantTickets tr > td:nth-child(2),
+  form.cantTickets tr > th:nth-child(2) {
+    display: none;
+  }
+  section.eventContentInfo {
+    padding: 0;
+  }
+  section.eventContentInfo h1,
+  section.eventContentInfo h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section.eventContentInfo > div:nth-child(2) > span {
+    justify-content: center !important;
+    align-items: center;
+  }
+  .eventContentInfo > div:first-child > .card {
+    margin-top: 1rem !important;
+  }
+  body.login nav.navigation {
+    display: none;
+  }
+  div#bannerPrincipal {
+    padding-top: 100px;
+  }
+  .slick-initialized .slick-slide {
+    height: 150px;
+  }
+  section#eventGrid > .container-fluid {
+    padding: 0 5px;
+  }
+  section#eventGrid {
+    padding: 10px 0 0;
+  }
+  .gridEvent {
+    gap: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: inherit;
+    flex-direction: column;
+  }
+  .eventContent {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  .events .card {
+    min-height: 230px;
+    height: 230px;
+  }
+  .events .card-body {
+    display: flex;
+  }
+  .events .card-body > div {
+    height: 100%;
+  }
+  .imgEvent {
+    width: 40%;
+  }
+  .infoEvent {
+    width: 60%;
+  }
+  section.search.section select {
+    display: none;
+  }
+  .search.section,
+  .caroussel.section {
+    padding: 10px 10px 0;
+  }
+  input#key {
+    width: 70%;
+  }
+  section.search.section .btn {
+    width: 30%;
+  }
+  #map-overlay {
+    text-align: center;
+    flex-direction: column;
+  }
+  body.checkOut .card-body {
+    padding: 1rem;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+  }
+  body.checkOut .card-body > h4,
+  body.checkOut .card-body > form,
+  body.checkOut .card-body > form > div {
+    padding: 0;
+  }
+  .table.checkout tr > th,
+  .table.checkout tr > td {
+    font-size: 10px;
+    text-align: center;
+  }
+  table.checkout > thead > tr > th:first-child,
+  table.checkout > tbody > tr > td:first-child,
+  table.checkout > thead > tr > th:last-child,
+  table.checkout > tbody > tr > td:last-child,
+  table.checkout > thead > tr > th:nth-child(2),
+  table.checkout > tbody > tr > td:nth-child(2),
+  table.checkout > tfoot > tr > td:first-child,
+  table.checkout > tfoot > tr > td:nth-child(2),
+  table.checkout > tfoot > tr > td:nth-child(3) {
+    display: none;
+  }
+  .checkOut .container-fluid {
+    padding: 1rem;
+  }
+  .onSite.checkOut .container-fluid > div > div:nth-child(3) .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  tbody > tr > td > span.d-block {
+    position: relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+  table tr th:first-child,
+  table tr td:first-child {
+    display: grid;
+  }
 }

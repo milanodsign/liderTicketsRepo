@@ -109,6 +109,7 @@ abstract class Pdf extends Html
         PageSetup::PAPERSIZE_A2_PAPER => 'A2', //    (420 mm by 594 mm)
         PageSetup::PAPERSIZE_A3_TRANSVERSE_PAPER => 'A3', //    (297 mm by 420 mm)
         PageSetup::PAPERSIZE_A3_EXTRA_TRANSVERSE_PAPER => [912.76, 1261.42], //    (322 mm by 445 mm)
+        PageSetup::TICKETS_CL => [402.51, 144], //    (142 mm by 50.8 mm)
     ];
 
     /**

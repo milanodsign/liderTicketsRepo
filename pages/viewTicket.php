@@ -22,11 +22,11 @@ if (isset($_SESSION['tiempo'])) {
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
 include('../assets/api/php/functions/fechaEs.php');
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
     $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
     $result = $mysqli->query($sql);
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-        $eMailUser = $row['mail'];
+    while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
+        $eMailUser = $rowUser['mail'];
 
         $sqlTickets = "SELECT * FROM `ticketsSales`  WHERE codTicket = '" . $codTicket . "'";
         $resultTickets = $mysqli->query($sqlTickets);
@@ -102,8 +102,8 @@ if ($_SESSION['userType'] == 0) {
                                         <button class="btn btn-primary goBack" onClick="printHTML()" title="Imprimir ticket">
                                             <i class="fa-solid fa-print"></i>
                                         </button>
-                                        <button class="btn btn-primary goBack" title="reenviar ticket">
-                                        <i class="fa-sharp fa-solid fa-paper-plane"></i>
+                                        <button class="btn btn-primary goBack" title="Reenviar ticket" onclick="reSendTicket('<?php echo $codTicket ?>')">
+                                            <i class="fa-sharp fa-solid fa-paper-plane"></i>
                                         </button>
                                     </span>
 
@@ -268,6 +268,10 @@ if ($_SESSION['userType'] == 0) {
                     if (window.print) {
                         window.print();
                     }
+                }
+
+                const reSendTicket = (codTicket) => {
+                    window.location.href = 'resendTicket.php?codTicket=' + codTicket;
                 }
             </script>
         </body>

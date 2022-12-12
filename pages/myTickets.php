@@ -16,7 +16,7 @@ if (isset($_SESSION['tiempo'])) {
 
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
   $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
   $result = $mysqli->query($sql);
   while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -46,7 +46,7 @@ if ($_SESSION['userType'] == 0) {
                   <input type="button" value="Agregar Tickets" class="btn btn-primary mb-0" onclick="ticketsCreateGo(`<?php echo $idEvent ?>`, `<?php echo $nomEvent ?>`)">
                 </div>
                 <div class="card-body">
-                  <table class="display tabEvent table-responsive nowrap" style="width:100%">
+                  <table class="display tabEvent table-responsive" style="width:100%">
                     <thead>
                       <tr>
                         <th scope="col">Nombre del Ticket</th>
@@ -57,6 +57,7 @@ if ($_SESSION['userType'] == 0) {
                         <th scope="col">Validadas</th>
                         <th scope="col">Valor</th>
                         <th scope="col">Total</th>
+                        <th>Solicitud de Edición</th>
                         <th scope="col">Acciones</th>
                       </tr>
                     </thead>
@@ -84,7 +85,7 @@ if ($_SESSION['userType'] == 0) {
                         $salesCount = mysqli_num_rows($resultTS);
                         $saleTotal += $salesCount;
 
-                        $sqlCancelT = "SELECT * FROM `ticketsSales` WHERE `idEvent`=" . $idEvent . " AND `ticketType` =" . $rowTickets['id'] . " AND `status` = 0";
+                        $sqlCancelT = "SELECT * FROM `ticketsSales` WHERE `idEvent`=" . $idEvent . " AND `ticketType` =" . $rowTickets['id'] . " AND `status` = 2";
                         $resultCancelT = $mysqli->query($sqlCancelT);;
                         $cancelCount = mysqli_num_rows($resultCancelT);
                         $cancelTotal += $cancelCount;
@@ -98,7 +99,7 @@ if ($_SESSION['userType'] == 0) {
 
                         $sumaTotalSales += $totalSales;
                         $sumaTotalCancel += $totalCancel;
-                        $total += $totalSalesTickets;
+                        $total += $totalSales;
 
                         switch ($rowTickets['estado']) {
                           case 0:
@@ -117,11 +118,26 @@ if ($_SESSION['userType'] == 0) {
                             $estado = '<span class="estatus rrpp"><i class="fa-solid fa-bullhorn"></i>Venta solo RRPP</span>';
                             break;
                         }
+                        switch ($rowTickets['requestEdition']){
+                          case 0:
+                            $requestEdition = '';
+                            break; 
+                          case 1:
+                            $requestEdition = '<span class="estatus soldOut"><i class="fa-solid fa-exclamation"></i>Edición en espera de aprobación</span>';
+                            break;
+                          case 2: 
+                            $requestEdition = '<span class="estatus active"><i class="fa-solid fa-check"></i>Edición Aprobado</span>';
+                            break;
+                          case 3:
+                            $requestEdition = '<span class="estatus close"><i class="fa-solid fa-times"></i>Edición Rechazado</span>';
+                            break;
+                        }
                       ?>
                         <tr>
                           <td><?php echo $rowTickets['name'] ?>
                             <br>
                             <?php echo $estado ?>
+                            <span class="arrowResponsive"><i class="fa-sharp fa-solid fa-circle-chevron-down"></i></span>
                           </td>
                           <td><?php echo $ticketsDisponibles . ' de ' . $rowTickets['cant'] ?></td>
                           <td style="text-align: center"><?php echo $salesCount ?></td>
@@ -129,14 +145,27 @@ if ($_SESSION['userType'] == 0) {
                           <td style="text-align: center"><?php echo $courtesyCount ?></td>
                           <td style="text-align: center">0</td>
                           <td style="text-align: right"><?php echo '$' . number_format($rowTickets['price'], 2) ?></td>
-                          <td style="text-align: right"><?php echo '$' . number_format($totalSalesTickets, 2) ?></td>
+                          <td style="text-align: right"><?php echo '$' . number_format($totalSales, 2) ?></td>
+                          <td><? echo $requestEdition?></td>
                           <td class="botonera">
-                            <button class="btn btn-danger btn-lg btnTable" title="Cerrar">
+                            <button class="btn btn-danger btn-lg btnTable" title="Cerrar" onclick="closeTicket(`<?php echo $idEvent ?>`,`<?php echo $rowTickets['id'] ?>`,`<?php echo $rowTickets['name'] ?>`,`<?php echo $nomEvent ?>`)">
                               <i class="fa-solid fa-power-off"></i>
                             </button>
-                            <button class="btn btn-success btn-lg btnTable" title="Editar">
-                              <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
+                            <?php
+                            if ($rowTickets['requestEdition'] == 2) {
+                            ?>
+                              <button class="btn btn-success btn-lg btnTable" title="Editar" onclick="ticketsEditGo(`<?php echo $idEvent ?>`,`<?php echo $nomEvent ?>`, `<?php echo $rowTickets['id'] ?>`)">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                              </button>
+                            <?php
+                            } else {
+                            ?>
+                              <button class="btn btn-success btn-lg btnTable" title="Solicitar" onclick="requestEdit(`<?php echo $idEvent ?>`,`<?php echo $nomEvent ?>`, `<?php echo $rowTickets['id'] ?>`)">
+                              <i class="fa-solid fa-code-pull-request"></i>
+                              </button>
+                            <?php
+                            }
+                            ?>
                           </td>
                         </tr>
                       <?php } ?>
@@ -395,6 +424,19 @@ if ($_SESSION['userType'] == 0) {
         });
         const ticketsCreateGo = (id, nomEvent) => {
           window.location.href = 'ticketsCreate.php?id=' + id + '&nomEvent=' + nomEvent;
+        }
+        const ticketsEditGo = (idEvent, nomEvent, idTicket) => {
+          window.location.href = 'ticketsEdit.php?idEvent=' + idEvent + '&nomEvent=' + nomEvent + '&idTicket=' + idTicket;
+        }
+        const requestEdit = (idEvent, nomEvent, idTicket) => {
+          window.location.href = '../assets/api/php/tickets/requestEditTicket.php?idTicket=' + idTicket + '&idEvent=' + idEvent + '&nomEvent=' + nomEvent;
+        }
+        const closeTicket = (idEvent, idTicket, name, nomEvent) => {
+          let confirmacion = confirm("¿Deseas eliminar el ticket " + name + " del evento " + nomEvent + "?");
+          if (confirmacion === true) {
+            window.location.href = '../assets/api/php/tickets/closeTicket.php?idTicket=' + idTicket + '&nomEvent=' + nomEvent + '&idEvent=' + idEvent;
+          }
+
         }
       </script>
     </body>

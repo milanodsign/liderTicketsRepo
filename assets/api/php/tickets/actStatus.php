@@ -4,12 +4,13 @@ ini_set('display_errors', '1');
 require('../../conex/conexConfig.php');
 
 $ref = $_GET['ref'];
+$id = $_GET['id'];
 
 
 
-$update = 'UPDATE `ticketsSales` SET `status`=1 WHERE `ref`="' . $ref . '"';
+$update = 'UPDATE `ticketsSales` SET `status`=1, `idTransaction`= "' . $id . '" WHERE `ref`="' . $ref . '"';
 $result = $mysqli->query($update);
-if ($result) {
+if ($result === TRUE) {
     $response[] = array(
         'message' => true,
     );
@@ -59,14 +60,14 @@ if ($result) {
 
     $sqlTT = 'SELECT * FROM `ticketsType` WHERE `id`="' . $ticketType . '"';
     $resultTT = $mysqli->query($sqlTT);
-    while ($rowTT = $resultE->fetch_array(MYSQLI_ASSOC)) {
+    while ($rowTT = $resultTT->fetch_array(MYSQLI_ASSOC)) {
         $ticketName = $rowTT['name'];
     }
 
     if ($filas == 1) {
         include('../../../lib/phpqrcode/qrlib.php');
         QRcode::png($row['codTicket'], "../temp/qrTickets.png", 'QR_ECLEVEL_Q', '10', '0');
-        $qrTickets = '<img src="https://lidertickets.hotshiping.co/assets/api/php/temp/qrTickets.png"/>';
+        $qrTickets = '<img src="https://lidertickets.cl/assets/api/php/temp/qrTickets.png"/>';
 
         $para      = $email;
         $titulo    = '¡Tu entrada está aquí! | Cod: ' . $codTicket;
@@ -84,7 +85,7 @@ if ($result) {
             <div style="background:#1e1f29;color:#333;font-family:Lato,Arial,sans-serif;font-size:16px!important;line-height:1;text-align:center;min-width:100%">
                 <div style="margin:0 auto;text-align:center">
         
-                    <img src="https://lidertickets.hotshiping.co/assets/img/small-logos/logoMail.png" alt="Lider Tickets"
+                    <img src="https://lidertickets.cl/assets/img/small-logos/logoMail.png" alt="Lider Tickets"
                         border="0" style="margin:1.5rem 0" class="CToWUd">
                 </div>
         
@@ -124,7 +125,7 @@ if ($result) {
                                                                 <div class="m_809902376527534251cupFoto"
                                                                     style="display:inline-block;font-size:18px;font-weight:700;vertical-align:top;width:260px">
                                                                     
-                                                                    <img src="https://lidertickets.hotshiping.co' . $flyer . '"
+                                                                    <img src="https://lidertickets.cl' . urlencode($flyer) . '"
                                                                         alt="' . $nomEvent . '" style="width:260px;max-width:100%" class="CToWUd a6T">
                                                                     <div class="a6S" dir="ltr" style="opacity: 0.01;">
                                                                         <div id=":2e2" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q"
@@ -184,7 +185,7 @@ if ($result) {
         
                                                             <td style="padding-bottom:20px;text-align:center">
                                                                 <div style="border:1px dotted #a4a4a4;margin:0 auto;text-align:center;vertical-align:top;width:100%, padding: 1.5rem 0;">
-                                                                <img src="https://lidertickets.hotshiping.co/assets/api/php/temp/qrTickets.png" style="margin-bottom: 1.5rem"/>
+                                                                <img src="https://lidertickets.cl/assets/api/php/temp/qrTickets.png" style="margin-bottom: 1.5rem"/>
                                                                 <span style="display:block;font-size:26px;word-break:break-all">
                                                                 ' . $codTicket . '
                                                                 </span>
@@ -210,8 +211,8 @@ if ($result) {
                                                 <p style="font-size:12px!important">¿Tienes alguna sugerencia, duda o consulta
                                                     sobre nuestro servicio?
                                                     Estaremos felices de ayudarte. Por favor escríbemos a <a
-                                                        href="mailto:info@lidertickets.com" style="color:#333"
-                                                        target="_blank">info@lidertickets.com</a> o llámanos al PBX
+                                                        href="mailto:info@lidertickets.co" style="color:#333"
+                                                        target="_blank">info@lidertickets.cl</a> o llámanos al PBX
                                                     0000000000.</p>
                                                 <p><strong>¡Que tengas un día Lidertickets!</strong></p>
                                             </td>
@@ -229,7 +230,7 @@ if ($result) {
         </html>';
         $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
         $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $cabeceras .= 'From: LiderTickets.com <info@lidertickets.co>' . "\r\n";
+        $cabeceras .= 'From: lidertickets.cl <info@lidertickets.cl>' . "\r\n";
         mail($para, $titulo, $mensaje, $cabeceras);
     } else {
         $para      = $email;
@@ -248,7 +249,7 @@ if ($result) {
             <div style="background:#1e1f29;color:#333;font-family:Lato,Arial,sans-serif;font-size:16px!important;line-height:1;text-align:center;min-width:100%">
                 <div style="margin:0 auto;text-align:center">
         
-                    <img src="https://lidertickets.hotshiping.co/assets/img/small-logos/logoMail.png" alt="Lider Tickets"
+                    <img src="https://lidertickets.cl/assets/img/small-logos/logoMail.png" alt="Lider Tickets"
                         border="0" style="margin:1.5rem 0" class="CToWUd">
                 </div>
         
@@ -288,7 +289,7 @@ if ($result) {
                                                                 <div class="m_809902376527534251cupFoto"
                                                                     style="display:inline-block;font-size:18px;font-weight:700;vertical-align:top;width:260px">
                                                                     
-                                                                    <img src="https://lidertickets.hotshiping.co' . $flyer . '"
+                                                                    <img src="https://lidertickets.cl' . $flyer . '"
                                                                         alt="' . $nomEvent . '" style="width:260px;max-width:100%" class="CToWUd a6T">
                                                                     <div class="a6S" dir="ltr" style="opacity: 0.01;">
                                                                         <div id=":2e2" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q"
@@ -346,7 +347,7 @@ if ($result) {
         
                                                         <tr>
                                                             <td style="text-align:center">
-                                                                <a href="https://www.lidertickets.co/pages/login.php" style="background-color: #e09900; border-color: #e09900;color: #fff;border: 0;cursor: pointer;" target="_blank">Ver mis Tickets</a>
+                                                                <a href="https://www.lidertickets.cl/pages/login.php" style="background-color: #e09900; border-color: #e09900;color: #fff;border: 0;cursor: pointer;" target="_blank">Ver mis Tickets</a>
                                                             </td>
         
                                                             <td style="padding-bottom:20px;text-align:center">
@@ -374,8 +375,8 @@ if ($result) {
                                                 <p style="font-size:12px!important">¿Tienes alguna sugerencia, duda o consulta
                                                     sobre nuestro servicio?
                                                     Estaremos felices de ayudarte. Por favor escríbemos a <a
-                                                        href="mailto:info@lidertickets.com" style="color:#333"
-                                                        target="_blank">info@lidertickets.com</a> o llámanos al PBX
+                                                        href="mailto:info@lidertickets.cl" style="color:#333"
+                                                        target="_blank">info@lidertickets.cl</a> o llámanos al PBX
                                                     0000000000.</p>
                                                 <p><strong>¡Que tengas un día Lidertickets!</strong></p>
                                             </td>
@@ -393,7 +394,7 @@ if ($result) {
         </html>';
         $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
         $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $cabeceras .= 'From: LiderTickets.com <info@lidertickets.co>' . "\r\n";
+        $cabeceras .= 'From: liderTickets.cl <info@lidertickets.cl>' . "\r\n";
         mail($para, $titulo, $mensaje, $cabeceras);
     }
 } else {

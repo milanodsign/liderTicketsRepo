@@ -35,29 +35,40 @@ $title = 'Iniciar Sesión'; ?>
           <div class="row">
             <div class="col-lg-7 col-sm-12 d-flex flex-column justify-content-center text-center w100">
               <div class="position-relative h-100 m-3 d-flex flex-column justify-content-center overflow-hidden">
-                <img src="../assets/img/small-logos/Logo_Home_Svg.svg" alt="" srcset="">
+                <img src="../assets/img/logo.svg" alt="" srcset="">
               </div>
             </div>
             <div class="col-lg-5 col-md-7 col-xl-5 d-flex flex-column mt-5 mx-auto mx-lg-0">
               <div class="card card-plain">
                 <div class="card-header pb-0 text-start">
-                  <h4 class="font-weight-bolder">Iniciar sesión</h4>
-                  <p class="mb-0">Ingrese su correo electrónico y contraseña para iniciar sesión</p>
+                  <h2 class="font-weight-bolder" id="titleCard">Iniciar sesión</h2>
+                  <p class="mb-0" id="subTitleCard">Ingresa tus datos para iniciar sesión</p>
                 </div>
                 <div class="card-body">
-                  <form role="form" action="../assets/api/conex/valLogin.php" method="POST">
+                  <form id="formLogin" class="active" role="form" action="../assets/api/conex/valLogin.php" method="POST">
                     <div class="mb-3">
                       <input type="email" name="mail" class="form-control form-control-lg" placeholder="Correo electrónico" aria-label="Correo electrónico">
                     </div>
-                    <div class="mb-3">
-                      <input type="password" name="pass" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Contraseña">
+                    <div class="mb-3 position-relative">
+                      <input type="password" name="pass" id="passLogin" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Contraseña">
+                      <i class="fa fa-eye-slash eyePass" aria-hidden="true" onclick="visiblePass()"></i>
                     </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="rememberMe">
-                      <label class="form-check-label" for="rememberMe">Recuerdame</label>
+                    <div class="d-flex forgoutPass justify-content-center">
+                      <span onclick="forgoutPass()">¿Olvidaste tu contraseña?</span>
                     </div>
                     <div class="text-center">
-                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Entrar</button>
+                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0 enter"><img src="../assets/img/entrar.png" alt=""></button>
+                    </div>
+                  </form>
+                  <form id="formFogout" role="form" action="../assets/api/conex/valLogin.php" method="POST">
+                    <div class="mb-3">
+                      <input type="email" name="mail" class="form-control form-control-lg" placeholder="Correo electrónico" aria-label="Correo electrónico">
+                    </div>
+                    <div class="d-flex forgoutPass justify-content-center">
+                      <span onclick="goLogin()">Volver al Login</span>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0 enter"><img src="../assets/img/enviar.png" alt=""></button>
                     </div>
                   </form>
                 </div>
@@ -86,6 +97,7 @@ $title = 'Iniciar Sesión'; ?>
     </footer>
   </main>
   <!--   Core JS Files   -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -97,6 +109,61 @@ $title = 'Iniciar Sesión'; ?>
         damping: '0.5'
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+    const visiblePass = () => {
+      const pass = document.getElementById('passLogin');
+      const eye = document.querySelector('.eyePass');
+      if (pass.type === 'password') {
+        pass.type = 'text';
+        eye.classList.remove('fa-eye-slash');
+        eye.classList.add('fa-eye');
+      } else {
+        pass.type = 'password';
+        eye.classList.remove('fa-eye');
+        eye.classList.add('fa-eye-slash');
+      }
+    }
+    const visibilityPassForgout1 = () => {
+      const pass = document.getElementById('passLogin1');
+      const eye = document.querySelector('.eyePass1');
+      if (pass.type === 'password') {
+        pass.type = 'text';
+        eye.classList.remove('fa-eye-slash');
+        eye.classList.add('fa-eye');
+      } else {
+        pass.type = 'password';
+        eye.classList.remove('fa-eye');
+        eye.classList.add('fa-eye-slash');
+      }
+    }
+    const visibilityPassForgout2 = () => {
+      const pass = document.getElementById('passLogin2');
+      const eye = document.querySelector('.eyePass2');
+      if (pass.type === 'password') {
+        pass.type = 'text';
+        eye.classList.remove('fa-eye-slash');
+        eye.classList.add('fa-eye');
+      } else {
+        pass.type = 'password';
+        eye.classList.remove('fa-eye');
+        eye.classList.add('fa-eye-slash');
+      }
+    }
+    const forgoutPass = () => {
+      const formLogin = document.getElementById('formLogin');
+      const formFogout = document.getElementById('formFogout');
+      formLogin.classList.remove('active');
+      $('#titleCard').html('Recuperar Contraseña');
+      $('#subTitleCard').html('Ingresa tu correo electrónico y te enviaremos un enlace para que puedas recuperar tu contraseña');
+      formFogout.classList.add('active');
+    }
+    const goLogin = () => {
+      const formLogin = document.getElementById('formLogin');
+      const formFogout = document.getElementById('formFogout');
+      formFogout.classList.remove('active');
+      $('#titleCard').html('Iniciar sesión');
+      $('#subTitleCard').html('Ingresa tus datos para iniciar sesión');
+      formLogin.classList.add('active');
     }
   </script>
   <!-- Github buttons -->

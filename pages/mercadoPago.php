@@ -17,7 +17,7 @@ if (isset($_SESSION['tiempo'])) {
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
 include('../assets/api/php/functions/fechaEs.php');
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
     $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
     $result = $mysqli->query($sql);
     while ($row = $result->fetch_array(MYSQLI_ASSOC)) {

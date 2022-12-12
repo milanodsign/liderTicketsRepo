@@ -58,16 +58,16 @@ while ($row = $resultSTS->fetch_array(MYSQLI_ASSOC)) {
 
             $sqlTT = 'SELECT * FROM `ticketsType` WHERE `id`="' . $ticketType . '"';
             $resultTT = $mysqli->query($sqlTT);
-            while ($rowTT = $resultE->fetch_array(MYSQLI_ASSOC)) {
+            while ($rowTT = $resultTT->fetch_array(MYSQLI_ASSOC)) {
                 $ticketName = $rowTT['name'];
             }
 
             include('../../../lib/phpqrcode/qrlib.php');
             QRcode::png($row['codTicket'], "../temp/qrTickets.png", 'QR_ECLEVEL_Q', '10', '0');
-            $qrTickets = '<img src="https://lidertickets.hotshiping.co/assets/api/php/temp/qrTickets.png"/>';
+            $qrTickets = '<img src="https://lidertickets.cl/assets/api/php/temp/qrTickets.png"/>';
 
             $para      = $email;
-            $titulo    = '¡Tu entrada está aquí! | Cod: ' . $codTicket;
+            $titulo    = '¡Tu entrada está aquí! | Cod: ' . $codTicket; 
             $mensaje   = '
         <html lang="es">    
         <head>
@@ -80,7 +80,7 @@ while ($row = $resultSTS->fetch_array(MYSQLI_ASSOC)) {
             <div style="background:#1e1f29;color:#333;font-family:Lato,Arial,sans-serif;font-size:16px!important;line-height:1;text-align:center;min-width:100%">
                 <div style="margin:0 auto;text-align:center">
         
-                    <img src="https://lidertickets.hotshiping.co/assets/img/small-logos/logoMail.png" alt="Lider Tickets"
+                    <img src="https://lidertickets.cl/assets/img/small-logos/logoMail.png" alt="Lider Tickets"
                         border="0" style="margin:1.5rem 0" class="CToWUd">
                 </div>
         
@@ -120,7 +120,7 @@ while ($row = $resultSTS->fetch_array(MYSQLI_ASSOC)) {
                                                                 <div class="m_809902376527534251cupFoto"
                                                                     style="display:inline-block;font-size:18px;font-weight:700;vertical-align:top;width:260px">
                                                                     
-                                                                    <img src="https://lidertickets.hotshiping.co' . $flyer . '"
+                                                                    <img src="https://lidertickets.cl' . $flyer . '"
                                                                         alt="' . $nomEvent . '" style="width:260px;max-width:100%" class="CToWUd a6T">
                                                                     <div class="a6S" dir="ltr" style="opacity: 0.01;">
                                                                         <div id=":2e2" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q"
@@ -180,7 +180,7 @@ while ($row = $resultSTS->fetch_array(MYSQLI_ASSOC)) {
         
                                                             <td style="padding-bottom:20px;text-align:center">
                                                                 <div style="border:1px dotted #a4a4a4;margin:0 auto;text-align:center;vertical-align:top;width:100%, padding: 1.5rem 0;">
-                                                                <img src="https://lidertickets.hotshiping.co/assets/api/php/temp/qrTickets.png" style="margin-bottom: 1.5rem"/>
+                                                                <img src="https://lidertickets.cl/assets/api/php/temp/qrTickets.png" style="margin-bottom: 1.5rem"/>
                                                                 <span style="display:block;font-size:26px;word-break:break-all">
                                                                 ' . $codTicket . '
                                                                 </span>
@@ -278,13 +278,13 @@ while ($row = $resultSTS->fetch_array(MYSQLI_ASSOC)) {
 
             $sqlTT = 'SELECT * FROM `ticketsType` WHERE `id`=' . $ticketType;
             $resultTT = $mysqli->query($sqlTT);
-            while ($rowTT = $resultE->fetch_array(MYSQLI_ASSOC)) {
+            while ($rowTT = $resultTT->fetch_array(MYSQLI_ASSOC)) {
                 $ticketName = $rowTT['name'];
             }
 
             include('../../../lib/phpqrcode/qrlib.php');
             QRcode::png($row['codTicket'], "../temp/qrTickets.png", 'QR_ECLEVEL_Q', '10', '0');
-            $qrTickets = '<img src="https://lidertickets.hotshiping.co/assets/api/php/temp/qrTickets.png"/>';
+            $qrTickets = '<img src="https://lidertickets.cl/assets/api/php/temp/qrTickets.png"/>';
 
             $para      = $email;
             $titulo    = '¡Tu entrada está aquí! | Cod: ' . $codTicket;
@@ -300,7 +300,7 @@ while ($row = $resultSTS->fetch_array(MYSQLI_ASSOC)) {
             <div style="background:#1e1f29;color:#333;font-family:Lato,Arial,sans-serif;font-size:16px!important;line-height:1;text-align:center;min-width:100%">
                 <div style="margin:0 auto;text-align:center">
         
-                    <img src="https://lidertickets.hotshiping.co/assets/img/small-logos/logoMail.png" alt="Lider Tickets"
+                    <img src="https://lidertickets.cl/assets/img/small-logos/logoMail.png" alt="Lider Tickets"
                         border="0" style="margin:1.5rem 0" class="CToWUd">
                 </div>
         
@@ -340,7 +340,7 @@ while ($row = $resultSTS->fetch_array(MYSQLI_ASSOC)) {
                                                                 <div class="m_809902376527534251cupFoto"
                                                                     style="display:inline-block;font-size:18px;font-weight:700;vertical-align:top;width:260px">
                                                                     
-                                                                    <img src="https://lidertickets.hotshiping.co' . $flyer . '"
+                                                                    <img src="https://lidertickets.cl' . $flyer . '"
                                                                         alt="' . $nomEvent . '" style="width:260px;max-width:100%" class="CToWUd a6T">
                                                                     <div class="a6S" dir="ltr" style="opacity: 0.01;">
                                                                         <div id=":2e2" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q"
@@ -400,7 +400,7 @@ while ($row = $resultSTS->fetch_array(MYSQLI_ASSOC)) {
         
                                                             <td style="padding-bottom:20px;text-align:center">
                                                                 <div style="border:1px dotted #a4a4a4;margin:0 auto;text-align:center;vertical-align:top;width:100%, padding: 1.5rem 0;">
-                                                                <img src="https://lidertickets.hotshiping.co/assets/api/php/temp/qrTickets.png" style="margin-bottom: 1.5rem"/>
+                                                                <img src="https://lidertickets.cl/assets/api/php/temp/qrTickets.png" style="margin-bottom: 1.5rem"/>
                                                                 <span style="display:block;font-size:26px;word-break:break-all">
                                                                 ' . $codTicket . '
                                                                 </span>

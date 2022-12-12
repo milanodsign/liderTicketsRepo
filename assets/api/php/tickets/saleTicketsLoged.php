@@ -2,6 +2,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require('../../conex/conexConfig.php');
+require_once(dirname(__FILE__) . '../../../../../vendor/autoload.php');
+
+$transaction = new \Transbank\Webpay\WebpayPlus\Transaction();
+
+$sessionID = 'sessionID';
 
 $referencia = $_POST['referencia'];
 $idEvent = $_POST['idEvent'];
@@ -22,6 +27,8 @@ $shoppingTime = date('H:i:s');
 $totalSale = 0;
 
 
+
+
 foreach ($idTickets as $ticketType) {
     $sqlTickets = "SELECT * FROM `ticketsType` WHERE `id`= " . $ticketType;
     $resultTickets = $mysqli->query($sqlTickets);
@@ -32,7 +39,7 @@ foreach ($idTickets as $ticketType) {
                 $totalSale = $totalSale + $rowTickets['price'];
                 $codTicket = 'TS' . substr(str_shuffle($permitted_chars), 0, 10);
 
-                $sql = "INSERT INTO `ticketsSales`(`id`, `idEvent`, `ticketType`, `cant`, `name`, `email`, `docType`, `numDoc`, `phone`, `shoppingDate`, `shoppingTime`, `codTicket`, `ref`, `payMethod`, `status`) VALUES (NULL, '" . $idEvent . "','" . $ticketType . "','1','" . $name . "','" . $email . "','" . $docType . "','" . $numDoc . "','" . $phone . "','" . $shoppingDate . "','" . $shoppingTime . "','" . $codTicket . "','" . $referencia . "','WOMPY',0)";
+                $sql = "INSERT INTO `ticketsSales`(`id`, `idEvent`, `ticketType`, `cant`, `name`, `email`, `docType`, `numDoc`, `phone`, `shoppingDate`, `shoppingTime`, `codTicket`, `ref`, `payMethod`, `status`) VALUES (NULL, '" . $idEvent . "','" . $ticketType . "','1','" . $name . "','" . $email . "','" . $docType . "','" . $numDoc . "','" . $phone . "','" . $shoppingDate . "','" . $shoppingTime . "','" . $codTicket . "','" . $referencia . "','WebPay',0)";
 
                 $result = $mysqli->query($sql);
             }
@@ -40,9 +47,13 @@ foreach ($idTickets as $ticketType) {
     }
 }
 $Total = $totalSale + $porcentaje;
+$createResponse = $transaction->create($referencia, uniqid(), $Total, 'https://lidertickets.co/assets/api/php/tickets/transactionResultLog.php');
+$redirectUrl = $createResponse->getUrl().'?token_ws='.$createResponse->getToken();
+header('Location: '.$redirectUrl, true, 302);
+    exit;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -50,25 +61,14 @@ $Total = $totalSale + $porcentaje;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../../../../img/favicon.png">
-    <title>Lider Tickets - Wompi</title>
+    <title>Lider Tickets - WebPay</title>
 </head>
 
 <body style="background: #20212b">
 
-    <div>
-        <form action="https://checkout.wompi.co/p/" method="GET">
-            <!-- OBLIGATORIOS -->
-            <input type="hidden" name="public-key" value="pub_prod_iVDk3rrRJX3jxgZJOFF4Gu9cbBaL8bNK" />
-            <input type="hidden" name="currency" value="COP" />
-            <input type="hidden" name="amount-in-cents" value="<?php echo $Total * 100 ?>" />
-            <input type="hidden" name="reference" value="<?php echo $referencia ?>" />
-            <!-- OPCIONALES -->
-            <input type="hidden" name="redirect-url" value="https://lidertickets.co/assets/api/php/tickets/transactionResultLoged.php" />
-            <input type="hidden" name="customer-data:email" value="<?php echo $email ?>" />
-            <input type="hidden" name="customer-data:full-name" value="<?php echo $name ?>" />
-            <input type="hidden" name="customer-data:phone-number" value="<?php echo $phone ?>" />
-            <input type="hidden" name="customer-data:legal-id" value="<?php echo $numDoc ?>" />
-            <input type="hidden" name="customer-data:legal-id-type" value="<?php echo $docType ?>" />
+    <!-- <div>
+        <form action="<?php echo $formAction ?>" method="POST">
+            <input type="hidden" name="token_ws" value="<?php echo $tokenWs ?>" />
             <button id="toPay" style="display: none;" type="submit">Pagar con Wompi</button>
         </form>
     </div>
@@ -77,7 +77,7 @@ $Total = $totalSale + $porcentaje;
         $(document).ready(function() {
             $('#toPay').click()
         });
-    </script>
+    </script> -->
 
 </body>
 

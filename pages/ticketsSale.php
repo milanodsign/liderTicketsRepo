@@ -16,7 +16,8 @@ if (isset($_SESSION['tiempo'])) {
 }
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
-if ($_SESSION['userType'] == 0) {
+include('../assets/api/php/functions/fechaEs.php');
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
     $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
     $result = $mysqli->query($sql);
     while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -43,7 +44,24 @@ if ($_SESSION['userType'] == 0) {
                                     <h3><?php echo $title . ' ' . $nomEvent ?></h3>
                                 </div>
                                 <div class="card-body">
-                                    <table class="display tabTicketsSale  table-responsive nowrap" style="width:100%">
+                                    <?php
+                                    $courtesyCount = 0;
+                                    $salesCount = 0;
+                                    $sqlCT = "SELECT * FROM `courtesyTickets` WHERE `idEvent`='" . $idEvent . "'";
+                                    $resultCT = $mysqli->query($sqlCT);;
+                                    $courtesyCount = mysqli_num_rows($resultCT);
+
+                                    $sqlTS = "SELECT * FROM `ticketsSales` WHERE `status`=1 AND `idEvent`='" . $idEvent . "'";
+                                    $resultTS = $mysqli->query($sqlTS);;
+                                    $salesCount = mysqli_num_rows($resultTS);
+
+                                    $totalTickets = $courtesyCount + $salesCount;
+
+                                    echo '<span class="align-items-center countTickets d-flex">
+                                    <h4><b>Total de tickets:</b> ' . $totalTickets . '</h4>  |  <h4><b>Total vendidos:</b> ' . $salesCount . '</h4>  |  <h4><b>Total cortesias:</b> ' . $courtesyCount . '</h4>
+                                    </span>';
+                                    ?>
+                                    <table class="table table-responsive ticketsSale tabTicketsSale" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Nombre</th>
@@ -51,31 +69,108 @@ if ($_SESSION['userType'] == 0) {
                                                 <th scope="col">Teléfono</th>
                                                 <th scope="col">Fecha de Compra</th>
                                                 <th scope="col">Tipo</th>
-                                                <th scope="col">RRPP</th>
-                                                <th scope="col">Estado</th>
                                                 <th scope="col">Forma de Pago</th>
                                                 <th scope="col">Precio</th>
-                                                <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
+                                            $sqlTC = "SELECT * FROM `courtesyTickets` WHERE `idEvent`='" . $idEvent . "'";
+                                            $resultTC = $mysqli->query($sqlTC);
+                                            while ($rowTC = $resultTC->fetch_array(MYSQLI_ASSOC)) {
 
+                                                $sqlTTC = "SELECT * FROM `ticketsType` WHERE `id`= " . $rowTC['ticketType'];
+                                                $resultTTC = $mysqli->query($sqlTTC);
+                                                while ($rowTTC = $resultTTC->fetch_array(MYSQLI_ASSOC)) {
+                                                    $ticketNameTC = $rowTTC['name'];
+                                                }
+                                                $itemsTC[] = array(
+                                                    'name' => $rowTC['name'],
+                                                    'email' => $rowTC['email'],
+                                                    'phone' => '',
+                                                    'date' => $rowTC['sendDate'],
+                                                    'ticketName' => $ticketNameTC,
+                                                    'type' => 'Cortesía',
+                                                    'price' => 'N/A',
+                                                );
+                                            }
+
+                                            $total = 0;
+                                            $sqlT = "SELECT * FROM `ticketsSales` WHERE `status`=1 AND `idEvent`='" . $idEvent . "'";
+                                            $resultT = $mysqli->query($sqlT);
+                                            while ($rowT = $resultT->fetch_array(MYSQLI_ASSOC)) {
+                                                $sqlTT = "SELECT * FROM `ticketsType` WHERE `id`= " . $rowT['ticketType'];
+                                                $resultTT = $mysqli->query($sqlTT);
+                                                while ($rowTT = $resultTT->fetch_array(MYSQLI_ASSOC)) {
+                                                    $ticketNameTS = $rowTT['name'];
+                                                    $price = $rowTT['price'];
+                                                }
+                                                $itemsTS[] = array(
+                                                    'name' => $rowT['name'],
+                                                    'email' => $rowT['email'],
+                                                    'phone' => '',
+                                                    'date' => $rowT['shoppingDate'],
+                                                    'ticketName' => $ticketNameTS,
+                                                    'type' => 'Venta',
+                                                    'price' => $price,
+                                                );
+                                                $total = $total + $price;
+                                            }
+
+                                            if (isset($itemsTC) && isset($itemsTS)) {
+                                                $arrayUnion = array_merge($itemsTS, $itemsTC);
+                                            } 
+                                            elseif (isset($itemsTS)) {
+                                                $arrayUnion = $itemsTS;
+                                            }
+                                            else {
+                                                $arrayUnion[] = array(
+                                                    'name' => '',
+                                                    'email' => '',
+                                                    'phone' => '',
+                                                    'date' => '',
+                                                    'ticketName' => '',
+                                                    'type' => '',
+                                                    'price' => '',
+                                                );
+                                            }
+
+                                            foreach ($arrayUnion as $item) {
+                                                if ($item['price'] === 'N/A' || $item['price'] === '') {
+                                                    $price = $item['price'];
+                                                } else {
+                                                    $price = '$' . number_format($item['price'], 2);
+                                                }
+                                                if ($item['date'] === '') {
+                                                    $date = $item['date'];
+                                                } else {
+                                                    $price = fechaEs($item['date']);
+                                                }
                                             ?>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <?php ?>
+                                                <tr>
+                                                    <td><?php echo $item['name'] ?>
+                                                    <span class="arrowResponsive"><i class="fa-sharp fa-solid fa-circle-chevron-down"></i></span></td>
+                                                    <td><?php echo $item['email'] ?></td>
+                                                    <td style="text-align: center"><?php echo $item['phone'] ?></td>
+                                                    <td><?php echo $item['date'] ?></td>
+                                                    <td><?php echo $item['ticketName'] ?></td>
+                                                    <td style="text-align: center"><?php echo $item['type'] ?></td>
+                                                    <td style="text-align: right"><?php echo $price ?></td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th colspan="6" style="text-align: right">Total:</th>
+                                                <th scope="col" style="text-align: right"><?php echo '$' . number_format($total, 2) ?></th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="6" style="text-align: right">Unidades vendidas:</th>
+                                                <th scope="col" style="text-align: right"><?php echo $salesCount ?></th>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
@@ -119,8 +214,8 @@ if ($_SESSION['userType'] == 0) {
                             }
                         ],
                         "lengthMenu": [
-                            [10, 25, 50, 75, 100, -1],
-                            [10, 25, 50, 75, 100, "TODOS"]
+                            [-1],
+                            ["TODOS"]
                         ],
                         "language": {
                             "aria": {

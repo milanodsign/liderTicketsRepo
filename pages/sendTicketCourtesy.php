@@ -17,10 +17,10 @@ if (isset($_SESSION['tiempo'])) {
 $_SESSION['tiempo'] = time();
 require '../assets/api/conex/conexConfig.php';
 include('../assets/api/php/functions/fechaEs.php');
-if ($_SESSION['userType'] == 0) {
+if ($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 || $_SESSION['userType'] == 2) {
     $sql = "SELECT * FROM `user` WHERE `id`= " . $_SESSION['id'];
     $result = $mysqli->query($sql);
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
         <!DOCTYPE html>
         <html lang="es">
@@ -41,11 +41,11 @@ if ($_SESSION['userType'] == 0) {
                         <?php
                         $sql = "SELECT * FROM `eventos` WHERE `id`= " . $idEvent;
                         $result = $mysqli->query($sql);
-                        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                        while ($rowUser = $result->fetch_array(MYSQLI_ASSOC)) {
                         ?>
                             <div class="col-md-4" style="max-width: 400px;max-height: 400px;box-sizing: border-box;padding: 0;">
                                 <div class="card imgEvent" style="height: 100%;">
-                                    <div class="card-body" style="background: url(<?php echo $row['flyer'] ?>);background-position: center; background-repeat: no-repeat;background-size: cover;width: 100%;">
+                                    <div class="card-body" style="background: url('<?php echo $row['flyer'] ?>');background-position: center; background-repeat: no-repeat;background-size: cover;width: 100%;">
                                     </div>
                                 </div>
                             </div>

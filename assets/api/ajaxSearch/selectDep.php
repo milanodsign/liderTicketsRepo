@@ -2,10 +2,10 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require('../conex/conexConfig.php');
-$sql = "SELECT DISTINCT depCol FROM `munDepCol` ORDER BY depCol ASC";
+$sql = "SELECT DISTINCT region FROM `comRegCL` ORDER BY region ASC";
 $result = $mysqli->query($sql);
-echo '<option value="">Seleccione Departamento</option>';
+echo '<option value="">Seleccione Región</option>';
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-    echo '<option value="' . $row['depCol'] . '">' . $row['depCol'] . '</option>';
+    echo '<option value="' . $row['region'] . '">' . $row['region'] . '</option>';
 };
 

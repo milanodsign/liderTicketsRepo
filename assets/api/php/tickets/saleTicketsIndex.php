@@ -2,6 +2,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require('../../conex/conexConfig.php');
+require_once(dirname(__FILE__) . '../../../../../vendor/autoload.php');
+
+$commerceCode = 597036125462;
+$apiKeySecret = '9028c6db-9b11-442b-9313-0849740013a3';
+
+$transaction = (new \Transbank\Webpay\WebpayPlus\Transaction())->configureForProduction($commerceCode, $apiKeySecret);
 
 $referencia = $_POST['referencia'];
 $idEvent = $_POST['idEvent'];
@@ -32,14 +38,19 @@ foreach ($idTickets as $ticketType) {
                 $totalSale = $totalSale + $rowTickets['price'];
                 $codTicket = 'TS' . substr(str_shuffle($permitted_chars), 0, 10);
 
-                $sql = "INSERT INTO `ticketsSales`(`id`, `idEvent`, `ticketType`, `cant`, `name`, `email`, `docType`, `numDoc`, `phone`, `shoppingDate`, `shoppingTime`, `codTicket`, `ref`, `payMethod`, `status`) VALUES (NULL, '" . $idEvent . "','" . $ticketType . "','1','" . $name . "','" . $email . "','" . $docType . "','" . $numDoc . "','" . $phone . "','" . $shoppingDate . "','" . $shoppingTime . "','" . $codTicket . "','" . $referencia . "','WOMPY',0)";
+                $sql = "INSERT INTO `ticketsSales`(`id`, `idEvent`, `ticketType`, `cant`, `name`, `email`, `docType`, `numDoc`, `phone`, `shoppingDate`, `shoppingTime`, `codTicket`, `ref`, `payMethod`, `status`) VALUES (NULL, '" . $idEvent . "','" . $ticketType . "','1','" . $name . "','" . $email . "','" . $docType . "','" . $numDoc . "','" . $phone . "','" . $shoppingDate . "','" . $shoppingTime . "','" . $codTicket . "','" . $referencia . "','webPay',0)";
 
                 $result = $mysqli->query($sql);
             }
         }
     }
 }
-$Total = $totalSale + $porcentaje;
+$Total = round($totalSale + $porcentaje);
+$URLdestination = 'https://lidertickets.cl/assets/api/php/tickets/transactionResult.php?reference=' . $referencia;
+$response = $transaction->create($referencia, $commerceCode, $Total, $URLdestination);
+$redirectUrl = $response->getUrl() . '?token_ws=' . $response->getToken();
+header('Location: ' . $redirectUrl, true, 302);
+exit;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,15 +65,13 @@ $Total = $totalSale + $porcentaje;
 </head>
 
 <body style="background: #20212b">
-
+    <!-- 
     <div>
-        <form action="https://checkout.wompi.co/p/" method="GET">
-            <!-- OBLIGATORIOS -->
+        <form action="https://checkout.webPay.co/p/" method="GET">
             <input type="hidden" name="public-key" value="pub_prod_iVDk3rrRJX3jxgZJOFF4Gu9cbBaL8bNK" />
             <input type="hidden" name="currency" value="COP" />
             <input type="hidden" name="amount-in-cents" value="<?php echo $Total * 100 ?>" />
             <input type="hidden" name="reference" value="<?php echo $referencia ?>" />
-            <!-- OPCIONALES -->
             <input type="hidden" name="redirect-url" value="https://lidertickets.co/assets/api/php/tickets/transactionResult.php" />
             <input type="hidden" name="customer-data:email" value="<?php echo $email ?>" />
             <input type="hidden" name="customer-data:full-name" value="<?php echo $name ?>" />
@@ -77,7 +86,7 @@ $Total = $totalSale + $porcentaje;
         $(document).ready(function() {
             $('#toPay').click()
         });
-    </script>
+    </script> -->
 
 </body>
 

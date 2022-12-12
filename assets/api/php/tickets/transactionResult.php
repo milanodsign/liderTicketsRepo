@@ -1,4 +1,23 @@
 <?php
+require('../../conex/conexConfig.php');
+require_once(dirname(__FILE__) . '../../../../../vendor/autoload.php');
+
+$commerceCode = 597036125462;
+$apiKeySecret = '9028c6db-9b11-442b-9313-0849740013a3';
+
+$transaction = (new Transbank\TransaccionCompleta\Transaction())->configureForProduction($commerceCode, $apiKeySecret);
+
+$token = $_GET['token_ws'] ?? $_POST['token_ws'] ?? null;
+$reference = $_GET['reference'] ?? $_POST['reference'] ?? null;
+
+if (!$token) {
+    header('Location: https://lidertickets.cl/pages/cancelTransaction.php', true, 302);
+}
+
+$response = $transaction->commit($token);
+
+$responseEncode = json_encode($response);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,26 +39,19 @@
         getResponse()
     });
 
-    const getResponse = async () => {
-        let idTransaction = '<?php echo $_GET['id'] ?>'
-        let respuesta = [];
-        await fetch('https://production.wompi.co/v1/transactions/' + idTransaction)
-            .then((response) => response.json())
-            .then((result) => {
-                respuesta = result
-                respuesta.data.status === "APPROVED" ? actStatus(respuesta.data.reference) : window.location.href = "https://lidertickets.co"
-            })
-            .catch((error) => {
-                console.error("ERROR FOUND" + error);
-            });
+    const getResponse = () => {
+        let idTransaction = '<?php echo $token ?>';
+        let response = <?php echo $responseEncode ?>;
+        let reference = '<?php echo $reference ?>';
+        response.responseCode === 0 ? actStatus(`${reference}`, `${idTransaction}`) : window.location.href = "https://lidertickets.cl/pages/cancelTransaction.php"
     }
 
-    const actStatus = (reference) => {
+    const actStatus = (reference, id) => {
         $.ajax({
-            url: "./actStatus.php?ref=" + reference,
+            url: "./actStatus.php?ref=" + reference + "&id=" + id,
             type: "get",
             dataType: "json",
-        }).then(window.location.href = "../../../../pages/login.php")
+        }).then(window.location.href = "https://lidertickets.cl/pages/successTransaction.php")
     }
 </script>
 
